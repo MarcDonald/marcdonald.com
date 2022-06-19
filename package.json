@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "lint:staged": "lint-staged --allow-empty",
+    "husky:prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@remix-run/node": "1.6.0",
+    "@remix-run/react": "1.6.0",
+    "@remix-run/vercel": "1.6.0",
+    "@vercel/node": "1.15.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "1.6.0",
+    "@remix-run/eslint-config": "1.6.0",
+    "@remix-run/serve": "1.6.0",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "eslint": "8.15.0",
+    "prettier": "2.7.1",
+    "typescript": "4.6.4",
+    "@typescript-eslint/eslint-plugin": "5.28.0",
+    "@typescript-eslint/parser": "5.28.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-promise": "6.0.0",
+    "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "8.0.1",
+    "lint-staged": "13.0.2"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
