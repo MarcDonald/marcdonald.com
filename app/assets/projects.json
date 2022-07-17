@@ -1,0 +1,20 @@
+[
+	{
+		"id": "hibi",
+		"name": "Hibi",
+		"description": "Japanese journal app",
+		"link": "https://github.com/MarcDonald/hibi"
+	},
+	{
+		"id": "event-management-system",
+		"name": "Event Management System",
+		"description": "University Project",
+		"link": "https://github.com/MarcDonald/event-management-system"
+	},
+	{
+		"id": "twitch-spotify-bot",
+		"name": "Twitch Chat Spotify Bot",
+		"description": "Twitch chat Spotify request bot",
+		"link": "https://github.com/MarcDonald/twitch-spotify-request-bot"
+	}
+]

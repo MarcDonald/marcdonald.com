@@ -46,7 +46,9 @@ export const meta: MetaFunction = () => {
 	const description = 'Software Engineer';
 
 	return {
-		viewport: 'width=device-width,initial-scale=1',
+		// viewport: 'width=device-width,initial-scale=1',
+		// TODO this forces the site to a width of 1024, i.e. not responsive but viewable
+		viewport: 'width=1024, initial-scale=1',
 		charset: 'utf-8',
 		description,
 		keywords: 'marc donald,developer,portfolio,software engineer',

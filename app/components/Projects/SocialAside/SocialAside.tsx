@@ -14,13 +14,10 @@ export default function SocialAside() {
 		<aside className={'social-aside'}>
 			<ul>
 				<li>
-					<a href={'#'}>Link 1</a>
+					<a href={'https://twitter.com/DeveloperMarc'}>Twitter</a>
 				</li>
 				<li>
-					<a href={'#'}>Link 2</a>
-				</li>
-				<li>
-					<a href={'#'}>Link 3</a>
+					<a href={'https://github.com/MarcDonald'}>GitHub</a>
 				</li>
 			</ul>
 		</aside>
