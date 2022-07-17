@@ -11,3 +11,6 @@ api
 
 *.iml
 .idea
+.DS_Store
+*.css
+*.css.map

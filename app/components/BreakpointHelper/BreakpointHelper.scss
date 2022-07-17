@@ -1,0 +1,40 @@
+@import '../../styles/app/breakpoints';
+
+.breakpoint-helper {
+	position: fixed;
+	top: 0;
+	padding: 4px;
+	margin: 8px;
+	border-radius: 8px;
+	background-color: yellow;
+	color: black;
+	opacity: 50%;
+
+	&::after {
+		content: 'Large Desktop';
+	}
+
+	@media (max-width: $normalDesktopMax) {
+		&::after {
+			content: 'Desktop';
+		}
+	}
+
+	@media (max-width: $laptopMax) {
+		&::after {
+			content: 'Laptop';
+		}
+	}
+
+	@media (max-width: $tabletMax) {
+		&::after {
+			content: 'Tablet';
+		}
+	}
+
+	@media (max-width: $phoneMax) {
+		&::after {
+			content: 'Phone';
+		}
+	}
+}
