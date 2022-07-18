@@ -2,7 +2,7 @@ import type { LinksFunction } from '@remix-run/node';
 
 import logo from 'public/favicons/default/favicon-196x196.png';
 
-import styles from './Aside.css';
+import styles from './Logo.css';
 
 export const links: LinksFunction = () => [
 	{
@@ -11,9 +11,9 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-export default function Aside() {
+export default function Logo() {
 	return (
-		<aside className={'aside'}>
+		<aside className={'logo-container'}>
 			<img src={logo} alt={'Logo - A large M in a rounded square'} />
 		</aside>
 	);

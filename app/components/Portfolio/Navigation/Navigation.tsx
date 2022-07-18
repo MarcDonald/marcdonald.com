@@ -1,5 +1,5 @@
 import type { LinksFunction } from '@remix-run/node';
-import { NavLink, Link } from '@remix-run/react';
+import { Link, NavLink } from '@remix-run/react';
 
 import type Project from '~/models/Project';
 
@@ -16,34 +16,36 @@ interface NavigationProps {
 	projects: Project[];
 }
 
+function getNavLinkClassName(isActive: boolean): string {
+	return `portfolio-navigation-link ${
+		isActive ? 'portfolio-navigation-link-active' : ''
+	}`;
+}
+
 export default function Navigation({ projects }: NavigationProps) {
 	return (
-		<nav className={'projects-navigation'}>
-			<ul className={'projects-navigation-list'}>
-				<li key={'about'} className={'projects-navigation-list-item'}>
+		<nav className={'portfolio-navigation'}>
+			<ul className={'portfolio-navigation-list'}>
+				<li key={'about'} className={'portfolio-navigation-list-item'}>
 					<NavLink
 						to={'about'}
-						className={({ isActive }) =>
-							`projects-navigation-link ${
-								isActive ? 'projects-navigation-link-active' : undefined
-							}`
-						}
+						className={({ isActive }) => getNavLinkClassName(isActive)}
 					>
 						About Me
 					</NavLink>
 				</li>
-				<li key={'github'} className={'projects-navigation-list-item'}>
+				<li key={'github'} className={'portfolio-navigation-list-item'}>
 					<a
 						href={'https://github.com/MarcDonald'}
-						className={'projects-navigation-link'}
+						className={'portfolio-navigation-link'}
 					>
 						GitHub
 					</a>
 				</li>
-				<li key={'twitter'} className={'projects-navigation-list-item'}>
+				<li key={'twitter'} className={'portfolio-navigation-list-item'}>
 					<a
 						href={'https://twitter.com/DeveloperMarc'}
-						className={'projects-navigation-link'}
+						className={'portfolio-navigation-link'}
 					>
 						Twitter
 					</a>
@@ -51,14 +53,10 @@ export default function Navigation({ projects }: NavigationProps) {
 				<hr />
 				<h3>Projects</h3>
 				{projects.map((project) => (
-					<li key={project.id} className={'projects-navigation-list-item'}>
+					<li key={project.id} className={'portfolio-navigation-list-item'}>
 						<NavLink
 							to={project.id}
-							className={({ isActive }) =>
-								`projects-navigation-link ${
-									isActive ? 'projects-navigation-link-active' : undefined
-								}`
-							}
+							className={({ isActive }) => getNavLinkClassName(isActive)}
 						>
 							{project.name}
 						</NavLink>

@@ -8,7 +8,7 @@ import projects from '~/assets/projects.json';
 import {
 	links as ShowcaseLinks,
 	Showcase,
-} from '~/components/Projects/Showcase';
+} from '~/components/Portfolio/Showcase';
 import type Project from '~/models/Project';
 
 type LoaderData = {

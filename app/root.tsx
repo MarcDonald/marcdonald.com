@@ -17,12 +17,9 @@ import {
 import DefaultFaviconLinks from '~/components/DefaultFaviconLinks';
 import globalStylesUrl from '~/styles/app/global.css';
 import styleResetUrl from '~/styles/app/reset.css';
-// eslint-disable-next-line import/no-duplicates
 import desktopVariables from '~/styles/app/variables/devices/variables-desktop.css';
 // TODO large desktop variables
 // import largeDesktopVariables from '~/styles/app/variables/devices/variables-large-desktop.css';
-// eslint-disable-next-line import/no-duplicates
-import largeDesktopVariables from '~/styles/app/variables/devices/variables-desktop.css';
 import laptopVariables from '~/styles/app/variables/devices/variables-laptop.css';
 import phoneVariables from '~/styles/app/variables/devices/variables-phone.css';
 import tabletVariables from '~/styles/app/variables/devices/variables-tablet.css';
@@ -45,13 +42,14 @@ const themeLinks = () => [
 const deviceLinks = () => [
 	{
 		rel: 'stylesheet',
-		href: largeDesktopVariables,
-	},
-	{
-		rel: 'stylesheet',
 		href: desktopVariables,
-		media: '(max-width: 160rem)',
 	},
+	// TODO
+	// {
+	// 	rel: 'stylesheet',
+	// 	href: desktopVariables,
+	// 	media: '(max-width: 160rem)',
+	// },
 	{
 		rel: 'stylesheet',
 		href: laptopVariables,

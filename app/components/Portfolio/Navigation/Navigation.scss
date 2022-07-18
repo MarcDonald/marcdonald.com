@@ -1,10 +1,10 @@
-.projects-navigation {
+.portfolio-navigation {
 	padding: var(--spacing-xl);
 	display: flex;
 	flex-direction: column;
 }
 
-.projects-navigation-list {
+.portfolio-navigation-list {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
@@ -17,7 +17,7 @@
 	}
 }
 
-.projects-navigation-link {
+.portfolio-navigation-link {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -36,7 +36,7 @@
 	}
 }
 
-.projects-navigation-link-active {
+.portfolio-navigation-link-active {
 	background-color: var(--color-button-nav-bg-active);
 	color: var(--color-button-nav-text-active);
 }
