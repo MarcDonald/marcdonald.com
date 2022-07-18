@@ -28,6 +28,7 @@ export default function Navigation({ projects }: NavigationProps) {
 			<ul className={'portfolio-navigation-list'}>
 				<li key={'about'} className={'portfolio-navigation-list-item'}>
 					<NavLink
+						prefetch={'intent'}
 						to={'about'}
 						className={({ isActive }) => getNavLinkClassName(isActive)}
 					>
@@ -55,6 +56,7 @@ export default function Navigation({ projects }: NavigationProps) {
 				{projects.map((project) => (
 					<li key={project.id} className={'portfolio-navigation-list-item'}>
 						<NavLink
+							prefetch={'intent'}
 							to={project.id}
 							className={({ isActive }) => getNavLinkClassName(isActive)}
 						>
@@ -66,10 +68,14 @@ export default function Navigation({ projects }: NavigationProps) {
 			<footer>
 				<ul>
 					<li>
-						<Link to={'/contact'}>Contact</Link>
+						<Link prefetch={'intent'} to={'/contact'}>
+							Contact
+						</Link>
 					</li>
 					<li>
-						<Link to={'/licenses'}>OSS Licenses</Link>
+						<Link prefetch={'intent'} to={'/licenses'}>
+							OSS Licenses
+						</Link>
 					</li>
 					<li>
 						<a href={'https://github.com/MarcDonald/marcdonald.com'}>
