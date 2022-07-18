@@ -1,9 +1,14 @@
 // noinspection JSUnusedGlobalSymbols
 
+import type { LoaderFunction } from '@remix-run/node';
+import { redirect } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
+
+export const loader: LoaderFunction = async () => {
+	return redirect('/projects/about');
+};
+
 export default function DefaultProjectRoute() {
-	return (
-		<div style={{ padding: '2rem' }}>
-			<h1>Select a project to find out more {'->'}</h1>
-		</div>
-	);
+	useLoaderData();
+	return <></>;
 }

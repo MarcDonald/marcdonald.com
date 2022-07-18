@@ -8,7 +8,7 @@ export const loader: LoaderFunction = async () => {
 	return redirect('/projects');
 };
 
-export default function Index() {
+export default function Landing() {
 	useLoaderData();
 	return <></>;
 }

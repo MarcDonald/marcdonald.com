@@ -7,4 +7,32 @@
 	height: 100%;
 	width: 100%;
 	border-radius: 8px;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	h2 {
+		text-align: center;
+	}
+
+	p {
+	}
+
+	a {
+		text-align: center;
+		text-decoration: none;
+	}
+}
+
+.project-technologies-container {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+
+	span {
+		padding: 8px;
+		background-color: var(--color-background);
+		border-radius: 16px;
+	}
 }

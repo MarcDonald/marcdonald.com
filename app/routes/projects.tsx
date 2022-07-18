@@ -1,23 +1,23 @@
 // noinspection JSUnusedGlobalSymbols
 
-import type { LinksFunction } from '@remix-run/node';
-import { Outlet } from '@remix-run/react';
+import type { LinksFunction, LoaderFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
+import { Outlet, useLoaderData } from '@remix-run/react';
 
+import projects from '~/assets/projects.json';
+import { Aside, links as AsideLinks } from '~/components/Projects/Aside';
 import { Header, links as HeaderLinks } from '~/components/Projects/Header';
 import {
 	links as NavigationLinks,
 	Navigation,
 } from '~/components/Projects/Navigation';
-import {
-	links as SocialAsideLinks,
-	SocialAside,
-} from '~/components/Projects/SocialAside';
+import type Project from '~/models/Project';
 import styles from '~/styles/index.css';
 
 export const links: LinksFunction = () => {
 	return [
 		...HeaderLinks(),
-		...SocialAsideLinks(),
+		...AsideLinks(),
 		...NavigationLinks(),
 		{
 			rel: 'stylesheet',
@@ -26,13 +26,23 @@ export const links: LinksFunction = () => {
 	];
 };
 
-export default function Projects() {
+type LoaderData = {
+	projects: Project[];
+};
+
+export const loader: LoaderFunction = async () => {
+	return json({ projects });
+};
+
+export default function ProjectsParentRoute() {
+	const data = useLoaderData<LoaderData>();
+
 	return (
 		<div className={'grid'}>
 			<Header />
-			<SocialAside />
+			<Aside />
 			<Outlet />
-			<Navigation />
+			<Navigation projects={data.projects} />
 		</div>
 	);
 }
