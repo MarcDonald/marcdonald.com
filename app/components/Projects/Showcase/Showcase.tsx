@@ -26,9 +26,6 @@ export default function Showcase({ project }: ShowcaseProps) {
 						src={'https://placekitten.com/300/300'}
 						width={400}
 						height={400}
-						style={{
-							backgroundColor: 'red',
-						}}
 						alt={project.name}
 					/>
 				</div>

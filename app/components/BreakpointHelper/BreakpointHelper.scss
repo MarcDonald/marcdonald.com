@@ -3,9 +3,9 @@
 .breakpoint-helper {
 	position: fixed;
 	top: 0;
-	padding: 4px;
-	margin: 8px;
-	border-radius: 8px;
+	padding: var(--spacing-sm);
+	margin: var(--spacing-md);
+	border-radius: var(--corner-md);
 	background-color: yellow;
 	color: black;
 	opacity: 50%;

@@ -5,7 +5,7 @@ import { redirect } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 export const loader: LoaderFunction = async () => {
-	return redirect('/projects');
+	return redirect('/projects/about');
 };
 
 export default function Landing() {

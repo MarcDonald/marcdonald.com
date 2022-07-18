@@ -1,5 +1,5 @@
 .aside {
-	padding: 16px;
+	padding: var(--spacing-lg);
 	display: grid;
 	place-content: center;
 }

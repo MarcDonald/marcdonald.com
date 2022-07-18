@@ -17,28 +17,69 @@ import {
 import DefaultFaviconLinks from '~/components/DefaultFaviconLinks';
 import globalStylesUrl from '~/styles/app/global.css';
 import styleResetUrl from '~/styles/app/reset.css';
-import darkVariables from '~/styles/app/variables-dark.css';
-import lightVariables from '~/styles/app/variables-light.css';
+// eslint-disable-next-line import/no-duplicates
+import desktopVariables from '~/styles/app/variables/devices/variables-desktop.css';
+// TODO large desktop variables
+// import largeDesktopVariables from '~/styles/app/variables/devices/variables-large-desktop.css';
+// eslint-disable-next-line import/no-duplicates
+import largeDesktopVariables from '~/styles/app/variables/devices/variables-desktop.css';
+import laptopVariables from '~/styles/app/variables/devices/variables-laptop.css';
+import phoneVariables from '~/styles/app/variables/devices/variables-phone.css';
+import tabletVariables from '~/styles/app/variables/devices/variables-tablet.css';
+import darkVariables from '~/styles/app/variables/themes/variables-dark.css';
+import lightVariables from '~/styles/app/variables/themes/variables-light.css';
+
+const themeLinks = () => [
+	{
+		rel: 'stylesheet',
+		href: lightVariables,
+		media: '(prefers-color-scheme: light)',
+	},
+	{
+		rel: 'stylesheet',
+		href: darkVariables,
+		media: '(prefers-color-scheme: dark)',
+	},
+];
+
+const deviceLinks = () => [
+	{
+		rel: 'stylesheet',
+		href: largeDesktopVariables,
+	},
+	{
+		rel: 'stylesheet',
+		href: desktopVariables,
+		media: '(max-width: 160rem)',
+	},
+	{
+		rel: 'stylesheet',
+		href: laptopVariables,
+		media: '(max-width: 93.75rem)',
+	},
+	{
+		rel: 'stylesheet',
+		href: tabletVariables,
+		media: '(max-width: 68.75rem)',
+	},
+	{
+		rel: 'stylesheet',
+		href: phoneVariables,
+		media: '(max-width: 34.375rem)',
+	},
+];
 
 export const links: LinksFunction = () => {
 	return [
 		...DefaultFaviconLinks(),
 		...BreakpointHelperLinks(),
-		{
-			rel: 'stylesheet',
-			href: lightVariables,
-			media: '(prefers-color-scheme: light)',
-		},
-		{
-			rel: 'stylesheet',
-			href: darkVariables,
-			media: '(prefers-color-scheme: dark)',
-		},
 		{ rel: 'stylesheet', href: styleResetUrl },
 		{
 			rel: 'stylesheet',
 			href: globalStylesUrl,
 		},
+		...themeLinks(),
+		...deviceLinks(),
 	];
 };
 

@@ -3,4 +3,15 @@ html {
 	scroll-behavior: smooth;
 	background-color: var(--color-background);
 	color: var(--color-text-primary);
+
+	a {
+		text-decoration: none;
+		color: var(--color-link-inline);
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+			color: var(--color-link-inline-hover);
+		}
+	}
 }

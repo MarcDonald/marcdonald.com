@@ -1,5 +1,5 @@
 .projects-navigation {
-	padding: 2rem;
+	padding: var(--spacing-xl);
 	display: flex;
 	flex-direction: column;
 }
@@ -8,7 +8,7 @@
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: var(--spacing-md);
 	padding-inline-start: 0;
 	flex: 1;
 
@@ -21,40 +21,33 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 8px;
-	padding: 8px;
-	background-color: var(--color-background-secondary);
-	border-radius: 16px;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md);
+	background-color: var(--color-button-nav-bg);
+	border-radius: var(--corner-lg);
 	text-decoration: none;
-	color: var(--color-text-primary);
+	color: var(--color-button-nav-text);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: underline;
-		color: red;
+		color: var(--color-button-nav-text-hover);
+		background-color: var(--color-button-nav-bg-hover);
 	}
 }
 
 .projects-navigation-link-active {
-	background-color: orange;
+	background-color: var(--color-button-nav-bg-active);
+	color: var(--color-button-nav-text-active);
 }
 
 footer {
 	ul {
 		display: flex;
 		justify-content: center;
-		gap: 16px;
+		gap: var(--spacing-lg);
 
 		list-style: none;
 		padding-inline-start: 0;
-	}
-
-	a {
-		text-decoration: none;
-		color: green;
-
-		&:hover {
-			text-decoration: underline;
-			color: orange;
-		}
 	}
 }

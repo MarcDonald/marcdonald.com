@@ -40,7 +40,7 @@ export default function Navigation({ projects }: NavigationProps) {
 						GitHub
 					</a>
 				</li>
-				<li key={'github'} className={'projects-navigation-list-item'}>
+				<li key={'twitter'} className={'projects-navigation-list-item'}>
 					<a
 						href={'https://twitter.com/DeveloperMarc'}
 						className={'projects-navigation-link'}
