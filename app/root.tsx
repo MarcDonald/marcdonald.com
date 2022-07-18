@@ -90,7 +90,8 @@ export const meta: MetaFunction = () => {
 		viewport: 'width=1024, initial-scale=1',
 		charset: 'utf-8',
 		description,
-		keywords: 'marc donald,developer,portfolio,software engineer',
+		keywords:
+			'marc donald,developer,portfolio,software engineer,android,kotlin,javascript,typescript,java',
 		'twitter:creator': '@DeveloperMarc',
 		'twitter:site': '@DeveloperMarc',
 		'twitter:title': 'Marc Donald',

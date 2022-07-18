@@ -10,6 +10,7 @@ import {
 	Showcase,
 } from '~/components/Portfolio/Showcase';
 import type Project from '~/models/Project';
+import styles from '~/styles/portfolio-project.css';
 
 type LoaderData = {
 	project: Project;
@@ -36,7 +37,13 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export const links: LinksFunction = () => {
-	return [...ShowcaseLinks()];
+	return [
+		...ShowcaseLinks(),
+		{
+			rel: 'stylesheet',
+			href: styles,
+		},
+	];
 };
 
 export default function ProjectShowcaseRoute() {
@@ -48,7 +55,15 @@ export function CatchBoundary() {
 	const caught = useCatch();
 
 	if (caught.status === 404) {
-		return <div>I have never seen that project before in my life</div>;
+		return (
+			<div className={'error-container'}>
+				<h2>
+					I have no idea what that project is
+					<br />
+					Try a different one
+				</h2>
+			</div>
+		);
 	} else {
 		throw new Error(`Unhandled error: ${caught.status}`);
 	}
@@ -59,6 +74,12 @@ export function ErrorBoundary({ error }: { error: Error }) {
 
 	const { projectId } = useParams();
 	return (
-		<div>{`There was an error loading project by the id ${projectId}.`}</div>
+		<div className={'error-container'}>
+			<h2>
+				{`There was an error loading project by the id ${projectId}`}
+				<br />
+				Try a different one
+			</h2>
+		</div>
 	);
 }
