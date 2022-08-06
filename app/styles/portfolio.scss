@@ -1,3 +1,4 @@
+@import '../styles/app/breakpoints';
 .grid {
 	height: 100%;
 	display: grid;
@@ -6,4 +7,16 @@
 
 	grid-template-columns: 75% 25%;
 	grid-template-rows: min-content auto;
+	grid-template-areas:
+		'header logo'
+		'content nav';
+
+	@media (max-width: $phoneMax) {
+		grid-template-columns: 100%;
+		grid-template-rows: min-content min-content auto;
+		grid-template-areas:
+			'header'
+			'nav'
+			'content';
+	}
 }

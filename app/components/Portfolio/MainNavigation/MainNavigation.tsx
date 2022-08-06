@@ -1,9 +1,10 @@
 import type { LinksFunction } from '@remix-run/node';
 import { Link, NavLink } from '@remix-run/react';
+import type { CSSProperties } from 'react';
 
 import type Project from '~/models/Project';
 
-import styles from './Navigation.css';
+import styles from './MainNavigation.css';
 
 export const links: LinksFunction = () => [
 	{
@@ -12,8 +13,9 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-interface NavigationProps {
+interface MainNavigationProps {
 	projects: Project[];
+	style?: CSSProperties;
 }
 
 function getNavLinkClassName(isActive: boolean): string {
@@ -22,9 +24,9 @@ function getNavLinkClassName(isActive: boolean): string {
 	}`;
 }
 
-export default function Navigation({ projects }: NavigationProps) {
+export default function MainNavigation(props: MainNavigationProps) {
 	return (
-		<nav className={'portfolio-navigation'}>
+		<nav className={'portfolio-navigation'} {...props}>
 			<ul className={'portfolio-navigation-list'}>
 				<li key={'about'} className={'portfolio-navigation-list-item'}>
 					<NavLink
@@ -53,7 +55,7 @@ export default function Navigation({ projects }: NavigationProps) {
 				</li>
 				<hr />
 				<h3>Projects</h3>
-				{projects.map((project) => (
+				{props.projects.map((project) => (
 					<li key={project.id} className={'portfolio-navigation-list-item'}>
 						<NavLink
 							prefetch={'intent'}

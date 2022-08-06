@@ -23,11 +23,13 @@ export default function Showcase({ project }: ShowcaseProps) {
 				<section className={'project-description-container'}>
 					<p>{project.description}</p>
 				</section>
-				<div className={'project-technologies-container'}>
+				<ul className={'project-technologies-container'}>
 					{project.technologies.map((tech) => (
-						<span key={tech}>{tech}</span>
+						<li key={tech}>
+							<p>{tech}</p>
+						</li>
 					))}
-				</div>
+				</ul>
 				<a href={project.link} className={'showcase-cta'}>
 					Check it out here!
 				</a>

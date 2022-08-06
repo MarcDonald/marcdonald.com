@@ -17,7 +17,7 @@ export default function AboutMeRoute() {
 					color: 'var(--color-text-on-page-background)',
 				}}
 			>
-				Check out one of my projects for proof {'->'}
+				Check out one of my projects for proof
 			</p>
 		</div>
 	);

@@ -1,5 +1,11 @@
+@import '../../../styles/app/breakpoints';
+
 .logo-container {
 	padding: var(--spacing-lg);
 	display: grid;
 	place-content: center;
+
+	@media (max-width: $phoneMax) {
+		display: none;
+	}
 }

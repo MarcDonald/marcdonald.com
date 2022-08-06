@@ -23,9 +23,9 @@ function getAge(): number {
 	return Math.floor((nowUTC - birthday) / millisInDay / daysInYear);
 }
 
-export default function Header() {
+export default function Header(props: any) {
 	return (
-		<header className={'name-header'}>
+		<header className={'name-header'} {...props}>
 			<h1>Marc Donald</h1>
 			<h2>Software Engineer, {getAge()}</h2>
 		</header>

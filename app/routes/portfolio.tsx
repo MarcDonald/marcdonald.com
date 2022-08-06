@@ -8,9 +8,13 @@ import projects from '~/assets/projects.json';
 import { Header, links as HeaderLinks } from '~/components/Portfolio/Header';
 import { Logo, links as LogoLinks } from '~/components/Portfolio/Logo';
 import {
-	links as NavigationLinks,
-	Navigation,
-} from '~/components/Portfolio/Navigation';
+	links as MainNavigationLinks,
+	MainNavigation,
+} from '~/components/Portfolio/MainNavigation';
+import {
+	links as MobileNavigationLinks,
+	MobileNavigation,
+} from '~/components/Portfolio/MobileNavigation';
 import type Project from '~/models/Project';
 import styles from '~/styles/portfolio.css';
 
@@ -18,7 +22,8 @@ export const links: LinksFunction = () => {
 	return [
 		...HeaderLinks(),
 		...LogoLinks(),
-		...NavigationLinks(),
+		...MainNavigationLinks(),
+		...MobileNavigationLinks(),
 		{
 			rel: 'stylesheet',
 			href: styles,
@@ -39,10 +44,13 @@ export default function PortfolioParentRoute() {
 
 	return (
 		<div className={'grid'}>
-			<Header />
-			<Logo />
-			<Outlet />
-			<Navigation projects={data.projects} />
+			<Header style={{ gridArea: 'header' }} />
+			<Logo style={{ gridArea: 'logo' }} />
+			<div style={{ gridArea: 'content' }}>
+				<Outlet />
+			</div>
+			<MainNavigation projects={data.projects} style={{ gridArea: 'nav' }} />
+			<MobileNavigation projects={data.projects} style={{ gridArea: 'nav' }} />
 		</div>
 	);
 }

@@ -11,9 +11,9 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-export default function Logo() {
+export default function Logo(props: any) {
 	return (
-		<aside className={'logo-container'}>
+		<aside className={'logo-container'} {...props}>
 			<img src={logo} alt={'Logo - A large M in a rounded square'} />
 		</aside>
 	);
