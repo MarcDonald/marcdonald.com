@@ -1,16 +1,18 @@
 .project-showcase {
 	padding: var(--spacing-lg);
+	overflow-y: hidden;
 }
 
 .project {
+	overflow-y: scroll;
 	background-color: var(--color-background);
-	height: 100%;
-	width: 100%;
 	border-radius: var(--corner-md);
 	padding: var(--spacing-lg);
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
+	align-items: center;
+	max-height: 100%;
 
 	h2 {
 		text-align: center;
@@ -25,15 +27,22 @@
 		text-align: center;
 		font-weight: 600;
 		font-size: var(--font-4);
+		width: fit-content;
 	}
+}
+
+.project-description-container {
+	overflow-y: scroll;
 }
 
 .project-technologies-container {
 	display: flex;
 	gap: var(--spacing-lg);
 	justify-content: center;
+	align-items: baseline;
 
 	span {
+		cursor: default;
 		padding: var(--spacing-md);
 		background-color: var(--color-background-secondary);
 		border-radius: var(--corner-lg);

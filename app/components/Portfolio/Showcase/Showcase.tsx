@@ -17,18 +17,12 @@ interface ShowcaseProps {
 
 export default function Showcase({ project }: ShowcaseProps) {
 	return (
-		<main className={'project-showcase'}>
-			<div className={'project'}>
-				<h2>{project.name}</h2>
-				<p>{project.description}</p>
-				<div style={{ display: 'grid', placeContent: 'center', flex: 1 }}>
-					<img
-						src={'https://placekitten.com/300/300'}
-						width={300}
-						height={300}
-						alt={project.name}
-					/>
-				</div>
+		<div className={'project-showcase'}>
+			<main className={'project'}>
+				<h2 className={'project-name-header'}>{project.name}</h2>
+				<section className={'project-description-container'}>
+					<p>{project.description}</p>
+				</section>
 				<div className={'project-technologies-container'}>
 					{project.technologies.map((tech) => (
 						<span key={tech}>{tech}</span>
@@ -37,7 +31,7 @@ export default function Showcase({ project }: ShowcaseProps) {
 				<a href={project.link} className={'showcase-cta'}>
 					Check it out here!
 				</a>
-			</div>
-		</main>
+			</main>
+		</div>
 	);
 }
