@@ -1,0 +1,8 @@
+.wave-background {
+	position: absolute;
+	bottom: 0;
+
+	& path {
+		fill: var(--color-wave-background);
+	}
+}

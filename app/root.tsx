@@ -15,6 +15,10 @@ import {
 	links as BreakpointHelperLinks,
 } from '~/components/BreakpointHelper';
 import DefaultFaviconLinks from '~/components/DefaultFaviconLinks';
+import {
+	links as WaveBackgroundLinks,
+	WaveBackground,
+} from '~/components/WaveBackground';
 import globalStylesUrl from '~/styles/app/global.css';
 import styleResetUrl from '~/styles/app/reset.css';
 import desktopVariables from '~/styles/app/variables/devices/variables-desktop.css';
@@ -78,6 +82,7 @@ export const links: LinksFunction = () => {
 		},
 		...themeLinks(),
 		...deviceLinks(),
+		...WaveBackgroundLinks(),
 	];
 };
 
@@ -115,7 +120,16 @@ function Document({
 			</head>
 			<body>
 				<BreakpointHelper />
-				{children}
+				<WaveBackground />
+				<div
+					style={{
+						isolation: 'isolate',
+						height: '100%',
+						width: '100%',
+					}}
+				>
+					{children}
+				</div>
 				<ScrollRestoration />
 				<Scripts />
 				<LiveReload />

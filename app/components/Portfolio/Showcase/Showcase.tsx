@@ -24,8 +24,8 @@ export default function Showcase({ project }: ShowcaseProps) {
 				<div style={{ display: 'grid', placeContent: 'center', flex: 1 }}>
 					<img
 						src={'https://placekitten.com/300/300'}
-						width={400}
-						height={400}
+						width={300}
+						height={300}
 						alt={project.name}
 					/>
 				</div>
@@ -34,7 +34,9 @@ export default function Showcase({ project }: ShowcaseProps) {
 						<span key={tech}>{tech}</span>
 					))}
 				</div>
-				<a href={project.link}>Check it out here!</a>
+				<a href={project.link} className={'showcase-cta'}>
+					Check it out here!
+				</a>
 			</div>
 		</main>
 	);

@@ -1,10 +1,9 @@
 .project-showcase {
-	padding: var(--spacing-xl);
+	padding: var(--spacing-lg);
 }
 
 .project {
-	background-color: var(--color-background-secondary);
-	box-shadow: var(--shadow-elevation-medium);
+	background-color: var(--color-background);
 	height: 100%;
 	width: 100%;
 	border-radius: var(--corner-md);
@@ -22,7 +21,7 @@
 		font-size: var(--font-3);
 	}
 
-	a {
+	.showcase-cta {
 		text-align: center;
 		font-weight: 600;
 		font-size: var(--font-4);
@@ -36,7 +35,7 @@
 
 	span {
 		padding: var(--spacing-md);
-		background-color: var(--color-background);
+		background-color: var(--color-background-secondary);
 		border-radius: var(--corner-lg);
 	}
 }
