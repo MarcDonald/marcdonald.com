@@ -76,7 +76,7 @@ export const links: LinksFunction = () => {
 		...DefaultFaviconLinks(),
 		...BreakpointHelperLinks(),
 		{ rel: 'stylesheet', href: styleResetUrl },
-  { rel: 'me', href: 'https://techhub.social/@developermarc' },
+		{ rel: 'me', href: 'https://techhub.social/@MarcDonald' },
 		{
 			rel: 'stylesheet',
 			href: globalStylesUrl,
