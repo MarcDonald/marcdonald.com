@@ -1,1 +1,1 @@
-# [Personal Website](https://new.marcdonald.com)
+# [Personal Website](https://marcdonald.com)
