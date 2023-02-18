@@ -17,7 +17,8 @@
 		"format": "prettier --check .",
 		"format:fix": "prettier --write .",
 		"sass": "sass --watch app/:app/",
-		"sass:build": "sass app/:app/"
+		"sass:build": "sass app/:app/",
+		"test": "echo \"TODO test\""
 	},
 	"dependencies": {
 		"@remix-run/node": "1.13.0",
