@@ -1,14 +1,12 @@
-// noinspection JSUnusedGlobalSymbols
-
-import type { LoaderFunction } from '@remix-run/node';
-import { redirect } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
-
-export const loader: LoaderFunction = async () => {
-	return redirect('/portfolio/about');
-};
-
-export default function Landing() {
-	useLoaderData();
-	return <></>;
+export default function AppWrapper() {
+	return (
+		<div
+			className={
+				'grid h-screen place-content-center dark:bg-black dark:text-white'
+			}
+		>
+			<h1 className={'text-center font-display text-5xl'}>Marc Donald</h1>
+			<h2 className={'mt-3 text-center text-2xl'}>Software Engineer</h2>
+		</div>
+	);
 }

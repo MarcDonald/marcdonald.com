@@ -12,5 +12,4 @@ api
 *.iml
 .idea
 .DS_Store
-*.css
-*.css.map
+app/tailwind.css

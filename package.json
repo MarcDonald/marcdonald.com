@@ -8,16 +8,19 @@
 	"private": true,
 	"sideEffects": false,
 	"scripts": {
-		"build": "npm run sass:build && remix build",
-		"dev": "concurrently \"npm run sass\" \"remix dev\"",
-		"lint:staged": "lint-staged --allow-empty",
+		"build": "run-s \"build:*\"",
+		"build:css": "npm run generate:css -- --minify",
+		"build:remix": "remix build",
+		"dev": "run-p \"dev:*\"",
+		"dev:css": "npm run generate:css -- --watch",
+		"dev:remix": "remix dev",
+		"format": "prettier --check --ignore-path .gitignore .",
+		"format:fix": "prettier --check --write --ignore-path .gitignore .",
+		"generate:css": "npx tailwindcss -i app/styles/app.css -o ./app/tailwind.css",
 		"husky:prepare": "husky install",
-		"lint": "eslint .",
-		"lint:fix": "eslint --fix .",
-		"format": "prettier --check .",
-		"format:fix": "prettier --write .",
-		"sass": "sass --watch app/:app/",
-		"sass:build": "sass app/:app/",
+		"lint": "eslint --ignore-path .gitignore .",
+		"lint:fix": "eslint --ignore-path .gitignore --fix .",
+		"lint:staged": "lint-staged --allow-empty",
 		"test": "echo \"TODO test\""
 	},
 	"dependencies": {
@@ -39,14 +42,16 @@
 		"@types/react-dom": "18.0.11",
 		"@typescript-eslint/eslint-plugin": "5.52.0",
 		"@typescript-eslint/parser": "5.52.0",
-		"concurrently": "7.6.0",
 		"eslint": "8.34.0",
 		"husky": "8.0.3",
 		"lint-staged": "13.1.2",
 		"prettier": "2.8.4",
 		"prettier-plugin-tailwindcss": "0.2.3",
-		"sass": "1.58.3",
-		"typescript": "4.9.5"
+		"tailwindcss": "^3.2.7",
+		"typescript": "4.9.5",
+		"npm-run-all": "4.1.5",
+		"tailwind-merge": "1.8.1",
+		"clsx": "1.2.1"
 	},
 	"engines": {
 		"node": ">=16"

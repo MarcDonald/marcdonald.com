@@ -1,0 +1,58 @@
+@font-face {
+	font-family: 'Cal Sans';
+	font-style: normal;
+	font-weight: 600;
+	/*noinspection CssUnknownTarget*/
+	src: local(''), url('/fonts/calsans/CalSans-SemiBold.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/calsans/CalSans-SemiBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+#root,
+#__next {
+	isolation: isolate;
+}
+
+@layer components {
+	#breakpoint-helper::after {
+		content: 'sm';
+	}
+
+	@media (min-width: 768px) {
+		#breakpoint-helper::after {
+			content: 'md';
+		}
+	}
+
+	@media (min-width: 1024px) {
+		#breakpoint-helper::after {
+			content: 'lg';
+		}
+	}
+
+	@media (min-width: 1280px) {
+		#breakpoint-helper::after {
+			content: 'xl';
+		}
+	}
+
+	@media (min-width: 1536px) {
+		#breakpoint-helper::after {
+			content: '2lg';
+		}
+	}
+}

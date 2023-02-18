@@ -1,13 +1,4 @@
-import type { LinksFunction } from '@remix-run/node';
-
-import styles from './BreakpointHelper.css';
-
-export const links: LinksFunction = () => [
-	{
-		rel: 'stylesheet',
-		href: styles,
-	},
-];
+import { cn } from '~/util/style.util';
 
 export default function BreakpointHelper() {
 	const display = (): boolean => {
@@ -16,10 +7,11 @@ export default function BreakpointHelper() {
 
 	return (
 		<span
-			style={{
-				display: display() ? 'visible' : 'none',
-			}}
-			className={'breakpoint-helper'}
+			id={'breakpoint-helper'}
+			className={cn(
+				'fixed top-0 m-1 inline rounded-md bg-yellow-300 p-1 text-sm text-black opacity-50',
+				display() ? 'block' : 'none'
+			)}
 		/>
 	);
 }
