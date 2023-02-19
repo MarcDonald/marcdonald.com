@@ -55,9 +55,9 @@ function Document({
 				<Links />
 				<title>{title}</title>
 			</head>
-			<body>
-				<BreakpointHelper />
+			<body className={'bg-white'}>
 				<Outlet />
+				<BreakpointHelper />
 				<ScrollRestoration />
 				<Scripts />
 				<LiveReload />
