@@ -1,37 +1,22 @@
-import { useEffect, useState } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import { cn } from '~/util/style.util';
 
-export default function Header() {
-	const [animateHeader, setAnimateHeader] = useState(false);
+type HeaderProps = { expanded: boolean };
 
-	useEffect(() => {
-		const listener = () => {
-			if (window.scrollY > 140) {
-				setAnimateHeader(true);
-			} else {
-				setAnimateHeader(false);
-			}
-		};
-		window.addEventListener('scroll', listener);
-		return () => {
-			window.removeEventListener('scroll', listener);
-		};
-	}, []);
-
+const Header = ({ expanded, ...props }: PropsWithChildren<HeaderProps>) => {
 	return (
 		<div
 			className={cn(
-				'sticky grid h-32 place-content-center bg-black p-2 transition-all duration-500 ease-in-out dark:text-white',
-				animateHeader
-					? 'top-4 mx-8 rounded-3xl bg-black py-2'
-					: 'top-64 mx-2 rounded-md'
+				'static sticky top-4 mt-64 grid h-32 place-content-center bg-black p-2 transition-all duration-500 ease-in-out will-change-auto dark:text-white',
+				expanded ? 'mx-8 rounded-3xl bg-black py-2' : 'mx-2 rounded-md'
 			)}
+			{...props}
 		>
 			<h1
 				className={cn(
 					'text-center font-display transition-all duration-500 ease-in-out',
-					animateHeader ? 'text-4xl' : 'text-5xl'
+					expanded ? 'text-4xl' : 'text-5xl'
 				)}
 			>
 				Marc Donald
@@ -40,11 +25,13 @@ export default function Header() {
 				className={cn(
 					'mt-3 text-center transition-all duration-500 ease-in-out',
 
-					animateHeader ? 'text-lg' : 'text-2xl'
+					expanded ? 'text-lg' : 'text-2xl'
 				)}
 			>
 				Software Engineer
 			</h2>
 		</div>
 	);
-}
+};
+
+export default Header;
