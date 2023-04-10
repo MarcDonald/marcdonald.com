@@ -36,6 +36,7 @@ const config = {
 			}
 		],
 		"prettier/prettier": "error",
+		"react/no-unescaped-entities": "off",
 	},
 };
 

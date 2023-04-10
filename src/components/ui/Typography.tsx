@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 type TypographyProps = React.PropsWithChildren & {
 	className?: string;
@@ -152,3 +153,23 @@ export function TypographySubtle(props: TypographyProps) {
 		</p>
 	);
 }
+
+export const TypographyLink = React.forwardRef<
+	React.ElementRef<'a'>,
+	React.ComponentPropsWithoutRef<'a'> & { href: string }
+>(({ children, className, href, ...props }, ref) => {
+	return (
+		<Link
+			className={cn(
+				'duration-250 border-b border-slate-900 transition-all hover:border-b-4 hover:text-slate-900 dark:border-slate-300 hover:dark:text-slate-300',
+				className
+			)}
+			href={href}
+			{...props}
+			ref={ref}
+		>
+			{children}
+		</Link>
+	);
+});
+TypographyLink.displayName = 'TypographyLink';

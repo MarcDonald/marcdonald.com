@@ -11,35 +11,52 @@ import {
 } from '@/components/ui/NavigationMenu';
 import React, { type PropsWithChildren } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/Seperator';
-import { TypographyH1, TypographyLarge } from '@/components/ui/Typography';
+import { TypographyLarge } from '@/components/ui/Typography';
 import { CodeIcon, GithubIcon, TwitterIcon } from 'lucide-react';
 import { SiMastodon } from '@icons-pack/react-simple-icons';
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from '@/components/ui/Tooltip';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/Avatar';
 
-const ProjectListItem = React.forwardRef<
+const ListItem = React.forwardRef<
 	React.ElementRef<'a'>,
 	React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+>(({ className, children, ...props }, ref) => {
 	return (
 		<li>
 			<NavigationMenuLink asChild>
 				<a
 					ref={ref}
 					className={cn(
-						'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100 dark:hover:bg-slate-700 dark:focus:bg-slate-700',
+						'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100 dark:hover:bg-slate-600 dark:focus:bg-slate-600',
 						className
 					)}
 					{...props}
 				>
-					<div className="text-sm font-medium leading-none">{title}</div>
-					<p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
-						{children}
-					</p>
+					{children}
 				</a>
 			</NavigationMenuLink>
 		</li>
+	);
+});
+ListItem.displayName = 'ListItem';
+
+const ProjectListItem = React.forwardRef<
+	React.ElementRef<'a'>,
+	React.ComponentPropsWithoutRef<'a'>
+>(({ title, children, ...props }, ref) => {
+	return (
+		<ListItem {...props} ref={ref}>
+			<div className="text-sm font-medium leading-none">{title}</div>
+			<p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
+				{children}
+			</p>
+		</ListItem>
 	);
 });
 ProjectListItem.displayName = 'ProjectListItem';
@@ -88,29 +105,19 @@ const ProjectsItem = () => {
 const LinkListItem = React.forwardRef<
 	React.ElementRef<'a'>,
 	React.ComponentPropsWithoutRef<'a'> & { icon?: React.ReactNode }
->(({ className, title, children, ...props }, ref) => {
+>(({ title, children, ...props }, ref) => {
 	return (
-		<li>
-			<NavigationMenuLink asChild>
-				<a
-					ref={ref}
-					rel={'me'}
-					className={cn(
-						'flex select-none flex-row items-center gap-4 space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100 dark:hover:bg-slate-700 dark:focus:bg-slate-700',
-						className
-					)}
-					{...props}
-				>
-					{props.icon}
-					<div>
-						<div className="text-sm font-medium leading-none">{title}</div>
-						<p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
-							{children}
-						</p>
-					</div>
-				</a>
-			</NavigationMenuLink>
-		</li>
+		<ListItem {...props} ref={ref}>
+			<div className={'flex flex-row items-center gap-4'}>
+				{props.icon}
+				<div>
+					<div className="text-sm font-medium leading-none">{title}</div>
+					<p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
+						{children}
+					</p>
+				</div>
+			</div>
+		</ListItem>
 	);
 });
 LinkListItem.displayName = 'LinkListItem';
@@ -118,12 +125,15 @@ LinkListItem.displayName = 'LinkListItem';
 const LinkNavigationSection = () => {
 	return (
 		<NavigationMenuItem>
-			<NavigationMenuTrigger className={'mt-[3px]'}>
-				<Image src={'/me_chibi.png'} alt={''} width={32} height={32} />
+			<NavigationMenuTrigger>
+				<Avatar className={'m-1 h-8 w-8'}>
+					<AvatarImage src={'/me_chibi.png'} />
+					<AvatarFallback>MD</AvatarFallback>
+				</Avatar>
 			</NavigationMenuTrigger>
 			<NavigationMenuContent>
 				<List>
-					<TypographyLarge>Code</TypographyLarge>
+					<TypographyLarge>Where to Find Me</TypographyLarge>
 					<LinkListItem
 						href={'https://github.com/MarcDonald/marcdonald.com'}
 						title="GitHub"
@@ -131,14 +141,11 @@ const LinkNavigationSection = () => {
 					>
 						All my projects
 					</LinkListItem>
-					<Separator />
-					<TypographyLarge>Rarely Used Socials</TypographyLarge>
 					<LinkListItem
 						href={'https://twitter.com/DeveloperMarc'}
 						title="Twitter"
 						icon={<TwitterIcon size={32} />}
 					>
-						{/* eslint-disable-next-line react/no-unescaped-entities */}
 						I'm not really a tweeter
 					</LinkListItem>
 					<LinkListItem
@@ -146,7 +153,6 @@ const LinkNavigationSection = () => {
 						title="Mastodon"
 						icon={<SiMastodon size={32} />}
 					>
-						{/* eslint-disable-next-line react/no-unescaped-entities */}
 						I'm not really a tooter either
 					</LinkListItem>
 				</List>
@@ -159,24 +165,29 @@ const RootNavigationMenu = () => {
 	return (
 		<NavigationMenu
 			className={
-				'sticky top-0 mb-2 grid list-none grid-cols-3 justify-between border-b border-b-slate-200 bg-white p-4 text-slate-900 dark:border-b-slate-700 dark:bg-slate-900 dark:text-slate-50 sm:grid'
+				'sticky top-0 mb-2 flex list-none justify-between border-b border-b-slate-200 bg-white p-4 text-slate-900 dark:border-b-slate-700 dark:bg-slate-800 dark:text-slate-50'
 			}
 		>
-			<NavigationMenuList className={'justify-start'}>
+			<NavigationMenuList>
 				<LinkNavigationSection />
 				<ProjectsItem />
 			</NavigationMenuList>
-			<div className={'block sm:hidden'} />
-			<TypographyH1 className={'hidden text-center sm:block'}>
-				Marc Donald
-			</TypographyH1>
-			<NavigationMenuItem className={'flex justify-end'}>
-				<Link href="/" legacyBehavior passHref>
-					<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-						<CodeIcon />
-					</NavigationMenuLink>
-				</Link>
-			</NavigationMenuItem>
+			<Tooltip>
+				<NavigationMenuItem>
+					<Link
+						href="https://github.com/marcdonald/marcdonald.com"
+						legacyBehavior
+						passHref
+					>
+						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+							<TooltipTrigger>
+								<CodeIcon />
+							</TooltipTrigger>
+							<TooltipContent>Source code for this site</TooltipContent>
+						</NavigationMenuLink>
+					</Link>
+				</NavigationMenuItem>
+			</Tooltip>
 		</NavigationMenu>
 	);
 };

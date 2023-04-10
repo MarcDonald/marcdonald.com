@@ -5,7 +5,7 @@ const description = 'Senior Software Engineer';
 export default function Document() {
 	return (
 		<Html
-			className={`relative min-h-screen bg-white font-sans text-slate-900 dark:bg-slate-900 dark:text-slate-50`}
+			className={`relative min-h-screen bg-white font-sans text-slate-900 dark:bg-slate-800 dark:text-slate-50`}
 		>
 			<Head>
 				<meta name="description" content={description} />
