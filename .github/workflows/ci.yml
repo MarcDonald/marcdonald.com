@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ '*' ]
+
+env:
+  DB_URL: "https://fakedb.caniwatch.tv"
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "clerkpublic"
+  CLERK_SECRET_KEY: "clerksecret"
+  TMDB_API_KEY: "tmdbapi"
+  UPSTASH_REDIS_REST_URL: "https://fakeredis.caniwatch.tv"
+  UPSTASH_REDIS_REST_TOKEN: "redissecret"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up NodeJS ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          GH_PKG_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint

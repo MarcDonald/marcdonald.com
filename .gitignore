@@ -1,15 +1,45 @@
-node_modules
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
 /build
-.cache
-/public/build
-.env
-api
 
-/cypress/screenshots
-/cypress/videos
-
-*.iml
-.idea
+# misc
 .DS_Store
-app/tailwind.css
+*.pem
+*.iml
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+# do not commit any .env files to git, except for the .env.example file. https://create.t3.gg/en/usage/env-variables#using-environment-variables
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+.cmmiter
+.idea
+.vscode
+*.log
+app/styles/tailwind.css
+tsconfig.tsbuildinfo
