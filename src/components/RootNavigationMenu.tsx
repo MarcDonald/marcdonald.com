@@ -123,7 +123,7 @@ const RootNavigationMenu = () => {
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<Link
-						href="https://techhub.social/MarcDonakd"
+						href="https://techhub.social/MarcDonald"
 						legacyBehavior
 						passHref
 						rel={'me'}
