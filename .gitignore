@@ -41,5 +41,5 @@ yarn-error.log*
 .idea
 .vscode
 *.log
-app/styles/tailwind.css
+src/styles/tailwind.css
 tsconfig.tsbuildinfo

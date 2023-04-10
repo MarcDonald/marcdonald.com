@@ -5,14 +5,6 @@ on:
   push:
     branches: [ '*' ]
 
-env:
-  DB_URL: "https://fakedb.caniwatch.tv"
-  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "clerkpublic"
-  CLERK_SECRET_KEY: "clerksecret"
-  TMDB_API_KEY: "tmdbapi"
-  UPSTASH_REDIS_REST_URL: "https://fakeredis.caniwatch.tv"
-  UPSTASH_REDIS_REST_TOKEN: "redissecret"
-
 jobs:
   build:
     runs-on: ubuntu-latest
