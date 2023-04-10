@@ -1,7 +1,6 @@
 import { type AppType } from 'next/app';
 
 import '@/styles/globals.css';
-export { reportWebVitals } from 'next-axiom';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import RootNavigationMenu from '@/components/RootNavigationMenu';
@@ -22,3 +21,4 @@ const MainApp: AppType = ({ Component, pageProps }) => {
 };
 
 export default MainApp;
+export { reportWebVitals } from 'next-axiom';
