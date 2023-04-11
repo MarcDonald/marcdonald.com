@@ -6,12 +6,10 @@ import {
 	TypographyP,
 	TypographySubtle,
 } from '@/components/ui/Typography';
-import WipBanner from '@/components/WipBanner';
 
 export default function Home() {
 	return (
-		<main className={'mx-4 mb-4'}>
-			<WipBanner />
+		<main className={'mx-4 mt-4'}>
 			<TypographyH1>
 				Senior Software Engineer from Northern Ireland
 			</TypographyH1>

@@ -125,7 +125,7 @@ LinkListItem.displayName = 'LinkListItem';
 const LinkNavigationSection = () => {
 	return (
 		<NavigationMenuItem>
-			<NavigationMenuTrigger>
+			<NavigationMenuTrigger className={'mt-[2px]'}>
 				<Avatar className={'m-1 h-8 w-8'}>
 					<AvatarImage src={'/me_chibi.png'} />
 					<AvatarFallback>MD</AvatarFallback>

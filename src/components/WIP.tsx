@@ -3,12 +3,10 @@ import {
 	TypographyLead,
 	TypographyLink,
 } from '@/components/ui/Typography';
-import WipBanner from '@/components/WipBanner';
 
 export default function WIP(props: { pageName: string; link: string }) {
 	return (
 		<main className={'mx-4'}>
-			<WipBanner />
 			<TypographyH1 className={'font-display mb-4 text-5xl'}>
 				{props.pageName}
 			</TypographyH1>
