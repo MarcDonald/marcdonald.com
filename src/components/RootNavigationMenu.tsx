@@ -149,7 +149,7 @@ const LinkNavigationSection = () => {
 						I'm not really a tweeter
 					</LinkListItem>
 					<LinkListItem
-						href={'https://techhub.social/MarcDonald'}
+						href={'https://techhub.social/@MarcDonald'}
 						title="Mastodon"
 						icon={<SiMastodon size={32} />}
 					>
