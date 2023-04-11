@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 const title = 'Marc Donald';
 const description = 'Senior Software Engineer';

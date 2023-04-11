@@ -28,4 +28,27 @@ const TooltipContent = React.forwardRef<
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };
+type TextTooltipProps = {
+	text: React.ReactNode;
+	content: React.ReactNode;
+	className?: string;
+};
+
+const TextTooltip = ({ text, content, className }: TextTooltipProps) => {
+	return (
+		<Tooltip>
+			<TooltipTrigger className={cn('cursor-text', className)}>
+				{text}
+			</TooltipTrigger>
+			<TooltipContent>{content}</TooltipContent>
+		</Tooltip>
+	);
+};
+
+export {
+	Tooltip,
+	TooltipTrigger,
+	TooltipContent,
+	TooltipProvider,
+	TextTooltip,
+};

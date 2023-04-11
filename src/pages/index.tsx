@@ -6,18 +6,15 @@ import {
 	TypographyP,
 	TypographySubtle,
 } from '@/components/ui/Typography';
+import PageContentWrapper from '@/components/PageContentWrapper';
 
 export default function Home() {
 	return (
-		<main className={'mx-4 mt-4'}>
+		<PageContentWrapper>
 			<TypographyH1>
 				Senior Software Engineer from Northern Ireland
 			</TypographyH1>
-			<TypographyH2
-				className={
-					'mt-5 text-2xl text-slate-700 dark:text-slate-400 md:text-3xl'
-				}
-			>
+			<TypographyH2>
 				I like to make things with TypeScript and React
 			</TypographyH2>
 			<TypographyH3>Here's some things I made</TypographyH3>
@@ -51,6 +48,6 @@ export default function Home() {
 					</TypographySubtle>
 				</li>
 			</ul>
-		</main>
+		</PageContentWrapper>
 	);
 }

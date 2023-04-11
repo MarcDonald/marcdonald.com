@@ -23,11 +23,11 @@ export function TypographyH1(props: TypographyProps) {
 export function TypographyH2(props: TypographyProps) {
 	return (
 		<h2
-			{...props}
 			className={cn(
-				'mt-10 scroll-m-20 border-b border-b-slate-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:border-b-slate-700',
+				'mt-5 scroll-m-20 border-b border-b-slate-200 pb-2 text-2xl font-semibold tracking-tight text-slate-700 transition-colors first:mt-0 dark:border-b-slate-700 dark:text-slate-400 md:text-3xl',
 				props.className
 			)}
+			{...props}
 		>
 			{props.children}
 		</h2>

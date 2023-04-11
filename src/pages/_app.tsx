@@ -6,6 +6,7 @@ import Head from 'next/head';
 import RootNavigationMenu from '@/components/RootNavigationMenu';
 import { TooltipProvider } from '@/components/ui/Tooltip';
 import WipBanner from '@/components/WipBanner';
+
 const inter = Inter({ subsets: ['latin'] });
 
 const MainApp: AppType = ({ Component, pageProps }) => {
@@ -14,13 +15,15 @@ const MainApp: AppType = ({ Component, pageProps }) => {
 			<Head>
 				<title>Marc Donald</title>
 			</Head>
-			<div className={`${inter.className} m-auto max-w-[1800px]`}>
-				<TooltipProvider>
-					<WipBanner />
-					<RootNavigationMenu />
-					<Component {...pageProps} />
-				</TooltipProvider>
-			</div>
+			<>
+				<WipBanner className={`${inter.className}`} />
+				<div className={`${inter.className} m-auto max-w-[1800px]`}>
+					<TooltipProvider delayDuration={200}>
+						<RootNavigationMenu />
+						<Component {...pageProps} />
+					</TooltipProvider>
+				</div>
+			</>
 		</>
 	);
 };

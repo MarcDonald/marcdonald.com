@@ -14,7 +14,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/Seperator';
 import { TypographyLarge } from '@/components/ui/Typography';
-import { CodeIcon, GithubIcon, TwitterIcon } from 'lucide-react';
+import { CodeIcon, GithubIcon, HomeIcon, TwitterIcon } from 'lucide-react';
 import { SiMastodon } from '@icons-pack/react-simple-icons';
 import {
 	Tooltip,
@@ -22,6 +22,7 @@ import {
 	TooltipTrigger,
 } from '@/components/ui/Tooltip';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/Avatar';
+import { useRouter } from 'next/router';
 
 const ListItem = React.forwardRef<
 	React.ElementRef<'a'>,
@@ -162,6 +163,7 @@ const LinkNavigationSection = () => {
 };
 
 const RootNavigationMenu = () => {
+	const { route } = useRouter();
 	return (
 		<NavigationMenu
 			className={
@@ -172,22 +174,37 @@ const RootNavigationMenu = () => {
 				<LinkNavigationSection />
 				<ProjectsItem />
 			</NavigationMenuList>
-			<Tooltip>
-				<NavigationMenuItem>
-					<Link
-						href="https://github.com/marcdonald/marcdonald.com"
-						legacyBehavior
-						passHref
-					>
-						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-							<TooltipTrigger>
-								<CodeIcon />
-							</TooltipTrigger>
-							<TooltipContent>Source code for this site</TooltipContent>
-						</NavigationMenuLink>
-					</Link>
-				</NavigationMenuItem>
-			</Tooltip>
+			{route === '/' ? (
+				<Tooltip>
+					<NavigationMenuItem>
+						<Link
+							href="https://github.com/marcdonald/marcdonald.com"
+							legacyBehavior
+							passHref
+						>
+							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+								<TooltipTrigger>
+									<CodeIcon />
+								</TooltipTrigger>
+								<TooltipContent>Source code for this site</TooltipContent>
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+				</Tooltip>
+			) : (
+				<Tooltip>
+					<NavigationMenuItem>
+						<Link href="/" legacyBehavior passHref>
+							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+								<TooltipTrigger>
+									<HomeIcon />
+								</TooltipTrigger>
+								<TooltipContent>Home</TooltipContent>
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+				</Tooltip>
+			)}
 		</NavigationMenu>
 	);
 };
