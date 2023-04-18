@@ -1,4 +1,6 @@
-import { TypographyH1, TypographyH2 } from '@/components/ui/Typography';
+'use client';
+
+import { TypographyH1, TypographyH2 } from './components/ui/Typography';
 
 export default function InternalServerError() {
 	return (

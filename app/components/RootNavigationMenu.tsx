@@ -8,20 +8,16 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
-} from '@/components/ui/NavigationMenu';
+} from './ui/NavigationMenu';
 import React, { type PropsWithChildren } from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { Separator } from '@/components/ui/Seperator';
-import { TypographyLarge } from '@/components/ui/Typography';
+import { cn } from '../lib/utils';
+import { Separator } from './ui/Seperator';
+import { TypographyLarge } from './ui/Typography';
 import { CodeIcon, GithubIcon, HomeIcon, TwitterIcon } from 'lucide-react';
 import { SiMastodon } from '@icons-pack/react-simple-icons';
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-} from '@/components/ui/Tooltip';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/Avatar';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/Tooltip';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/Avatar';
 import { useRouter } from 'next/router';
 
 const ListItem = React.forwardRef<
@@ -80,13 +76,11 @@ const ProjectsItem = () => {
 			<NavigationMenuContent>
 				<List>
 					<TypographyLarge>For Fun</TypographyLarge>
-					<ProjectListItem
-						href="/twitch-spotify-bot"
-						title="Twitch Spotify Bot"
-					>
-						Twitch chat bot that allows users to add songs to a Spotify queue
+					<ProjectListItem href="/buttercat" title="Buttercat">
+						A framework for creating modular, extensible, and easy to set up
+						Twitch bots
 					</ProjectListItem>
-					<ProjectListItem href="/hibi" title="Hibi">
+					<ProjectListItem href="/hibi" title="Page">
 						An Android app for learning Japanese by keeping a journal
 					</ProjectListItem>
 					<Separator />

@@ -1,12 +1,12 @@
-import PageContentWrapper from '@/components/PageContentWrapper';
+import PageContentWrapper from '../components/PageContentWrapper';
 import {
 	TypographyH1,
 	TypographyH2,
 	TypographyH3,
-} from '@/components/ui/Typography';
-import DownloadSection from '@/components/DownloadSection';
+} from '../components/ui/Typography';
+import DownloadSection from '../components/DownloadSection';
 
-export default function Hibi() {
+export default function HibiPage() {
 	return (
 		<PageContentWrapper>
 			<TypographyH1>Hibi 「日々」</TypographyH1>

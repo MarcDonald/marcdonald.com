@@ -1,12 +1,12 @@
-import PageContentWrapper from '@/components/PageContentWrapper';
+import PageContentWrapper from '../components/PageContentWrapper';
 import {
 	TypographyH1,
 	TypographyH2,
 	TypographyP,
-} from '@/components/ui/Typography';
-import DownloadSection from '@/components/DownloadSection';
+} from '../components/ui/Typography';
+import DownloadSection from '../components/DownloadSection';
 
-export default function EventManagementSystem() {
+export default function EmsPage() {
 	return (
 		<PageContentWrapper>
 			<TypographyH1>Event Management System</TypographyH1>

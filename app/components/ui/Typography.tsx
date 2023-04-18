@@ -11,7 +11,7 @@ export function TypographyH1(props: TypographyProps) {
 		<h1
 			{...props}
 			className={cn(
-				'scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
+				'mb-4 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
 				props.className
 			)}
 		>
@@ -23,11 +23,11 @@ export function TypographyH1(props: TypographyProps) {
 export function TypographyH2(props: TypographyProps) {
 	return (
 		<h2
+			{...props}
 			className={cn(
-				'mt-5 scroll-m-20 border-b border-b-slate-200 pb-2 text-2xl font-semibold tracking-tight text-slate-700 transition-colors first:mt-0 dark:border-b-slate-700 dark:text-slate-400 md:text-3xl',
+				'scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight text-muted-foreground transition-colors first:mt-0',
 				props.className
 			)}
-			{...props}
 		>
 			{props.children}
 		</h2>
@@ -39,7 +39,7 @@ export function TypographyH3(props: TypographyProps) {
 		<h3
 			{...props}
 			className={cn(
-				'mt-8 scroll-m-20 text-2xl font-semibold tracking-tight',
+				'scroll-m-20 text-2xl font-semibold tracking-tight',
 				props.className
 			)}
 		>
@@ -53,7 +53,7 @@ export function TypographyH4(props: TypographyProps) {
 		<h4
 			{...props}
 			className={cn(
-				'mt-8 scroll-m-20 text-xl font-semibold tracking-tight',
+				'scroll-m-20 text-xl font-semibold tracking-tight',
 				props.className
 			)}
 		>
@@ -77,10 +77,7 @@ export function TypographyBlockquote(props: TypographyProps) {
 	return (
 		<blockquote
 			{...props}
-			className={cn(
-				'mt-6 border-l-2 border-slate-300 pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200',
-				props.className
-			)}
+			className={cn('mt-6 border-l-2 pl-6 italic', props.className)}
 		>
 			{props.children}
 		</blockquote>
@@ -92,7 +89,7 @@ export function TypographyInlineCode(props: TypographyProps) {
 		<code
 			{...props}
 			className={cn(
-				'relative rounded bg-slate-100 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400',
+				'relative rounded bg-popover px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-popover-foreground',
 				props.className
 			)}
 		>
@@ -105,10 +102,7 @@ export function TypographyLead(props: TypographyProps) {
 	return (
 		<p
 			{...props}
-			className={cn(
-				'text-xl text-slate-700 dark:text-slate-400',
-				props.className
-			)}
+			className={cn('text-xl text-muted-foreground', props.className)}
 		>
 			{props.children}
 		</p>
@@ -117,13 +111,7 @@ export function TypographyLead(props: TypographyProps) {
 
 export function TypographyLarge(props: TypographyProps) {
 	return (
-		<div
-			{...props}
-			className={cn(
-				'text-lg font-semibold text-slate-900 dark:text-slate-50',
-				props.className
-			)}
-		>
+		<div {...props} className={cn('text-lg font-semibold', props.className)}>
 			{props.children}
 		</div>
 	);
@@ -140,14 +128,11 @@ export function TypographySmall(props: TypographyProps) {
 	);
 }
 
-export function TypographySubtle(props: TypographyProps) {
+export function TypographyMuted(props: TypographyProps) {
 	return (
 		<p
 			{...props}
-			className={cn(
-				'text-sm text-slate-500 dark:text-slate-400',
-				props.className
-			)}
+			className={cn('text-sm text-muted-foreground', props.className)}
 		>
 			{props.children}
 		</p>
@@ -161,7 +146,7 @@ export const TypographyLink = React.forwardRef<
 	return (
 		<Link
 			className={cn(
-				'duration-250 border-b border-slate-900 transition-all hover:border-b-4 hover:text-slate-900 dark:border-slate-300 hover:dark:text-slate-300',
+				'duration-250 hover:dark:foreground border-b border-foreground transition-all hover:border-b-4 hover:text-foreground dark:border-foreground',
 				className
 			)}
 			href={href}

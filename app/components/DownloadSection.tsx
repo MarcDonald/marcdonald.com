@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
+import { Button } from './ui/Button';
 import { DownloadIcon, GithubIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 const DownloadSection = ({
 	githubSlug,
@@ -21,7 +21,7 @@ const DownloadSection = ({
 				href={`https://github.com/${githubSlug}/releases/latest`}
 				className={'w-full'}
 			>
-				<Button className={'w-full'} variant={'subtle'} tabIndex={-1}>
+				<Button className={'w-full'} tabIndex={-1}>
 					<DownloadIcon className="mr-2 h-4 w-4" /> Download
 				</Button>
 			</Link>

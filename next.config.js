@@ -1,7 +1,10 @@
-import {withAxiom} from 'next-axiom';
+const { withAxiom } = require('next-axiom');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withAxiom({
+	experimental: {
+		appDir: true,
+	},
 	reactStrictMode: true,
 	images: {
 		domains: ['placekitten.com'],
@@ -15,4 +18,4 @@ const nextConfig = withAxiom({
 	swcMinify: true,
 });
 
-export default nextConfig;
+module.exports = nextConfig;

@@ -2,16 +2,16 @@ import {
 	TypographyH1,
 	TypographyH2,
 	TypographyP,
-} from '@/components/ui/Typography';
-import PageContentWrapper from '@/components/PageContentWrapper';
-import { TextTooltip } from '@/components/ui/Tooltip';
+} from '../components/ui/Typography';
+import PageContentWrapper from '../components/PageContentWrapper';
+import { TextTooltip } from '../components/ui/Tooltip';
 import Image from 'next/image';
-import DownloadSection from '@/components/DownloadSection';
+import DownloadSection from '../components/DownloadSection';
 
-export default function TwitchSpotifyBot() {
+export default function ButtercatPage() {
 	return (
 		<PageContentWrapper>
-			<TypographyH1>Twitch Spotify Bot</TypographyH1>
+			<TypographyH1>Buttercat</TypographyH1>
 			<TypographyH2>
 				<TextTooltip
 					text={'PepeJAM'}
@@ -27,12 +27,12 @@ export default function TwitchSpotifyBot() {
 				with your Twitch chat
 			</TypographyH2>
 			<DownloadSection
-				githubSlug={'marcdonald/twitch-spotify-request-bot'}
+				githubSlug={'marcdonald/buttercat'}
 				className={'-mb-2 '}
 			/>
 			<TypographyP>
-				A bot that lets your Twitch chat add songs to your Spotify queue so you
-				can vibe with your viewers.
+				A framework for creating modular, extensible, and easy to set up Twitch
+				bots
 			</TypographyP>
 		</PageContentWrapper>
 	);

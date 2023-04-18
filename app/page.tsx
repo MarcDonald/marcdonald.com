@@ -4,9 +4,9 @@ import {
 	TypographyH3,
 	TypographyLink,
 	TypographyP,
-	TypographySubtle,
-} from '@/components/ui/Typography';
-import PageContentWrapper from '@/components/PageContentWrapper';
+	TypographyMuted,
+} from './components/ui/Typography';
+import PageContentWrapper from './components/PageContentWrapper';
 
 export default function Home() {
 	return (
@@ -17,25 +17,24 @@ export default function Home() {
 			<TypographyH2>
 				I like to make things with TypeScript and React
 			</TypographyH2>
-			<TypographyH3>Here's some things I made</TypographyH3>
+			<TypographyH3 className={'mt-4'}>Here's some things I made</TypographyH3>
 			<ul className={'m-5 list-disc'}>
 				<li>
 					<TypographyP>
 						<TypographyLink href={'/hibi'}>Hibi</TypographyLink>
 					</TypographyP>
-					<TypographySubtle>
+					<TypographyMuted>
 						An Android app for learning Japanese by keeping a journal
-					</TypographySubtle>
+					</TypographyMuted>
 				</li>
 				<li className={'mt-5'}>
 					<TypographyP>
-						<TypographyLink href={'/twitch-spotify-bot'}>
-							Twitch Spotify Bot
-						</TypographyLink>
+						<TypographyLink href={'/buttercat'}>Buttercat</TypographyLink>
 					</TypographyP>
-					<TypographySubtle>
-						Twitch chat bot that allows users to add songs to a Spotify queue
-					</TypographySubtle>
+					<TypographyMuted>
+						A framework for creating modular, extensible, and easy to set up
+						Twitch bots
+					</TypographyMuted>
 				</li>
 				<li className={'mt-5'}>
 					<TypographyP>
@@ -43,9 +42,9 @@ export default function Home() {
 							Event Management System
 						</TypographyLink>
 					</TypographyP>
-					<TypographySubtle>
+					<TypographyMuted>
 						System for the management of event security and stewarding personnel
-					</TypographySubtle>
+					</TypographyMuted>
 				</li>
 			</ul>
 		</PageContentWrapper>
