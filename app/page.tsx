@@ -29,7 +29,9 @@ export default function Home() {
 				</li>
 				<li className={'mt-5'}>
 					<TypographyP>
-						<TypographyLink href={'/buttercat'}>Buttercat</TypographyLink>
+						<TypographyLink href={'https://buttercat.dev'}>
+							Buttercat
+						</TypographyLink>
 					</TypographyP>
 					<TypographyMuted>
 						A framework for creating modular, extensible, and easy to set up

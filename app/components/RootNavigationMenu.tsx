@@ -76,7 +76,7 @@ const ProjectsItem = () => {
 			<NavigationMenuContent>
 				<List>
 					<TypographyLarge>For Fun</TypographyLarge>
-					<ProjectListItem href="/buttercat" title="Buttercat">
+					<ProjectListItem href="https://buttercat.dev" title="Buttercat">
 						A framework for creating modular, extensible, and easy to set up
 						Twitch bots
 					</ProjectListItem>
