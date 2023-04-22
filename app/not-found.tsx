@@ -1,4 +1,4 @@
-import { TypographyH1, TypographyH2 } from './components/ui/Typography';
+import { TypographyH1, TypographyH2 } from '../components/ui/typography';
 import Link from 'next/link';
 
 export default function NotFound() {

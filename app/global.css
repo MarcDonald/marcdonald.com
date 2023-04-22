@@ -35,10 +35,8 @@
 
 		--radius: 0.5rem;
 	}
-}
 
-@media (prefers-color-scheme: dark) {
-	:root {
+	.dark {
 		--background: 224 71% 4%;
 		--foreground: 213 31% 91%;
 
@@ -80,9 +78,4 @@
 		@apply bg-background text-foreground;
 		font-feature-settings: 'rlig' 1, 'calt' 1;
 	}
-}
-
-#root,
-#__next {
-	isolation: isolate;
 }

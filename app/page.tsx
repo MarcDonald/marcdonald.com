@@ -5,8 +5,8 @@ import {
 	TypographyLink,
 	TypographyP,
 	TypographyMuted,
-} from './components/ui/Typography';
-import PageContentWrapper from './components/PageContentWrapper';
+} from '../components/ui/typography';
+import PageContentWrapper from '../components/page-content-wrapper';
 
 export default function Home() {
 	return (
@@ -21,7 +21,7 @@ export default function Home() {
 			<ul className={'m-5 list-disc'}>
 				<li>
 					<TypographyP>
-						<TypographyLink href={'/hibi'}>Hibi</TypographyLink>
+						<TypographyLink href={'/project/hibi'}>Hibi</TypographyLink>
 					</TypographyP>
 					<TypographyMuted>
 						An Android app for learning Japanese by keeping a journal
@@ -40,7 +40,7 @@ export default function Home() {
 				</li>
 				<li className={'mt-5'}>
 					<TypographyP>
-						<TypographyLink href={'/event-management-system'}>
+						<TypographyLink href={'/project/event-management-system'}>
 							Event Management System
 						</TypographyLink>
 					</TypographyP>

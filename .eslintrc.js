@@ -1,17 +1,22 @@
 module.exports = {
-	root: true,
-	extends: ['prettier', 'next'],
-	plugins: ['import', 'prettier'],
+	extends: ['plugin:@typescript-eslint/recommended', 'prettier', 'next'],
+	plugins: ['@typescript-eslint', 'import', 'prettier'],
+	rules: {
+		'no-used-vars': 'off',
+		'react/no-unescaped-entities': 'off',
+		'@typescript-eslint/no-unused-vars': [
+			'error',
+			{
+				argsIgnorePattern: '^_',
+				varsIgnorePattern: '^_',
+			},
+		],
+	},
 	ignorePatterns: ['*.d.ts', '*.ts.map', '*.tsbuildinfo'],
 	parser: '@typescript-eslint/parser',
-	rules: {
-		'react/no-unescaped-entities': 'off',
-	},
 	settings: {
-		'mdx/code-blocks': true,
-		'mdx/language-mapper': {},
 		next: {
-			rootDir: ['apps/*/'],
+			rootDir: ['apps/*'],
 		},
 	},
 };

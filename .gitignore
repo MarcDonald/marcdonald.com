@@ -43,3 +43,4 @@ yarn-error.log*
 *.log
 src/styles/tailwind.css
 tsconfig.tsbuildinfo
+.contentlayer

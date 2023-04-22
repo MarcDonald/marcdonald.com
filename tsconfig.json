@@ -29,7 +29,8 @@
 			}
 		],
 		"paths": {
-			"@/*": ["./app/*"]
+			"contentlayer/generated": ["./.contentlayer/generated"],
+			"@/*": ["./*"]
 		},
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
@@ -37,6 +38,12 @@
 		"strictNullChecks": true
 	},
 	"compileOnSave": false,
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		".contentlayer/generated"
+	],
 	"exclude": ["node_modules"]
 }
