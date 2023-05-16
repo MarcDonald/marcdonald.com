@@ -3,7 +3,9 @@ import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { cn } from '@/lib/utils';
-import '@/app/mdx.css';
+import '@/styles/mdx.css';
+import { TypographyLink } from '@/components/ui/typography';
+import DownloadSection from '@/components/download-section';
 
 type ComponentProps = {
 	className?: string;
@@ -64,14 +66,12 @@ const components = {
 			{...props}
 		/>
 	),
-	a: ({ className, ...props }: ComponentProps) => (
-		<a
-			className={cn(
-				'font-medium text-foreground underline underline-offset-4 hover:text-muted-foreground',
-				className
-			)}
-			{...props}
-		/>
+	a: ({
+		className,
+		href,
+		...props
+	}: ComponentProps & { href?: string | undefined }) => (
+		<TypographyLink href={href ?? ''} className={cn(className)} {...props} />
 	),
 	p: ({ className, ...props }: ComponentProps) => (
 		<p
@@ -154,6 +154,7 @@ const components = {
 		/>
 	),
 	Image,
+	DownloadSection,
 };
 
 interface MdxProps {

@@ -7,6 +7,7 @@ import {
 	BookmarkIcon,
 	CatIcon,
 	GithubIcon,
+	HomeIcon,
 	Laptop,
 	Moon,
 	ShieldCheckIcon,
@@ -15,7 +16,7 @@ import {
 } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import { cn } from '../lib/utils';
+import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import {
 	CommandDialog,
@@ -26,7 +27,7 @@ import {
 	CommandList,
 	CommandSeparator,
 } from './ui/command';
-import { siteConfig } from '../config/site';
+import { siteConfig } from '@/config/site';
 
 export default function AppCommandMenu({
 	...props
@@ -89,7 +90,9 @@ export default function AppCommandMenu({
 							Event Management System
 						</CommandItem>
 						<CommandItem
-							onSelect={() => runCommand(() => router.push('/buttercat'))}
+							onSelect={() =>
+								runCommand(() => router.push('https://buttercat.dev'))
+							}
 						>
 							<CatIcon className="mr-2 h-4 w-4" />
 							Buttercat
@@ -111,6 +114,10 @@ export default function AppCommandMenu({
 						</CommandItem>
 					</CommandGroup>
 					<CommandGroup heading="Links">
+						<CommandItem onSelect={() => runCommand(() => router.push('/'))}>
+							<HomeIcon className="mr-2 h-4 w-4" />
+							Home
+						</CommandItem>
 						<CommandItem
 							onSelect={() =>
 								runCommand(() => router.push(siteConfig.creator.github))

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../../lib/utils';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 type TypographyProps = React.PropsWithChildren & {
@@ -9,11 +9,11 @@ type TypographyProps = React.PropsWithChildren & {
 export function TypographyH1(props: TypographyProps) {
 	return (
 		<h1
-			{...props}
 			className={cn(
 				'mb-4 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
 				props.className
 			)}
+			{...props}
 		>
 			{props.children}
 		</h1>

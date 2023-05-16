@@ -1,15 +1,14 @@
 import React from 'react';
 
-import './global.css';
+import '@/styles/global.css';
 
 import { Metadata } from 'next';
-import { cn } from '../lib/utils';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '../components/theme-provider';
+import { cn } from '@/lib/utils';
+import { ThemeProvider } from '@/components/theme-provider';
 import StyleSwitcher from '../components/style-switcher';
-import { siteConfig } from '../config/site';
-import { fontSans } from '../lib/fonts';
-import { SiteHeader } from '../components/site-header';
+import { siteConfig } from '@/config/site';
+import { fontMono, fontSans } from '@/lib/fonts';
+import { SiteHeader } from '@/components/site-header';
 
 export const metadata: Metadata = {
 	title: {
@@ -40,15 +39,17 @@ export const metadata: Metadata = {
 	},
 };
 
-const inter = Inter({ subsets: ['latin'] });
-
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning className={`${inter.className}`}>
+		<html
+			lang="en"
+			suppressHydrationWarning
+			className={`${fontSans.className} ${fontMono.className} font-sans`}
+		>
 			<body
 				className={cn(
 					'min-h-screen scroll-smooth bg-background font-sans antialiased',

@@ -31,6 +31,10 @@ export const Project = defineDocumentType(() => ({
 		link: {
 			type: 'string',
 		},
+		downloadGitHubSlug: {
+			type: 'string',
+			required: false,
+		},
 	},
 	computedFields,
 }));

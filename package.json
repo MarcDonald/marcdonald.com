@@ -3,8 +3,8 @@
 	"version": "3.0.0",
 	"private": true,
 	"scripts": {
-		"build": "next build",
-		"dev": "next dev",
+		"build": "contentlayer build && next build",
+		"dev": "concurrently \"contentlayer dev\" \"next dev\"",
 		"lint": "next lint",
 		"start": "next start",
 		"prepare": "husky install",
@@ -39,6 +39,7 @@
 		"tailwindcss-animate": "^1.0.5"
 	},
 	"devDependencies": {
+		"concurrently": "^8.0.1",
 		"@types/eslint": "^8.21.3",
 		"@types/node": "^18.15.5",
 		"@types/prettier": "^2.7.2",

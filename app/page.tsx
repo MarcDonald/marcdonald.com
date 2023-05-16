@@ -5,7 +5,7 @@ import {
 	TypographyLink,
 	TypographyP,
 	TypographyMuted,
-} from '../components/ui/typography';
+} from '@/components/ui/typography';
 import PageContentWrapper from '../components/page-content-wrapper';
 
 export default function Home() {

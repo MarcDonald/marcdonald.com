@@ -5,7 +5,8 @@ import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Mdx } from '@/components/ui/mdx';
 import Balancer from 'react-wrap-balancer';
-import { cn } from '@/lib/utils';
+import DownloadSection from '@/components/download-section';
+import { TypographyLink } from '@/components/ui/typography';
 
 interface ProjectPageProps {
 	params: {
@@ -58,21 +59,28 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 		notFound();
 	}
 
-	const { title, description } = proj;
+	const { title, description, link, downloadGitHubSlug } = proj;
 
 	return (
 		<main className="relative px-6 py-6 md:px-8 lg:gap-10 lg:py-8 xl:px-12">
 			<div className="mx-auto w-full min-w-0">
 				<div className="space-y-2">
-					<h1 className={cn('scroll-m-20 text-4xl font-bold tracking-tight')}>
-						{title}
-					</h1>
+					<TypographyLink href={link ?? '#'} className={'pb-1'}>
+						<h1
+							className={'inline scroll-m-20 text-4xl font-bold tracking-tight'}
+						>
+							{title}
+						</h1>
+					</TypographyLink>
 					{description && (
 						<p className="text-lg text-muted-foreground">
 							<Balancer>{description}</Balancer>
 						</p>
 					)}
 				</div>
+				{downloadGitHubSlug && (
+					<DownloadSection githubSlug={downloadGitHubSlug} />
+				)}
 			</div>
 			<Separator className="my-4 md:my-6" />
 			<Mdx code={proj.body.code} />

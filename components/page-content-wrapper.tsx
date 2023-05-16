@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '@/lib/utils';
 
 const PageContentWrapper = ({
 	children,
@@ -7,7 +7,7 @@ const PageContentWrapper = ({
 	...props
 }: PropsWithChildren & { className?: string }) => {
 	return (
-		<main className={cn('m-4', className)} {...props}>
+		<main className={cn('m-6', className)} {...props}>
 			{children}
 		</main>
 	);
