@@ -9,6 +9,7 @@ import StyleSwitcher from '../components/style-switcher';
 import { siteConfig } from '@/config/site';
 import { fontMono, fontSans } from '@/lib/fonts';
 import { SiteHeader } from '@/components/site-header';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
 	title: {
@@ -64,6 +65,7 @@ export default function RootLayout({
 					</div>
 				</ThemeProvider>
 				<StyleSwitcher />
+				<Analytics />
 			</body>
 		</html>
 	);
