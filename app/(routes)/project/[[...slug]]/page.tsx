@@ -62,7 +62,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 	const { title, description, link, downloadGitHubSlug } = proj;
 
 	return (
-		<main className="relative px-6 py-6 md:px-8 lg:gap-10 lg:py-8 xl:px-12">
+		<>
 			<div className="mx-auto w-full min-w-0">
 				<div className="space-y-2">
 					<TypographyLink href={link ?? '#'} className={'pb-1'}>
@@ -84,6 +84,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 			</div>
 			<Separator className="my-4 md:my-6" />
 			<Mdx code={proj.body.code} />
-		</main>
+		</>
 	);
 }

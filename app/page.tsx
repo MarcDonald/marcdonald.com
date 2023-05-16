@@ -6,11 +6,10 @@ import {
 	TypographyP,
 	TypographyMuted,
 } from '@/components/ui/typography';
-import PageContentWrapper from '../components/page-content-wrapper';
 
 export default function Home() {
 	return (
-		<PageContentWrapper>
+		<>
 			<TypographyH1>
 				Senior Software Engineer from Northern Ireland
 			</TypographyH1>
@@ -49,6 +48,6 @@ export default function Home() {
 					</TypographyMuted>
 				</li>
 			</ul>
-		</PageContentWrapper>
+		</>
 	);
 }

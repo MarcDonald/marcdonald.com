@@ -61,7 +61,7 @@ export default function RootLayout({
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<div className="relative flex min-h-screen flex-col">
 						<SiteHeader />
-						{children}
+						<main className={'container my-6 lg:px-10'}>{children}</main>
 					</div>
 				</ThemeProvider>
 				<StyleSwitcher />
