@@ -16,7 +16,9 @@ export default function Home() {
 			<TypographyH2>
 				I like to make things with TypeScript and React
 			</TypographyH2>
-			<TypographyH3 className={'mt-4'}>Here's some things I made</TypographyH3>
+			<TypographyH3 className={'mt-4'}>
+				Here's some things I've made
+			</TypographyH3>
 			<ul className={'m-5 list-disc'}>
 				<li>
 					<TypographyP>
