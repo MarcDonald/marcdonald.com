@@ -7,6 +7,7 @@ import { Mdx } from '@/components/ui/mdx';
 import Balancer from 'react-wrap-balancer';
 import DownloadSection from '@/components/download-section';
 import { TypographyLink } from '@/components/ui/typography';
+import { siteConfig } from '@/config/site';
 
 interface ProjectPageProps {
 	params: {
@@ -26,15 +27,25 @@ export async function generateMetadata({
 	return {
 		title: project.title,
 		description: project.description,
+		keywords: project.keywords,
 		twitter: {
 			title: project.title,
 			description: project.description,
 		},
+		openGraph: {
+			title: project.title,
+			description: project.description,
+			url: `${siteConfig.url}/project/${buildSlugFromParams(params)}`,
+		},
 	};
 }
 
+function buildSlugFromParams(params: { slug: string[] }) {
+	return params.slug?.join('/') || '';
+}
+
 async function getProjectFromParams(params: { slug: string[] }) {
-	const slug = params.slug?.join('/') || '';
+	const slug = buildSlugFromParams(params);
 	const project = allProjects.find((proj) => proj.slugAsParams === slug);
 
 	if (!project) {

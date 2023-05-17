@@ -31,6 +31,10 @@ export const Project = defineDocumentType(() => ({
 		link: {
 			type: 'string',
 		},
+		keywords: {
+			type: 'list',
+			of: { type: 'string' },
+		},
 		downloadGitHubSlug: {
 			type: 'string',
 			required: false,
