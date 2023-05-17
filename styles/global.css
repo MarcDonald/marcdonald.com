@@ -4,29 +4,29 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 222.2 47.4% 11.2%;
+		--background: 240 70% 99%;
+		--foreground: 293 73% 8%;
 
-		--muted: 210 40% 96.1%;
+		--muted: 240 11% 94%;
 		--muted-foreground: 215.4 16.3% 46.9%;
 
-		--popover: 0 0% 100%;
-		--popover-foreground: 222.2 47.4% 11.2%;
+		--popover: 271 75% 97%;
+		--popover-foreground: 293 73% 8%;
 
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 47.4% 11.2%;
+		--card: 271 75% 97%;
+		--card-foreground: 293 73% 8%;
 
-		--border: 214.3 31.8% 91.4%;
-		--input: 214.3 31.8% 91.4%;
+		--border: 292 12% 70%;
+		--input: 292 12% 70%;
 
-		--primary: 222.2 47.4% 11.2%;
-		--primary-foreground: 210 40% 98%;
+		--primary: 47 80% 44%;
+		--primary-foreground: 293 73% 8%;
 
-		--secondary: 210 40% 96.1%;
-		--secondary-foreground: 222.2 47.4% 11.2%;
+		--secondary: 293 28% 11%;
+		--secondary-foreground: 293 73% 8%;
 
-		--accent: 210 40% 96.1%;
-		--accent-foreground: 222.2 47.4% 11.2%;
+		--accent: 156 34% 78%;
+		--accent-foreground: 293 73% 8%;
 
 		--destructive: 0 100% 50%;
 		--destructive-foreground: 210 40% 98%;
@@ -37,29 +37,29 @@
 	}
 
 	.dark {
-		--background: 224 71% 4%;
-		--foreground: 213 31% 91%;
+		--background: 229 33% 4%;
+		--foreground: 240 22% 99%;
 
-		--muted: 223 47% 11%;
-		--muted-foreground: 215.4 16.3% 56.9%;
+		--muted: 296 13% 20%;
+		--muted-foreground: 240 22% 70%;
 
-		--popover: 224 71% 4%;
-		--popover-foreground: 215 20.2% 65.1%;
+		--popover: 293 28% 11%;
+		--popover-foreground: 240 22% 99%;
 
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 47.4% 11.2%;
+		--card: 226 12% 9%;
+		--card-foreground: 240 22% 99%;
 
-		--border: 216 34% 17%;
-		--input: 216 34% 17%;
+		--border: 240 22% 30%;
+		--input: 240 22% 30%;
 
-		--primary: 210 40% 98%;
-		--primary-foreground: 222.2 47.4% 1.2%;
+		--primary: 47 80% 44%;
+		--primary-foreground: 229 33% 4%;
 
-		--secondary: 222.2 47.4% 11.2%;
-		--secondary-foreground: 210 40% 98%;
+		--secondary: 293 28% 11%;
+		--secondary-foreground: 240 22% 99%;
 
-		--accent: 216 34% 17%;
-		--accent-foreground: 210 40% 98%;
+		--accent: 226 8% 27%;
+		--accent-foreground: 240 22% 99%;
 
 		--destructive: 0 63% 31%;
 		--destructive-foreground: 210 40% 98%;
@@ -74,6 +74,7 @@
 	* {
 		@apply border-border;
 	}
+	html,
 	body {
 		@apply bg-background text-foreground;
 		font-feature-settings: 'rlig' 1, 'calt' 1;

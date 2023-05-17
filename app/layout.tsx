@@ -20,10 +20,7 @@ export const metadata: Metadata = {
 	keywords: [
 		'software engineer,portfolio,developer,marc donald,programming,web development,full stack,fullstack,react,reactjs,typescript,js,java,html,css,frontend,backend,full stack,fullstack,full-stack',
 	],
-	themeColor: [
-		{ media: '(prefers-color-scheme: light)', color: 'white' },
-		{ media: '(prefers-color-scheme: dark)', color: 'black' },
-	],
+	themeColor: [{ color: 'hsl(var(--background))' }],
 	metadataBase: new URL(siteConfig.url),
 	alternates: {
 		canonical: '/',
