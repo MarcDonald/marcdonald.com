@@ -31,6 +31,10 @@ export const Project = defineDocumentType(() => ({
 		link: {
 			type: 'string',
 		},
+		image: {
+			type: 'string',
+			required: false,
+		},
 		keywords: {
 			type: 'list',
 			of: { type: 'string' },

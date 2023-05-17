@@ -1,6 +1,9 @@
+const isProduction = process.env.VERCEL_ENV === 'production';
 export const siteConfig = {
-	name: 'Marc Donald',
-	url: 'https://marcdonald.com',
+	name: isProduction ? 'Marc Donald' : 'Marc Donald 🚧',
+	url: isProduction
+		? 'https://marcdonald.com'
+		: 'https://development.marcdonald.com',
 	description: 'Senior Software Engineer',
 	links: {
 		github: 'https://github.com/marcdonald/marcdonald.com',

@@ -31,11 +31,32 @@ export async function generateMetadata({
 		twitter: {
 			title: project.title,
 			description: project.description,
+			card: project.image ? 'summary_large_image' : 'summary',
+			images: project.image
+				? [
+						{
+							url: `${siteConfig.url}/${project.image}`,
+							width: 1200,
+							height: 630,
+							alt: project.title,
+						},
+				  ]
+				: [],
 		},
 		openGraph: {
 			title: project.title,
 			description: project.description,
 			url: `${siteConfig.url}/project/${buildSlugFromParams(params)}`,
+			images: project.image
+				? [
+						{
+							url: `${siteConfig.url}/${project.image}`,
+							width: 1200,
+							height: 630,
+							alt: project.title,
+						},
+				  ]
+				: [],
 		},
 	};
 }
