@@ -8,10 +8,11 @@ import Balancer from 'react-wrap-balancer';
 import DownloadSection from '@/components/download-section';
 import { TypographyLink } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site';
+import ProjectHeaderShell from '@/components/project-header-shell';
 
 interface ProjectPageProps {
 	params: {
-		slug: string[];
+		slug: string;
 	};
 }
 
@@ -46,7 +47,7 @@ export async function generateMetadata({
 		openGraph: {
 			title: project.title,
 			description: project.description,
-			url: `${siteConfig.url}/project/${buildSlugFromParams(params)}`,
+			url: `${siteConfig.url}/project/${params.slug}`,
 			images: project.image
 				? [
 						{
@@ -61,26 +62,16 @@ export async function generateMetadata({
 	};
 }
 
-function buildSlugFromParams(params: { slug: string[] }) {
-	return params.slug?.join('/') || '';
-}
-
-async function getProjectFromParams(params: { slug: string[] }) {
-	const slug = buildSlugFromParams(params);
-	const project = allProjects.find((proj) => proj.slugAsParams === slug);
-
-	if (!project) {
-		notFound();
-	}
-
-	return project;
+async function getProjectFromParams(params: { slug: string }) {
+	const slug = params.slug;
+	return allProjects.find((proj) => proj.slugAsParams === slug);
 }
 
 export async function generateStaticParams(): Promise<
 	ProjectPageProps['params'][]
 > {
 	return allProjects.map((proj) => ({
-		slug: proj.slugAsParams.split('/'),
+		slug: proj.slugAsParams,
 	}));
 }
 
@@ -95,25 +86,23 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
 	return (
 		<>
-			<div className="mx-auto w-full min-w-0">
-				<div className="space-y-2">
-					<TypographyLink href={link ?? '#'} className={'pb-1'}>
-						<h1
-							className={'inline scroll-m-20 text-4xl font-bold tracking-tight'}
-						>
-							{title}
-						</h1>
-					</TypographyLink>
-					{description && (
-						<p className="text-lg text-muted-foreground">
-							<Balancer>{description}</Balancer>
-						</p>
-					)}
-				</div>
+			<ProjectHeaderShell>
+				<TypographyLink href={link ?? '#'} className={'pb-1'}>
+					<h1
+						className={'inline scroll-m-20 text-4xl font-bold tracking-tight'}
+					>
+						{title}
+					</h1>
+				</TypographyLink>
+				{description && (
+					<p className="text-lg text-muted-foreground">
+						<Balancer>{description}</Balancer>
+					</p>
+				)}
 				{downloadGitHubSlug && (
 					<DownloadSection githubSlug={downloadGitHubSlug} />
 				)}
-			</div>
+			</ProjectHeaderShell>
 			<Separator className="my-4 md:my-6" />
 			<Mdx code={proj.body.code} />
 		</>
