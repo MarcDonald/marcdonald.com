@@ -5,10 +5,10 @@ import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Mdx } from '@/components/ui/mdx';
 import Balancer from 'react-wrap-balancer';
-import DownloadSection from '@/components/download-section';
+import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
 import { TypographyLink } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site';
-import ProjectHeaderShell from '@/components/project-header-shell';
+import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 
 interface ProjectPageProps {
 	params: {

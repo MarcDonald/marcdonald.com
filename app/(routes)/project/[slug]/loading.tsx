@@ -1,7 +1,7 @@
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
-import ProjectHeaderShell from '@/components/project-header-shell';
+import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 
 export default async function ProjectPageSkeleton() {
 	return (

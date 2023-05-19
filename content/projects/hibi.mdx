@@ -29,6 +29,7 @@ keywords:
 ## Tech and Architecture
 ![Architecture Diagram](https://raw.githubusercontent.com/MarcDonald/hibi/master/.github/assets/architecture-diagram.png?raw=true "Architecture Diagram")
 
+
 Hibi is written entirely in Kotlin and employs a single activity MVVM architecture pattern using [AndroidX View Model](https://developer.android.com/topic/libraries/architecture/viewmodel) components.
 The activity contains a single NavHostFragment, part of the [AndroidX Navigation Components](https://developer.android.com/guide/navigation/), which hosts all other fragments such as the MainScreenFragment.
 Each fragment observes data in a View Model which may retrieve data from various repositories and API services and properly format it for display. All business logic is handled in the View Models and fragments are kept as minimal as possible (only having code for setting up Observers, click listeners, etc...).

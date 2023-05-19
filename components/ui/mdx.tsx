@@ -5,7 +5,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 import { cn } from '@/lib/utils';
 import '@/styles/mdx.css';
 import { TypographyLink } from '@/components/ui/typography';
-import DownloadSection from '@/components/download-section';
+import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
 
 type ComponentProps = {
 	className?: string;

@@ -5,7 +5,7 @@ import '@/styles/global.css';
 import { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
-import StyleSwitcher from '../components/style-switcher';
+import StyleSwitcher from '@/components/style-switcher';
 import { siteConfig } from '@/config/site';
 import { fontMono, fontSans } from '@/lib/fonts';
 import { SiteHeader } from '@/components/site-header';
