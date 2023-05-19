@@ -12,7 +12,8 @@ const computedFields = {
 	},
 	slugAsParams: {
 		type: 'string',
-		resolve: (guide) => guide._raw.flattenedPath.split('/').slice(1).join('/'),
+		resolve: (guide) =>
+			guide._raw.flattenedPath.split('/').slice(1).join('/').toLowerCase(),
 	},
 };
 

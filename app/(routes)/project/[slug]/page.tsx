@@ -26,11 +26,17 @@ export async function generateMetadata({
 	}
 
 	return {
-		title: project.title,
+		title: {
+			default: project.title,
+			template: `%s - ${siteConfig.name}`,
+		},
 		description: project.description,
 		keywords: project.keywords,
 		twitter: {
-			title: project.title,
+			title: {
+				default: project.title,
+				template: `%s - ${siteConfig.name}`,
+			},
 			description: project.description,
 			card: project.image ? 'summary_large_image' : 'summary',
 			images: project.image
@@ -45,7 +51,10 @@ export async function generateMetadata({
 				: [],
 		},
 		openGraph: {
-			title: project.title,
+			title: {
+				default: project.title,
+				template: `%s - ${siteConfig.name}`,
+			},
 			description: project.description,
 			url: `${siteConfig.url}/project/${params.slug}`,
 			images: project.image
@@ -63,7 +72,7 @@ export async function generateMetadata({
 }
 
 async function getProjectFromParams(params: { slug: string }) {
-	const slug = params.slug;
+	const slug = params.slug.toLowerCase();
 	return allProjects.find((proj) => proj.slugAsParams === slug);
 }
 
