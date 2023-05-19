@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import '@/styles/mdx.css';
 import { TypographyLink } from '@/components/ui/typography';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 type ComponentProps = {
 	className?: string;
@@ -155,6 +156,9 @@ const components = {
 	),
 	Image,
 	DownloadSection,
+	Alert,
+	AlertDescription,
+	AlertTitle,
 };
 
 interface MdxProps {
