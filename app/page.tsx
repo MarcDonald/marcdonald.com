@@ -10,9 +10,7 @@ import {
 export default function Home() {
 	return (
 		<>
-			<TypographyH1>
-				Senior Software Engineer from Northern Ireland
-			</TypographyH1>
+			<TypographyH1>Marc Donald</TypographyH1>
 			<TypographyH2>
 				I like to make things with TypeScript and React
 			</TypographyH2>
@@ -25,7 +23,8 @@ export default function Home() {
 						<TypographyLink href={'/project/hibi'}>Hibi</TypographyLink>
 					</TypographyP>
 					<TypographyMuted>
-						An Android app for learning Japanese by keeping a journal
+						An Android app designed to aid your Japanese learning through
+						keeping a journal
 					</TypographyMuted>
 				</li>
 				<li className={'mt-5'}>
@@ -47,6 +46,7 @@ export default function Home() {
 					</TypographyP>
 					<TypographyMuted>
 						System for the management of event security and stewarding personnel
+						(Final year university project)
 					</TypographyMuted>
 				</li>
 			</ul>
