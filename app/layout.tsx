@@ -12,9 +12,6 @@ import { SiteHeader } from '@/components/site-header';
 import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
-	robots: {
-		index: siteConfig.isProduction,
-	},
 	title: {
 		default: siteConfig.name,
 		template: `%s - ${siteConfig.name}`,
@@ -26,7 +23,7 @@ export const metadata: Metadata = {
 	themeColor: [{ color: 'hsl(var(--background))' }],
 	metadataBase: new URL(siteConfig.url),
 	alternates: {
-		canonical: '/',
+		canonical: siteConfig.url,
 	},
 	openGraph: {
 		type: 'website',
