@@ -13,9 +13,19 @@ import { cn } from '@/lib/utils';
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { siteConfig } from '@/config/site';
 
-const NavItem = ({ href, label }: { href: string; label: string }) => {
+const NavItem = ({
+	href,
+	label,
+	parentLink,
+}: {
+	href: string;
+	label: string;
+	parentLink?: boolean;
+}) => {
 	const pathname = usePathname();
+	const isActive = parentLink ? pathname.startsWith(href) : pathname === href;
 
 	return (
 		<NavigationMenuItem>
@@ -24,7 +34,7 @@ const NavItem = ({ href, label }: { href: string; label: string }) => {
 					className={cn(
 						navigationMenuTriggerStyle(),
 						'bg-transparent',
-						pathname === href ? 'bg-muted' : ''
+						isActive ? 'bg-muted' : ''
 					)}
 				>
 					{label}
@@ -71,6 +81,9 @@ export default function HeaderNav() {
 			<NavigationMenuList>
 				<NavItem href={'/'} label={'Home'} />
 				<NavItem href={'https://github.com/MarcDonald'} label={'GitHub'} />
+				{siteConfig.showBlog && (
+					<NavItem href={'/blog'} label={'Blog'} parentLink={true} />
+				)}
 				<NavigationMenuItem>
 					<NavigationMenuTrigger
 						className={cn(

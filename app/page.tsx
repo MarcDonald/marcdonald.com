@@ -3,9 +3,11 @@ import {
 	TypographyH2,
 	TypographyH3,
 	TypographyLink,
-	TypographyP,
-	TypographyMuted,
 } from '@/components/ui/typography';
+import ProjectList from '@/app/_components/project-list';
+import BlogList from '@/app/_components/blog-list';
+import { siteConfig } from '@/config/site';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
 	return (
@@ -14,42 +16,26 @@ export default function Home() {
 			<TypographyH2>
 				I like to make things with TypeScript and React
 			</TypographyH2>
-			<TypographyH3 className={'mt-4'}>
-				Here's some things I've made
-			</TypographyH3>
-			<ul className={'m-5 list-disc'}>
-				<li>
-					<TypographyP>
-						<TypographyLink href={'/project/hibi'}>Hibi</TypographyLink>
-					</TypographyP>
-					<TypographyMuted>
-						An Android app designed to aid your Japanese learning through
-						keeping a journal
-					</TypographyMuted>
-				</li>
-				<li className={'mt-5'}>
-					<TypographyP>
-						<TypographyLink href={'https://buttercat.dev'}>
-							Buttercat
-						</TypographyLink>
-					</TypographyP>
-					<TypographyMuted>
-						A framework for creating modular, extensible, and easy to set up
-						Twitch bots
-					</TypographyMuted>
-				</li>
-				<li className={'mt-5'}>
-					<TypographyP>
-						<TypographyLink href={'/project/event-management-system'}>
-							Event Management System
-						</TypographyLink>
-					</TypographyP>
-					<TypographyMuted>
-						System for the management of event security and stewarding personnel
-						(Final year university project)
-					</TypographyMuted>
-				</li>
-			</ul>
+			<div className={'md:grid md:grid-cols-2'}>
+				<section>
+					<TypographyH3 className={'mb-2 mt-4'}>
+						Here's some things I've wrote
+					</TypographyH3>
+					{siteConfig.showBlog ? <BlogList maxItems={5} /> : <></>}
+					<TypographyLink
+						href={'/blog'}
+						className={'mt-4 flex w-fit flex-row gap-1 hover:gap-2'}
+					>
+						See More <ArrowRight />
+					</TypographyLink>
+				</section>
+				<section>
+					<TypographyH3 className={'mb-2 mt-4'}>
+						Here's some things I've made
+					</TypographyH3>
+					<ProjectList />
+				</section>
+			</div>
 		</>
 	);
 }

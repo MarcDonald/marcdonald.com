@@ -8,6 +8,18 @@ import { TypographyLink } from '@/components/ui/typography';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
+const ResponsiveImage = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
+	// eslint-disable-next-line jsx-a11y/alt-text
+	<Image
+		sizes="100vw"
+		style={{ width: '100%', height: 'auto' }}
+		className={cn(props.className)}
+		{...props}
+	/>
+);
+
 type ComponentProps = {
 	className?: string;
 } & React.PropsWithChildren;
@@ -98,14 +110,7 @@ const components = {
 			{...props}
 		/>
 	),
-	img: ({
-		className,
-		alt,
-		...props
-	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
-		// eslint-disable-next-line @next/next/no-img-element
-		<img className={cn('rounded-md border', className)} alt={alt} {...props} />
-	),
+	img: ResponsiveImage,
 	hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
 	table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
 		<div className="my-6 w-full overflow-y-auto">
