@@ -8,7 +8,11 @@ import Balancer from 'react-wrap-balancer';
 import { siteConfig } from '@/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 import ScrollProgressBar from '@/components/scroll-progress-bar';
-import { TypographyH1 } from '@/components/ui/typography';
+import {
+	TypographyH1,
+	TypographyH2,
+	TypographyMuted,
+} from '@/components/ui/typography';
 
 interface BlogPageProps {
 	params: {
@@ -101,20 +105,20 @@ export default async function BlogPage({ params }: BlogPageProps) {
 					<Balancer>{title}</Balancer>
 				</TypographyH1>
 				{description && (
-					<p className="text-lg text-muted-foreground">
+					<TypographyH2 className={'border-b-0'}>
 						<Balancer>{description}</Balancer>
-					</p>
+					</TypographyH2>
 				)}
-				<p className="text-xs text-muted-foreground">
-					Published:{' '}
-					{Intl.DateTimeFormat('en-GB', {
-						day: 'numeric',
-						month: 'long',
-						year: 'numeric',
-					}).format(new Date(date))}
-				</p>
 			</ProjectHeaderShell>
-			<Separator className="my-4 md:my-6" />
+			<TypographyMuted>
+				Published:{' '}
+				{Intl.DateTimeFormat('en-GB', {
+					day: 'numeric',
+					month: 'long',
+					year: 'numeric',
+				}).format(new Date(date))}
+			</TypographyMuted>
+			<Separator className="my-4" />
 			<Mdx code={blog.body.code} />
 		</>
 	);

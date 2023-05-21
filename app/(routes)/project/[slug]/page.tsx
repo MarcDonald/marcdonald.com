@@ -6,7 +6,11 @@ import { Separator } from '@/components/ui/separator';
 import { Mdx } from '@/components/ui/mdx';
 import Balancer from 'react-wrap-balancer';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
-import { TypographyH1, TypographyLink } from '@/components/ui/typography';
+import {
+	TypographyH1,
+	TypographyH2,
+	TypographyLink,
+} from '@/components/ui/typography';
 import { siteConfig } from '@/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 import ScrollProgressBar from '@/components/scroll-progress-bar';
@@ -98,17 +102,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 		<>
 			<ScrollProgressBar />
 			<ProjectHeaderShell>
-				<Balancer>
-					<TypographyLink href={link ?? '#'} className={'pb-1'}>
-						<TypographyH1 className={'scroll-m-20'}>
-							<Balancer>{title}</Balancer>
-						</TypographyH1>
-					</TypographyLink>
-				</Balancer>
+				<TypographyLink href={link ?? '#'}>
+					<TypographyH1 className={'scroll-m-20'}>
+						<Balancer>{title}</Balancer>
+					</TypographyH1>
+				</TypographyLink>
 				{description && (
-					<p className="text-lg text-muted-foreground">
+					<TypographyH2 className="border-b-0">
 						<Balancer>{description}</Balancer>
-					</p>
+					</TypographyH2>
 				)}
 				{downloadGitHubSlug && (
 					<DownloadSection githubSlug={downloadGitHubSlug} />
