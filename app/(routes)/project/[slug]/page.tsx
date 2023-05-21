@@ -9,6 +9,7 @@ import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-
 import { TypographyLink } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
+import ScrollProgressBar from '@/components/scroll-progress-bar';
 
 interface ProjectPageProps {
 	params: {
@@ -95,14 +96,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
 	return (
 		<>
+			<ScrollProgressBar />
 			<ProjectHeaderShell>
-				<TypographyLink href={link ?? '#'} className={'pb-1'}>
-					<h1
-						className={'inline scroll-m-20 text-4xl font-bold tracking-tight'}
-					>
-						{title}
-					</h1>
-				</TypographyLink>
+				<Balancer>
+					<TypographyLink href={link ?? '#'} className={'pb-1'}>
+						<h1
+							className={'inline scroll-m-20 text-4xl font-bold tracking-tight'}
+						>
+							{title}
+						</h1>
+					</TypographyLink>
+				</Balancer>
 				{description && (
 					<p className="text-lg text-muted-foreground">
 						<Balancer>{description}</Balancer>
