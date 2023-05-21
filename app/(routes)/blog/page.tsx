@@ -5,9 +5,7 @@ export default function BlogParentRoute() {
 	return (
 		<>
 			<TypographyH1>Blog</TypographyH1>
-			<TypographyH2>
-				I like to make things with TypeScript and React
-			</TypographyH2>
+			<TypographyH2>Here's some things I've wrote</TypographyH2>
 			<BlogList className={'mt-4'} />
 		</>
 	);

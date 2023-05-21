@@ -10,12 +10,11 @@ keywords:
 ---
 
 <Alert>
-    <AlertTitle>Important Note</AlertTitle>
-    <AlertDescription>
-        This project was created as a university project and is not suitable for production. There will be no active
-        development
-        on this project.
-    </AlertDescription>
+	<AlertTitle>Important Note</AlertTitle>
+	<AlertDescription>
+		This project was created as a university project and is not suitable for
+		production. There will be no active development on this project.
+	</AlertDescription>
 </Alert>
 
 A system for the management of Security and Stewarding staff at events created as a final year project for my BEng
@@ -38,7 +37,7 @@ place, such as museums, hotels, and large stores.
 ## Objectives
 
 - Create a simple to use mobile application for stewards to request assistance from security, cleaners, and supervisors
-with as little input as possible
+  with as little input as possible
 
 - Allow stewards to view the venue’s current alert status at a glance
 
@@ -59,7 +58,7 @@ The system consists of three main components:
 - An [Android app](https://github.com/MarcDonald/event-management-system/tree/master/android-app/) for Stewards to request assistance from the control room
 
 - A [web dashboard](https://github.com/MarcDonald/event-management-system/tree/master/web-app/) for Control Room Operators to view assistance requests for events, and for Admins to
-manage Events, Venues, and Staff
+  manage Events, Venues, and Staff
 
 - A serverless AWS [backend](https://github.com/MarcDonald/event-management-system/tree/master/cdk-stack/)
 
@@ -78,7 +77,13 @@ however I switched it out for Styled Components later in development
 
 ### System Architecture
 
-![Architecture Diagram](https://raw.githubusercontent.com/MarcDonald/event-management-system/master/.github/assets/architecture.png)
+<div className={'mx-auto my-4 md:w-3/4'}>
+	<img
+		src="https://raw.githubusercontent.com/MarcDonald/event-management-system/master/.github/assets/architecture.png"
+		alt="Architecture Diagram"
+		className={'mx-auto aspect-video rounded-md object-contain'}
+	/>
+</div>
 
 0 - Web app is served from an S3 bucket that is behind a CloudFront distribution that allows HTTPS
 
@@ -132,18 +137,36 @@ would have to be performed when using a multi-table relational database.
 As information related to WebSocket connections was completely unrelated to the other data being stored in the system I
 created a separate table for it.
 
-![Example Data](https://raw.githubusercontent.com/MarcDonald/event-management-system/master/.github/assets/example-data.png)
+<div className={'mx-auto my-4'}>
+	<img
+		src="https://raw.githubusercontent.com/MarcDonald/event-management-system/master/.github/assets/example-data.png"
+		alt="Example Data"
+		className={'mx-auto aspect-video rounded-md object-contain'}
+	/>
+</div>
 
 _An example of how data is stored in the DynamoDB table, note that some columns have been left out for simplicity’s
 sake._
 
 ### REST API
 
-![API Schema](https://raw.githubusercontent.com/MarcDonald/event-management-system/master/.github/assets/rest-api.png)
+<div className={'mx-auto my-4 md:w-3/4'}>
+	<img
+		src="https://raw.githubusercontent.com/MarcDonald/event-management-system/master/.github/assets/rest-api.png"
+		alt="Rest API Schema"
+		className={'mx-auto aspect-video rounded-md object-contain'}
+	/>
+</div>
 
 ### Generic WebSocket Lambda Flow
 
-![WebSocket Flow](https://raw.githubusercontent.com/MarcDonald/event-management-system/master/.github/assets/websocket-flow.png)
+<div className={'mx-auto my-4 md:w-3/4'}>
+	<img
+		src="https://raw.githubusercontent.com/MarcDonald/event-management-system/master/.github/assets/websocket-flow.png"
+		alt="WebSocket Flow"
+		className={'mx-auto aspect-video rounded-md object-contain'}
+	/>
+</div>
 
 The above figure shows the flow that the code follows within a Lambda that adds an item to the database and then
 notifies connections to a WebSocket. A Lambda that implements this flow is the AddAssistanceRequest Lambda which saves

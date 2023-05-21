@@ -5,7 +5,7 @@ import {
 } from '@/components/ui/typography';
 import { BlogPost } from 'contentlayer/generated';
 import { cn } from '@/lib/utils';
-import { sortedPosts } from '@/config/blog';
+import { sortedBlogPosts } from '@/config/blog';
 
 const BlogLink = ({ blog }: { blog: BlogPost }) => {
 	return (
@@ -28,7 +28,7 @@ export default function BlogList({
 }) {
 	return (
 		<ul className={cn('list-none p-0', className)}>
-			{sortedPosts.slice(0, maxItems).map((blog) => (
+			{sortedBlogPosts.slice(0, maxItems).map((blog) => (
 				<BlogLink key={blog.slug} blog={blog} />
 			))}
 		</ul>

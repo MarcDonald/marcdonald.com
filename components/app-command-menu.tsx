@@ -4,13 +4,11 @@ import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import { DialogProps } from '@radix-ui/react-alert-dialog';
 import {
-	BookmarkIcon,
-	CatIcon,
 	GithubIcon,
 	HomeIcon,
 	Laptop,
 	Moon,
-	ShieldCheckIcon,
+	NewspaperIcon,
 	SunMedium,
 	TwitterIcon,
 } from 'lucide-react';
@@ -28,6 +26,8 @@ import {
 	CommandSeparator,
 } from './ui/command';
 import { siteConfig } from '@/config/site';
+import { projects } from '@/config/project';
+import { sortedBlogPosts } from '@/config/blog';
 
 export default function AppCommandMenu({
 	...props
@@ -73,30 +73,29 @@ export default function AppCommandMenu({
 				<CommandList>
 					<CommandEmpty>No results found.</CommandEmpty>
 					<CommandGroup heading="Projects">
-						<CommandItem
-							onSelect={() => runCommand(() => router.push('/project/hibi'))}
-						>
-							<BookmarkIcon className="mr-2 h-4 w-4" />
-							Hibi
-						</CommandItem>
-						<CommandItem
-							onSelect={() =>
-								runCommand(() =>
-									router.push('/project/event-management-system')
-								)
-							}
-						>
-							<ShieldCheckIcon className="mr-2 h-4 w-4" />
-							Event Management System
-						</CommandItem>
-						<CommandItem
-							onSelect={() =>
-								runCommand(() => router.push('https://buttercat.dev'))
-							}
-						>
-							<CatIcon className="mr-2 h-4 w-4" />
-							Buttercat
-						</CommandItem>
+						{projects.map((proj) => (
+							<CommandItem
+								key={proj.title}
+								onSelect={() => runCommand(() => router.push(proj.link))}
+							>
+								<proj.icon className="mr-2 h-4 w-4" />
+								{proj.title}
+							</CommandItem>
+						))}
+					</CommandGroup>
+					<CommandSeparator />
+					<CommandGroup heading="Blog Posts">
+						{sortedBlogPosts.map((post) => (
+							<CommandItem
+								key={post.title}
+								onSelect={() =>
+									runCommand(() => router.push(`blog/${post.slugAsParams}`))
+								}
+							>
+								<NewspaperIcon className="mr-2 h-4 w-4" />
+								{post.title}
+							</CommandItem>
+						))}
 					</CommandGroup>
 					<CommandSeparator />
 					<CommandGroup heading="Theme">

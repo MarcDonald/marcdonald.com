@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Mdx } from '@/components/ui/mdx';
 import Balancer from 'react-wrap-balancer';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
-import { TypographyLink } from '@/components/ui/typography';
+import { TypographyH1, TypographyLink } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 import ScrollProgressBar from '@/components/scroll-progress-bar';
@@ -100,11 +100,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 			<ProjectHeaderShell>
 				<Balancer>
 					<TypographyLink href={link ?? '#'} className={'pb-1'}>
-						<h1
-							className={'inline scroll-m-20 text-4xl font-bold tracking-tight'}
-						>
-							{title}
-						</h1>
+						<TypographyH1 className={'scroll-m-20'}>
+							<Balancer>{title}</Balancer>
+						</TypographyH1>
 					</TypographyLink>
 				</Balancer>
 				{description && (

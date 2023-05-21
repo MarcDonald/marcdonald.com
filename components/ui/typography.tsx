@@ -6,12 +6,12 @@ type TypographyProps = React.PropsWithChildren & {
 	className?: string;
 };
 
-export function TypographyH1(props: TypographyProps) {
+export function TypographyH1({ className, ...props }: TypographyProps) {
 	return (
 		<h1
 			className={cn(
 				'mb-4 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
-				props.className
+				className
 			)}
 			{...props}
 		>

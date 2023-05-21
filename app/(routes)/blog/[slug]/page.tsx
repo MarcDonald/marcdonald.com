@@ -8,6 +8,7 @@ import Balancer from 'react-wrap-balancer';
 import { siteConfig } from '@/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 import ScrollProgressBar from '@/components/scroll-progress-bar';
+import { TypographyH1 } from '@/components/ui/typography';
 
 interface BlogPageProps {
 	params: {
@@ -96,9 +97,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
 		<>
 			<ScrollProgressBar />
 			<ProjectHeaderShell>
-				<h1 className={'inline scroll-m-20 text-4xl font-bold tracking-tight'}>
+				<TypographyH1 className={'scroll-m-20'}>
 					<Balancer>{title}</Balancer>
-				</h1>
+				</TypographyH1>
 				{description && (
 					<p className="text-lg text-muted-foreground">
 						<Balancer>{description}</Balancer>
