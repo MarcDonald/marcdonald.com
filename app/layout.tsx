@@ -12,6 +12,9 @@ import { SiteHeader } from '@/components/site-header';
 import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
+	robots: {
+		index: siteConfig.isProduction,
+	},
 	title: {
 		default: siteConfig.name,
 		template: `%s - ${siteConfig.name}`,

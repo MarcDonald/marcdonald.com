@@ -13,6 +13,7 @@ export const siteConfig = {
 		twitter: 'https://twitter.com/@DeveloperMarc',
 		github: 'https://github.com/MarcDonald',
 	},
+	isProduction,
 };
 
 export type SiteConfig = typeof siteConfig;
