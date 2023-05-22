@@ -15,6 +15,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/config/site';
 
+const showBlog = siteConfig.showBlog;
+
 const NavItem = ({
 	href,
 	label,
@@ -81,7 +83,7 @@ export default function HeaderNav() {
 			<NavigationMenuList>
 				<NavItem href={'/'} label={'Home'} />
 				<NavItem href={'https://github.com/MarcDonald'} label={'GitHub'} />
-				{siteConfig.showBlog && (
+				{showBlog && (
 					<NavItem href={'/blog'} label={'Blog'} parentLink={true} />
 				)}
 				<NavigationMenuItem>

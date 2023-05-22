@@ -4,7 +4,7 @@ export const siteConfig = {
 	url: isProduction
 		? 'https://marcdonald.com'
 		: 'https://development.marcdonald.com',
-	description: 'Senior Software Engineer',
+	description: 'I like to make things with TypeScript and React',
 	links: {
 		github: 'https://github.com/marcdonald/marcdonald.com',
 	},
