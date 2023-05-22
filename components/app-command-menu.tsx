@@ -29,6 +29,8 @@ import { siteConfig } from '@/config/site';
 import { projects } from '@/config/project';
 import { sortedBlogPosts } from '@/config/blog';
 
+const showBlog = siteConfig.showBlog;
+
 export default function AppCommandMenu({
 	...props
 }: DialogProps & { className?: string }) {
@@ -84,20 +86,24 @@ export default function AppCommandMenu({
 						))}
 					</CommandGroup>
 					<CommandSeparator />
-					<CommandGroup heading="Blog Posts">
-						{sortedBlogPosts.map((post) => (
-							<CommandItem
-								key={post.title}
-								onSelect={() =>
-									runCommand(() => router.push(`blog/${post.slugAsParams}`))
-								}
-							>
-								<NewspaperIcon className="mr-2 h-4 w-4" />
-								{post.title}
-							</CommandItem>
-						))}
-					</CommandGroup>
-					<CommandSeparator />
+					{showBlog && (
+						<>
+							<CommandGroup heading="Blog Posts">
+								{sortedBlogPosts.map((post) => (
+									<CommandItem
+										key={post.title}
+										onSelect={() =>
+											runCommand(() => router.push(`blog/${post.slugAsParams}`))
+										}
+									>
+										<NewspaperIcon className="mr-2 h-4 w-4" />
+										{post.title}
+									</CommandItem>
+								))}
+							</CommandGroup>
+							<CommandSeparator />
+						</>
+					)}
 					<CommandGroup heading="Theme">
 						<CommandItem onSelect={() => runCommand(() => setTheme('light'))}>
 							<SunMedium className="mr-2 h-4 w-4" />

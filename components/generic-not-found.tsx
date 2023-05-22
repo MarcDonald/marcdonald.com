@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export default function GenericNotFound() {
 	return (
-		<div className={'m-6 grid place-content-center gap-8'}>
+		<div className={'m-6 grid place-content-center gap-8 text-center'}>
 			<div>
 				<TypographyH1 className={'font-display mb-4 text-9xl'}>
 					404
