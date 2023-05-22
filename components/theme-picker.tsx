@@ -11,6 +11,7 @@ import {
 	DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { LaptopIcon, MoonIcon, SunIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ThemePicker() {
 	const { setTheme } = useTheme();
@@ -19,8 +20,20 @@ export default function ThemePicker() {
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<Button variant="ghost" size="sm" className="w-9 px-0">
-					<SunIcon className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-					<MoonIcon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+					<motion.div
+						className={'absolute'}
+						whileHover={{
+							rotate: [0, 20, -20, 0],
+							scale: 1.1,
+							transition: {
+								duration: 0.5,
+								times: [0, 0.5, 1],
+							},
+						}}
+					>
+						<SunIcon className="absolute -left-[12px] -top-[12px] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+						<MoonIcon className="absolute -left-[12px] -top-[12px] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+					</motion.div>
 					<span className="sr-only">Toggle theme</span>
 				</Button>
 			</DropdownMenuTrigger>

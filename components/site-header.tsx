@@ -6,17 +6,14 @@ import { buttonVariants } from './ui/button';
 import CommandMenu from './app-command-menu';
 import { GithubIcon } from 'lucide-react';
 import ThemePicker from './theme-picker';
-import Image from 'next/image';
-import icon from '@/app/icon.png';
 import HeaderNav from '@/components/header-nav';
+import HeaderIcon from '@/components/header-icon';
 
 export function SiteHeader() {
 	return (
 		<header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 shadow-sm backdrop-blur">
 			<div className="container flex h-14 items-center px-4">
-				<Link href={'/'} className={'rounded-md p-2'}>
-					<Image src={icon} alt={''} width={32} height={32} />
-				</Link>
+				<HeaderIcon />
 				<HeaderNav />
 				<div className="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
 					<div className="w-full flex-1 md:w-auto md:flex-none">
