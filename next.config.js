@@ -18,6 +18,15 @@ const nextConfig = withAxiom({
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
+	async redirects() {
+		return [
+			{
+				source: '/hibi',
+				destination: '/project/hibi',
+				permanent: true,
+			},
+		];
+	},
 	swcMinify: true,
 });
 
