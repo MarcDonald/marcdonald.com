@@ -1,14 +1,14 @@
 import React from 'react';
 
-import '@/styles/global.css';
+import '@/app/styles/global.css';
 
 import { Metadata } from 'next';
-import { cn } from '@/lib/utils';
-import { ThemeProvider } from '@/components/theme-provider';
-import StyleSwitcher from '@/components/style-switcher';
-import { siteConfig } from '@/config/site';
-import { fontMono, fontSans } from '@/lib/fonts';
-import { SiteHeader } from '@/components/site-header';
+import { cn } from '@/app/lib/utils';
+import { ThemeProvider } from '@/app/components/theme-provider';
+import StyleSwitcher from '@/app/components/style-switcher';
+import { siteConfig } from '@/app/config/site';
+import { fontMono, fontSans } from '@/app/lib/fonts';
+import { SiteHeader } from '@/app/components/site-header';
 import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {

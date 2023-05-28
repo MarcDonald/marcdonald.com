@@ -1,5 +1,5 @@
-import { TypographyH1, TypographyH2 } from '@/components/ui/typography';
-import BlogList from '@/app/_components/blog-list';
+import { TypographyH1, TypographyH2 } from '@/app/components/ui/typography';
+import BlogList from '@/app/components/blog-list';
 
 export default function BlogParentRoute() {
 	return (

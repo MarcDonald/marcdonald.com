@@ -2,11 +2,11 @@ import * as React from 'react';
 import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
-import { cn } from '@/lib/utils';
-import '@/styles/mdx.css';
-import { TypographyLink } from '@/components/ui/typography';
+import { cn } from '@/app/lib/utils';
+import '@/app/styles/mdx.css';
+import { TypographyLink } from '@/app/components/ui/typography';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Alert, AlertDescription, AlertTitle } from '@/app/components/ui/alert';
 
 const ResponsiveImage = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment

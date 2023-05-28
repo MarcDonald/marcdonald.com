@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/app/components/ui/button';
 import { DownloadIcon, GithubIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/app/lib/utils';
 
 const DownloadSection = ({
 	githubSlug,

@@ -2,17 +2,17 @@ import { allBlogPosts } from 'contentlayer/generated';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import React from 'react';
-import { Separator } from '@/components/ui/separator';
-import { Mdx } from '@/components/ui/mdx';
+import { Separator } from '@/app/components/ui/separator';
+import { Mdx } from '@/app/components/ui/mdx';
 import Balancer from 'react-wrap-balancer';
-import { siteConfig } from '@/config/site';
+import { siteConfig } from '@/app/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
-import ScrollProgressBar from '@/components/scroll-progress-bar';
+import ScrollProgressBar from '@/app/components/scroll-progress-bar';
 import {
 	TypographyH1,
 	TypographyH2,
 	TypographyMuted,
-} from '@/components/ui/typography';
+} from '@/app/components/ui/typography';
 
 interface BlogPageProps {
 	params: {

@@ -2,10 +2,10 @@ import {
 	TypographyLink,
 	TypographyMuted,
 	TypographyP,
-} from '@/components/ui/typography';
+} from '@/app/components/ui/typography';
 import { BlogPost } from 'contentlayer/generated';
-import { cn } from '@/lib/utils';
-import { sortedBlogPosts } from '@/config/blog';
+import { cn } from '@/app/lib/utils';
+import { sortedBlogPosts } from '@/app/config/blog';
 
 const BlogLink = ({ blog }: { blog: BlogPost }) => {
 	return (

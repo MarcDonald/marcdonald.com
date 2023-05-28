@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/app/lib/utils';
 
 const WipBanner = ({ className }: { className?: string }) => {
 	return (

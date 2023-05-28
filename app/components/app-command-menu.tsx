@@ -14,8 +14,8 @@ import {
 } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import { cn } from '@/lib/utils';
-import { Button } from './ui/button';
+import { cn } from '@/app/lib/utils';
+import { Button } from '@/app/components/ui/button';
 import {
 	CommandDialog,
 	CommandEmpty,
@@ -24,10 +24,10 @@ import {
 	CommandItem,
 	CommandList,
 	CommandSeparator,
-} from './ui/command';
-import { siteConfig } from '@/config/site';
-import { projects } from '@/config/project';
-import { sortedBlogPosts } from '@/config/blog';
+} from '@/app/components/ui/command';
+import { siteConfig } from '@/app/config/site';
+import { projects } from '@/app/config/project';
+import { sortedBlogPosts } from '@/app/config/blog';
 
 const showBlog = siteConfig.showBlog;
 

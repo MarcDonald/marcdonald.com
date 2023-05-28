@@ -1,6 +1,6 @@
 import React from 'react';
-import { Separator } from '@/components/ui/separator';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Separator } from '@/app/components/ui/separator';
+import { Skeleton } from '@/app/components/ui/skeleton';
 import BlogHeaderShell from '@/app/(routes)/blog/[slug]/_components/blog-header-shell';
 
 export default async function BlogPageSkeleton() {

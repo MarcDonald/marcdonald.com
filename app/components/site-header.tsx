@@ -1,13 +1,13 @@
 import Link from 'next/link';
 
-import { siteConfig } from '@/config/site';
-import { cn } from '@/lib/utils';
-import { buttonVariants } from './ui/button';
+import { siteConfig } from '@/app/config/site';
+import { cn } from '@/app/lib/utils';
+import { buttonVariants } from '@/app/components/ui/button';
 import CommandMenu from './app-command-menu';
 import { GithubIcon } from 'lucide-react';
 import ThemePicker from './theme-picker';
-import HeaderNav from '@/components/header-nav';
-import HeaderIcon from '@/components/header-icon';
+import HeaderNav from '@/app/components/header-nav';
+import HeaderIcon from '@/app/components/header-icon';
 
 export function SiteHeader() {
 	return (

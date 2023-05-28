@@ -8,12 +8,12 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
-import { cn } from '@/lib/utils';
+} from '@/app/components/ui/navigation-menu';
+import { cn } from '@/app/lib/utils';
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { siteConfig } from '@/config/site';
+import { siteConfig } from '@/app/config/site';
 
 const showBlog = siteConfig.showBlog;
 

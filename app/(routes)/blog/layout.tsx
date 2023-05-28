@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteConfig } from '@/config/site';
+import { siteConfig } from '@/app/config/site';
 import { notFound } from 'next/navigation';
 
 export default function BlogLayout({ children }: React.PropsWithChildren) {

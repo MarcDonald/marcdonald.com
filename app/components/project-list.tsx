@@ -2,8 +2,8 @@ import {
 	TypographyLink,
 	TypographyMuted,
 	TypographyP,
-} from '@/components/ui/typography';
-import { ProjectDetails, projects } from '@/config/project';
+} from '@/app/components/ui/typography';
+import { ProjectDetails, projects } from '@/app/config/project';
 
 const ProjectLink = ({ project }: { project: ProjectDetails }) => {
 	return (

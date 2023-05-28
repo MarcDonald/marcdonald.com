@@ -1,6 +1,6 @@
-import { TypographyH1, TypographyH2 } from '@/components/ui/typography';
+import { TypographyH1, TypographyH2 } from '@/app/components/ui/typography';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/app/components/ui/button';
 
 export default function GenericNotFound() {
 	return (

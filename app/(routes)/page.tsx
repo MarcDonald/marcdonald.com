@@ -3,10 +3,10 @@ import {
 	TypographyH2,
 	TypographyH3,
 	TypographyLink,
-} from '@/components/ui/typography';
-import ProjectList from '@/app/_components/project-list';
-import BlogList from '@/app/_components/blog-list';
-import { siteConfig } from '@/config/site';
+} from '@/app/components/ui/typography';
+import ProjectList from '@/app/components/project-list';
+import BlogList from '@/app/components/blog-list';
+import { siteConfig } from '@/app/config/site';
 import { ArrowRight } from 'lucide-react';
 
 const showBlog = siteConfig.showBlog;
