@@ -29,8 +29,6 @@ import { siteConfig } from '@/app/config/site';
 import { projects } from '@/app/config/project';
 import { sortedBlogPosts } from '@/app/config/blog';
 
-const showBlog = siteConfig.showBlog;
-
 export default function AppCommandMenu({
 	...props
 }: DialogProps & { className?: string }) {
@@ -86,7 +84,7 @@ export default function AppCommandMenu({
 						))}
 					</CommandGroup>
 					<CommandSeparator />
-					{showBlog && (
+					{siteConfig.showBlog && (
 						<>
 							<CommandGroup heading="Blog Posts">
 								{sortedBlogPosts.map((post) => (
