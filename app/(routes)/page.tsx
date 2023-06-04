@@ -27,6 +27,7 @@ export default function Home() {
 						<BlogList maxItems={5} />
 						<TypographyLink
 							href={'/blog'}
+							aria-label={'View all blog posts'}
 							className={'mt-4 flex w-fit flex-row gap-1 hover:gap-2'}
 						>
 							See More <ArrowRight />

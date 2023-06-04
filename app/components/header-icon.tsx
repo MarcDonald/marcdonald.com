@@ -7,7 +7,7 @@ import icon from '@/app/icon.png';
 
 export default function HeaderIcon() {
 	return (
-		<Link href={'/'} className={'rounded-md p-2'}>
+		<Link href={'/'} className={'rounded-md p-2'} aria-label={'Back Home'}>
 			<motion.div
 				whileHover={{
 					scale: [null, 1.25, 1.2],
@@ -17,7 +17,7 @@ export default function HeaderIcon() {
 					},
 				}}
 			>
-				<Image src={icon} alt={''} width={32} height={32} />
+				<Image src={icon} alt={'Chibi icon of marc'} width={32} height={32} />
 			</motion.div>
 		</Link>
 	);

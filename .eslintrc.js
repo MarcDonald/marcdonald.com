@@ -17,7 +17,7 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	settings: {
 		next: {
-			rootDir: ['apps/*'],
+			rootDir: ['app/*'],
 		},
 	},
 };
