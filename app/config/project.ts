@@ -1,6 +1,7 @@
 import {
 	BookmarkIcon,
 	CatIcon,
+	GitPullRequestIcon,
 	LucideIcon,
 	ShieldCheckIcon,
 } from 'lucide-react';
@@ -14,6 +15,13 @@ export type ProjectDetails = {
 
 export const projects: ProjectDetails[] = [
 	{
+		title: 'Omniscience',
+		description:
+			'Mac app to help you manage GitHub Pull Requests and optimise your code review process',
+		link: '/project/hibi',
+		icon: GitPullRequestIcon,
+	},
+	{
 		title: 'Hibi',
 		description:
 			'An Android app designed to aid your Japanese learning through keeping a journal',
@@ -21,9 +29,9 @@ export const projects: ProjectDetails[] = [
 		icon: BookmarkIcon,
 	},
 	{
-		title: 'Buttercat',
+		title: 'Buttercat (WIP)',
 		description:
-			'A framework for creating modular, extensible, and easy to set up Twitch bots',
+			'A (WIP) framework for creating modular, extensible, and easy to set up Twitch bots',
 		link: 'https://buttercat.dev',
 		icon: CatIcon,
 	},

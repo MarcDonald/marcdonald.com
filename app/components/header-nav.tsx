@@ -95,11 +95,14 @@ export default function HeaderNav() {
 					</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+							<ListItem href="https://omniscience.app" title="Omniscience">
+								GitHub Pull Request management app
+							</ListItem>
 							<ListItem href="/project/hibi" title="Hibi">
 								Japanese learning journal app
 							</ListItem>
 							<ListItem href="https://buttercat.dev" title="Buttercat">
-								Modular Twitch bot framework
+								WIP Modular Twitch bot framework
 							</ListItem>
 							<ListItem
 								href="/project/event-management-system"
