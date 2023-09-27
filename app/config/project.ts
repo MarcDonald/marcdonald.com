@@ -18,7 +18,7 @@ export const projects: ProjectDetails[] = [
 		title: 'Omniscience',
 		description:
 			'Mac app to help you manage GitHub Pull Requests and optimise your code review process',
-		link: '/project/hibi',
+		link: 'https://omniscience.app',
 		icon: GitPullRequestIcon,
 	},
 	{
