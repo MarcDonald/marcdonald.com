@@ -13,7 +13,6 @@ import { cn } from '@/app/lib/utils';
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { sortedBlogPosts } from '@/app/config/blog';
 
 const NavItem = ({
 	href,
@@ -81,9 +80,10 @@ export default function HeaderNav() {
 			<NavigationMenuList>
 				<NavItem href={'/'} label={'Home'} />
 				<NavItem href={'https://github.com/MarcDonald'} label={'GitHub'} />
-				{sortedBlogPosts.length > 0 && (
-					<NavItem href={'/blog'} label={'Blog'} parentLink={true} />
-				)}
+				{/* TODO temporarily commented out due to hydration errors */}
+				{/*{sortedBlogPosts.length > 0 && (*/}
+				{/*	<NavItem href={'/blog'} label={'Blog'} parentLink={true} />*/}
+				{/*)}*/}
 				<NavigationMenuItem>
 					<NavigationMenuTrigger
 						className={cn(
