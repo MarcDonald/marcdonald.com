@@ -1,9 +1,9 @@
 import React from 'react';
-import { siteConfig } from '@/app/config/site';
 import { notFound } from 'next/navigation';
+import { sortedBlogPosts } from '@/app/config/blog';
 
 export default function BlogLayout({ children }: React.PropsWithChildren) {
-	if (!siteConfig.showBlog) {
+	if (sortedBlogPosts.length === 0) {
 		notFound();
 	}
 

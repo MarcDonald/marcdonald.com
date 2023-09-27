@@ -84,7 +84,7 @@ export default function AppCommandMenu({
 						))}
 					</CommandGroup>
 					<CommandSeparator />
-					{siteConfig.showBlog && (
+					{sortedBlogPosts.length > 0 && (
 						<>
 							<CommandGroup heading="Blog Posts">
 								{sortedBlogPosts.map((post) => (

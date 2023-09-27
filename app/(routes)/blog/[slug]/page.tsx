@@ -88,6 +88,18 @@ export async function generateStaticParams(): Promise<
 	}));
 }
 
+function DraftBanner() {
+	return (
+		<div
+			className={
+				'sticky left-0 right-0 top-16 isolate z-40 -m-6 mb-6 flex h-6 items-center justify-center rounded-lg bg-red-800 text-white'
+			}
+		>
+			DRAFT
+		</div>
+	);
+}
+
 export default async function BlogPage({ params }: BlogPageProps) {
 	const blog = await getBlogFromParams(params);
 
@@ -100,6 +112,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
 	return (
 		<>
 			<ScrollProgressBar />
+			{!blog.published && <DraftBanner />}
 			<ProjectHeaderShell>
 				<TypographyH1 className={'scroll-m-20'}>
 					<Balancer>{title}</Balancer>
@@ -111,7 +124,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
 				)}
 			</ProjectHeaderShell>
 			<TypographyMuted>
-				Published:{' '}
+				{blog.published ? 'Published' : 'Draft'}:{' '}
 				{Intl.DateTimeFormat('en-GB', {
 					day: 'numeric',
 					month: 'long',

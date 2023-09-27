@@ -1,0 +1,69 @@
+---
+title: Achieve Pull Request Omniscience
+description: I got tired of the endless stack of PRs so I made an app to help me de-clutter
+keywords:
+  - react
+  - typescript
+  - mac
+  - omniscience
+date: 2023-09-27
+published: false
+---
+
+## Déjà vu
+
+- codeowner for many, many stacks
+- all the stacks are shared
+- lots and lots of PRs
+- minor changes to PRs require re-approval
+
+## Goldilocks and The Three Requirements
+
+- tried out several existing tools
+- had three main requirements
+
+1. close to real-time desktop notifications
+2. filtering by label + repository
+3. tell me when my review was dismissed
+
+- couldn't find an app that had the combination of features I needed
+- The next obvious step was to make my own
+
+- The Plan? Make a quick tool to notify me of PRs that need my attention
+- The reality? spend 3 months of my life creating an app that met my potentially very niche needs
+
+## The World Could Always Use More Electron Apps
+
+- I'm a zoomer TS dev & a web dev
+  - I don't really want to learn another language and platform just for this quick app
+  - also didn't want to use xcode and couldn't be bothered to see if intellij worked with swift + app development
+- I risked my public standing and wrote an electron app
+  - Reports of its inefficiency are greatly exaggerated
+  - If you're using the app you most likely have a decently powerful Mac for coding - hyper optimised performance wasn't really a concern
+- I'm not a designer, thankfully shadcn is
+
+- After about 3 weeks of building a bit every evening I had something that met my initial three requirements
+- Why stop there? Added a few more nice-to-have features and cleaned up the UI & code
+- Before I knew it it had been 3 months and I had an actually pretty nice looking and stable app
+
+## A Real Product
+
+- Outside of my actual work I had never made a _real_ product that could be used by random people I've never met
+- How do I tell people about it?
+- How do I distribute it?
+- How do I justify spending £80 on an Apple Developer account so I stop getting that bloody security popup?
+- How can I ensure it's accessible for everyone
+  - Authorization via GitHub PAT, no storing/transferring of actual login credentials + granular permission control
+  - Electron app so already runs on pretty much anything
+  - Making sure accessibility isn't ignored
+  - Distribute via App Store & the .dmg file
+    - Some companies don't let you log in to an Apple account so the App Store may not be available for everyone
+    - Some VPNs block new domains or domains with non-standard TLDs, so downloading a .dmg may not be available for others
+      - This also affects auto-updates even if they are able to download a .dmg as it can't programmatically click "Yes I'm fine with going to this site"
+    - This could change in the future if I decide to add any features that go behind a paywall (don't worry, nothing scummy, all the features in the app at the moment will remain free) but for now both are available
+- The pain of Apple signatures, certificates, notarization, and app reviews
+
+## Download it
+
+- Finally release version 1.0.0
+- Check it out at [omniscience.app](https://omniscience.app)

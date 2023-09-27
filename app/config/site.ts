@@ -26,7 +26,6 @@ export const siteConfig = {
 		twitter: 'https://twitter.com/@DeveloperMarc',
 		github: 'https://github.com/MarcDonald',
 	},
-	showBlog: !isProduction(),
 	isProduction: isProduction(),
 };
 
