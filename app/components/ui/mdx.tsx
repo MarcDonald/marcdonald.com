@@ -110,6 +110,9 @@ const components = {
 			{...props}
 		/>
 	),
+	figcaption: ({ className, ...props }: ComponentProps) => (
+		<figcaption className={cn('italic', className)} {...props} />
+	),
 	img: ResponsiveImage,
 	hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
 	table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (

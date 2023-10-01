@@ -135,7 +135,7 @@ download the DMG from the website. This may change in the future if I decide to 
 paywall (don't worry, nothing scummy, all the features in the app at the moment will remain free) but for now both
 options are available.
 
-## Download it
+## PR Paradise
 
 I started working on this app in June 2023 and just released version 1.0.0 last week (September 2023). It took a bit
 longer than I expected but I'm pretty damn proud of how it turned out!
@@ -143,20 +143,26 @@ longer than I expected but I'm pretty damn proud of how it turned out!
 You can try it out for yourself at [omniscience.app](https://omniscience.app) or on the
 [App Store](https://apps.apple.com/gb/app/omniscience-for-github/id6467049481?mt=12).
 
-<div className={'mx-auto my-4 block dark:hidden md:w-3/4'}>
+<figure className={'mx-auto my-4 md:w-3/4'}>
 	<img
 		src="/images/blog/omniscience/light-home.png"
 		alt="A screenshot of Omniscience demonstrating some of the key features of the app such as review dismissal
 		notifications, label filtering, and a Pending your Review section"
-		className={'mx-auto aspect-video rounded-md object-contain'}
+		className={
+			'mx-auto block aspect-video rounded-md object-contain dark:hidden '
+		}
 	/>
-</div>
-
-<div className={'mx-auto my-4 hidden dark:block md:w-3/4'}>
 	<img
 		src="/images/blog/omniscience/dark-home.png"
-        alt="A screenshot of Omniscience demonstrating some of the key features of the app such as review dismissal
+		alt="A screenshot of Omniscience demonstrating some of the key features of the app such as review dismissal
 		notifications, label filtering, and a Pending your Review section"
-		className={'mx-auto aspect-video rounded-md object-contain'}
+		className={
+			'mx-auto hidden aspect-video rounded-md object-contain dark:block'
+		}
 	/>
-</div>
+	<figcaption className={'text-center italic'}>
+		A screenshot of Omniscience demonstrating some of the key features of the
+		app such as review dismissal notifications, label filtering, and a Pending
+		your Review section
+	</figcaption>
+</figure>
