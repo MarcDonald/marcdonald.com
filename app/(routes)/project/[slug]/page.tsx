@@ -55,6 +55,9 @@ export async function generateMetadata({
 				  ]
 				: [],
 		},
+		alternates: {
+			canonical: `${siteConfig.url}/project/${params.slug}`,
+		},
 		openGraph: {
 			title: {
 				default: project.title,

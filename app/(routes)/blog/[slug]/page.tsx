@@ -54,6 +54,9 @@ export async function generateMetadata({
 				  ]
 				: [],
 		},
+		alternates: {
+			canonical: `${siteConfig.url}/blog/${params.slug}`,
+		},
 		openGraph: {
 			title: {
 				default: blog.title,
