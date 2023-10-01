@@ -20,7 +20,7 @@ export default function Home() {
 				{sortedBlogPosts.length > 0 && (
 					<section>
 						<TypographyH3 className={'mb-2 mt-4'}>
-							Here's some things I've wrote
+							Here's some things I've written
 						</TypographyH3>
 						<BlogList maxItems={5} />
 						{sortedBlogPosts.length > 5 && (
