@@ -80,10 +80,7 @@ export default function HeaderNav() {
 			<NavigationMenuList>
 				<NavItem href={'/'} label={'Home'} />
 				<NavItem href={'https://github.com/MarcDonald'} label={'GitHub'} />
-				{/* TODO temporarily commented out due to hydration errors */}
-				{/*{sortedBlogPosts.length > 0 && (*/}
-				{/*	<NavItem href={'/blog'} label={'Blog'} parentLink={true} />*/}
-				{/*)}*/}
+				<NavItem href={'/blog'} label={'Blog'} parentLink={true} />
 				<NavigationMenuItem>
 					<NavigationMenuTrigger
 						className={cn(
