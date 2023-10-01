@@ -91,7 +91,9 @@ export default function AppCommandMenu({
 									<CommandItem
 										key={post.title}
 										onSelect={() =>
-											runCommand(() => router.push(`blog/${post.slugAsParams}`))
+											runCommand(() =>
+												router.push(`/blog/${post.slugAsParams}`)
+											)
 										}
 									>
 										<NewspaperIcon className="mr-2 h-4 w-4" />
