@@ -1,0 +1,162 @@
+---
+title: From PR Pandemonium to PR Paradise
+description: I got tired of the never-ending flood of PRs so I made an app to help me de-clutter
+keywords:
+  - react
+  - electron
+  - typescript
+  - mac
+  - omniscience
+date: 2023-10-01
+image: images/blog/omniscience/open-graph.png
+published: false
+---
+
+## PR Pandemonium
+
+If you're a developer in a large company you've no doubt experienced the pain that comes with being a code-owner for
+many repositories.
+The seemingly never-ending pile of PRs across 20 or 30 repositories that you have to sift through to
+find ones that are time-sensitive.
+PRs that make you think you're going insane because you swear you've seen these exact changes
+before, only to realise that you _have_ reviewed this PR before and your review was dismissed because of typo fix or a
+version bump commit.
+
+These issues are made exponentially worse when your team starts sharing repositories with other teams, adding the
+extra step of having to filter through the PRs to find ones that are relevant to your immediate team.
+
+This takes a significant chunk of time and energy, because let's be honest no-one signed up for this amount of
+admin when they applied to be a Software Engineer.
+
+I knew there had to be a way to alleviate some of this burden. My team had already started to use the GitHub label
+feature so we could automatically send PRs that are relevant to our team directly to a Slack channel - but I found
+that this alone wasn't enough. I was still clicking into PRs constantly to see if I had approved them in the past,
+and I was still missing PRs from my team resulting in them having to message me asking me to take a look.
+
+## Goldilocks and The Three Requirements
+
+I spent some time researching solutions and trying some existing third party tools to see if any could satisfy my
+three requirements:
+
+1. Real-time (or pretty close) desktop notifications
+2. Filtering by label + repository
+3. PRs shouldn't vanish when a teammate reviews it or my existing review is dismissed
+
+Alas, I found none that managed to meet all three. The closest I could find was [Gitify](https://www.gitify.io/),
+however it lacked features like review dismissal notifications and label filtering.
+
+After several months of trying different tools and techniques I decided whip up a quick tool to meet my requirements.
+
+**_The Plan?_**
+Make a quick tool to notify me of PRs that need my attention
+
+**_The Reality?_**
+Spend 3 months of my life creating an app that met my potentially very niche needs
+
+## The World Could Always Use More Electron Apps
+
+I have a confession to make.
+
+I'm a _zoomer._
+
+My favourite language is TypeScript and I mainly work in the React/AWS sphere. I've looked at Swift before in the
+past but never in any detail, and I didn't really want to learn another language and platform just for this quick app.
+I'm also a big [IntelliJ](https://www.jetbrains.com/idea/) stan and in my limited time trying out XCode I had precisely
+_zero_ desire to use it for an actual project.
+
+I decided to risk my public standing and write an [Electron](https://electronjs.org/) app. I know, I know, how could
+I do such a thing? Electron apps are slow, massively inefficient, and don't integrate with the OS nicely!
+
+I'm going to be honest - I prioritised the developer experience here. As I said, I'm a React dev. I have experience
+writing webapps, and this was just going to be a quick app I hoped to churn out in a week or two. I also figured
+the target audience for this app would be enterprise developers with decently powerful MacBooks - hyper-optimised
+performance wasn't really that big a concern (as long as it didn't slow my Mac to a crawl).
+
+After about three weeks of building a bit every evening after work, I had something that met my initial three
+requirements. But why stop there? I added a few more nice-to-have features and cleaned up the UI and codebase as I
+went. Before I knew it, it had been three months and I had an actually pretty nice looking
+(thanks [shadcn!](https://ui.shadcn.com/)) and stable app.
+
+## A Real Product
+
+Outside of my actual day-to-day work I had never made a _real_ product that could be used by random people I've
+never met. This left me with quite a few questions:
+
+- How can I ensure it's accessible for everyone
+- How do I keep people's information secure?
+- How do I distribute it?
+- How do I justify spending £80 on an Apple Developer account so I stop getting that bloody security popup?
+- How do I tell people about it?
+- What should I call it?
+
+During development I had used the name _Git [Omniscience](https://www.merriam-webster.com/dictionary/omniscient)_
+since the goal was to let you have awareness and understanding of all GitHub PRs that are relevant to you. I thought
+this name was pretty good so I just dropped the "Git" from the start of it and called the app _Omniscience_.
+
+### Accessibility
+
+I've always been a big proponent of ensuring apps are accessible to everyone, so I put my money where my mouth is
+and spent several days going through and ensuring everything was up to snuff.
+
+- I added ["Skip to Content" links](https://css-tricks.com/how-to-create-a-skip-to-content-link/) to make keyboard
+  navigation a breeze.
+- I made sure I used appropriate semantic HTML elements and alt-text where appropriate.
+- In my pre-release testing I used the app with just a screen-reader and my keyboard to check that everything was
+  covered
+
+### Security
+
+Security was a big concern of mine. Companies don't tend to like it when you give confidential information out to
+random applications on the internet. Because of this I opted to use the GitHub Personal Access Token system for
+authenticating a user. This means that at no point do actual login credentials get input into my app. This also
+allows the user to scope the token to things like "repo" and "read:user", rather than giving the app the ability to
+do anything it wanted with your account.
+
+All interactions with GitHub through Omniscience use HTTPS and only use the official GitHub API (no scraping or
+anything like that!).
+
+### Distribution
+
+I debated quite a bit about how best to distribute the app. Since I wasn't planning to open source it, I thought
+people would be hesitant to download a random binary from a website and give it access to their GitHub account. I
+also know that some companies don't allow their employees to install unverified software off the internet.
+
+This combined with the fact that some VPNs block new domains or domains with non-standard TLDs meant that
+downloading a DMG file may not be a good solution for the majority of users. Even if a user just had to selected
+"Yes I'm fine with going to this site" in order to download the DMG, this would mean auto-updates wouldn't work as
+the app would not be able to get past this.
+
+In the end I decided to bite the bullet and pay £80 for an Apple Developer license to let people download it via the
+App Store, as well as to get proper signatures and notarization set up. I had heard that Apple are pretty strict
+with their App Review process to get on the App Store, but to my surprise I was only rejected twice before succeeding!
+
+Since some companies don't allow their employees to log in to iCloud accounts, I also included the ability to
+download the DMG from the website. This may change in the future if I decide to add any features that go behind a
+paywall (don't worry, nothing scummy, all the features in the app at the moment will remain free) but for now both
+options are available.
+
+## Download it
+
+I started working on this app in June 2023 and just released version 1.0.0 last week (September 2023). It took a bit
+longer than I expected but I'm pretty damn proud of how it turned out!
+
+You can try it out for yourself at [omniscience.app](https://omniscience.app) or on the
+[App Store](https://apps.apple.com/gb/app/omniscience-for-github/id6467049481?mt=12).
+
+<div className={'mx-auto my-4 block dark:hidden md:w-3/4'}>
+	<img
+		src="/images/blog/omniscience/light-home.png"
+		alt="A screenshot of Omniscience demonstrating some of the key features of the app such as review dismissal
+		notifications, label filtering, and a Pending your Review section"
+		className={'mx-auto aspect-video rounded-md object-contain'}
+	/>
+</div>
+
+<div className={'mx-auto my-4 hidden dark:block md:w-3/4'}>
+	<img
+		src="/images/blog/omniscience/dark-home.png"
+        alt="A screenshot of Omniscience demonstrating some of the key features of the app such as review dismissal
+		notifications, label filtering, and a Pending your Review section"
+		className={'mx-auto aspect-video rounded-md object-contain'}
+	/>
+</div>

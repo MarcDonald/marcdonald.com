@@ -110,7 +110,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
 	const { title, description, date } = blog;
 
 	return (
-		<>
+		<article>
 			<ScrollProgressBar />
 			{!blog.published && <DraftBanner />}
 			<ProjectHeaderShell>
@@ -133,6 +133,6 @@ export default async function BlogPage({ params }: BlogPageProps) {
 			</TypographyMuted>
 			<Separator className="my-4" />
 			<Mdx code={blog.body.code} />
-		</>
+		</article>
 	);
 }
