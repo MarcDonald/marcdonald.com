@@ -18,6 +18,10 @@ export default async function Sitemap() {
 			url: siteConfig.url,
 			lastModified: new Date('2023-10-03T22:45'),
 		},
+		{
+			url: `${siteConfig.url}/blog`,
+			lastModified: blogPosts.map((post) => post.lastModified).sort()[0],
+		},
 		...blogPosts,
 		...projects,
 	];
