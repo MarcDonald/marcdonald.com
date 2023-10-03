@@ -5,7 +5,7 @@ import icon from '@/app/icon.png';
 
 export async function GET() {
 	const feed = new RSS({
-		title: siteConfig.name,
+		title: "Marc Donald's Blog",
 		description: siteConfig.description,
 		site_url: siteConfig.url,
 		image_url: `${siteConfig.url}${icon.src}`,
@@ -26,8 +26,8 @@ export async function GET() {
 	sortedBlogPosts.forEach((post) => {
 		feed.item({
 			title: post.title,
-			guid: `${siteConfig.url}/${post.slugAsParams}`,
-			url: `${siteConfig.url}/${post.slugAsParams}`,
+			guid: `${siteConfig.url}/blog/${post.slugAsParams}`,
+			url: `${siteConfig.url}/blog/${post.slugAsParams}`,
 			date: post.date,
 			description: post.description ?? '',
 			author: siteConfig.creator.name,
