@@ -44,6 +44,10 @@ export const Project = defineDocumentType(() => ({
 			type: 'string',
 			required: false,
 		},
+		modifiedDate: {
+			type: 'date',
+			required: true,
+		},
 	},
 	computedFields,
 }));
@@ -67,6 +71,10 @@ export const BlogPost = defineDocumentType(() => ({
 		date: {
 			type: 'date',
 			required: true,
+		},
+		modifiedDate: {
+			type: 'date',
+			required: false,
 		},
 		keywords: {
 			type: 'list',
