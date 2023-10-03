@@ -4,7 +4,7 @@ import { siteConfig } from '@/app/config/site';
 import { cn } from '@/app/lib/utils';
 import { buttonVariants } from '@/app/components/ui/button';
 import CommandMenu from './app-command-menu';
-import { GithubIcon } from 'lucide-react';
+import { GithubIcon, RssIcon } from 'lucide-react';
 import ThemePicker from './theme-picker';
 import HeaderNav from '@/app/components/header-nav';
 import HeaderIcon from '@/app/components/header-icon';
@@ -24,7 +24,7 @@ export function SiteHeader() {
 							href={siteConfig.links.github}
 							target="_blank"
 							rel="noreferrer"
-							className={'lg:hidden'}
+							className={'hidden sm:block'}
 						>
 							<div
 								className={cn(
@@ -40,6 +40,25 @@ export function SiteHeader() {
 							</div>
 						</Link>
 						<ThemePicker />
+						<Link
+							href={'/feed.xml'}
+							target="_blank"
+							rel="noreferrer"
+							className={'hidden sm:block'}
+						>
+							<div
+								className={cn(
+									buttonVariants({
+										size: 'sm',
+										variant: 'ghost',
+									}),
+									'w-9 px-0'
+								)}
+							>
+								<RssIcon className="h-5 w-5" />
+								<span className="sr-only">RSS Feed</span>
+							</div>
+						</Link>
 					</nav>
 				</div>
 			</div>

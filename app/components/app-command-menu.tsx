@@ -9,6 +9,7 @@ import {
 	Laptop,
 	Moon,
 	NewspaperIcon,
+	RssIcon,
 	SunMedium,
 	TwitterIcon,
 } from 'lucide-react';
@@ -138,6 +139,12 @@ export default function AppCommandMenu({
 						>
 							<TwitterIcon className="mr-2 h-4 w-4" />
 							Twitter
+						</CommandItem>
+						<CommandItem
+							onSelect={() => runCommand(() => router.push('/feed.xml'))}
+						>
+							<RssIcon className="mr-2 h-4 w-4" />
+							RSS Feed
 						</CommandItem>
 					</CommandGroup>
 				</CommandList>

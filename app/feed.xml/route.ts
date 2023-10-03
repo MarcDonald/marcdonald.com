@@ -30,7 +30,7 @@ export async function GET() {
 			url: `${siteConfig.url}/${post.slugAsParams}`,
 			date: post.date,
 			description: post.description ?? '',
-			author: 'Marc Donald',
+			author: siteConfig.creator.name,
 			categories: post.keywords ?? [],
 		});
 	});
