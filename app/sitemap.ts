@@ -16,7 +16,7 @@ export default async function Sitemap() {
 	return [
 		{
 			url: siteConfig.url,
-			lastModified: new Date('2023-10-03T22:45'),
+			lastModified: new Date(),
 		},
 		{
 			url: `${siteConfig.url}/blog`,
