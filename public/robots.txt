@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://marcdonald.com/sitemap.xml
