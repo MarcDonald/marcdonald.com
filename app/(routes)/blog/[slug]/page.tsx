@@ -103,6 +103,12 @@ function DraftBanner() {
 	);
 }
 
+const dateFormatter = Intl.DateTimeFormat('en-GB', {
+	day: 'numeric',
+	month: 'long',
+	year: 'numeric',
+});
+
 export default async function BlogPage({ params }: BlogPageProps) {
 	const blog = await getBlogFromParams(params);
 
@@ -128,12 +134,13 @@ export default async function BlogPage({ params }: BlogPageProps) {
 			</ProjectHeaderShell>
 			<TypographyMuted>
 				{blog.published ? 'Published' : 'Draft'}:{' '}
-				{Intl.DateTimeFormat('en-GB', {
-					day: 'numeric',
-					month: 'long',
-					year: 'numeric',
-				}).format(new Date(date))}
+				{dateFormatter.format(new Date(date))}{' '}
 			</TypographyMuted>
+			{blog.modifiedDate && (
+				<TypographyMuted className={'text-xs italic'}>
+					Last Modified: {dateFormatter.format(new Date(blog.modifiedDate))}
+				</TypographyMuted>
+			)}
 			<Separator className="my-4" />
 			<Mdx code={blog.body.code} />
 		</article>
