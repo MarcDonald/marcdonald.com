@@ -7,7 +7,7 @@ import { cn } from '@/app/lib/utils';
 import { ThemeProvider } from '@/app/components/theme-provider';
 import StyleSwitcher from '@/app/components/style-switcher';
 import { siteConfig } from '@/app/config/site';
-import { fontMono, fontSans } from '@/app/lib/fonts';
+import { fontDisplay, fontMono, fontSans } from '@/app/lib/fonts';
 import { SiteHeader } from '@/app/components/site-header';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -50,7 +50,7 @@ export default function RootLayout({
 		<html
 			lang="en"
 			suppressHydrationWarning
-			className={`${fontSans.className} ${fontMono.className} font-sans`}
+			className={`${fontDisplay.className} ${fontDisplay.variable} ${fontSans.className} ${fontMono.className} font-sans`}
 		>
 			<body
 				className={cn(
