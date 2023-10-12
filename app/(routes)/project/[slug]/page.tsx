@@ -8,7 +8,7 @@ import Balancer from 'react-wrap-balancer';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
 import {
 	TypographyH1,
-	TypographyH2,
+	TypographyLarge,
 	TypographyLink,
 } from '@/app/components/ui/typography';
 import { siteConfig } from '@/app/config/site';
@@ -102,18 +102,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 	const { title, description, link, downloadGitHubSlug } = proj;
 
 	return (
-		<>
+		<article>
 			<ScrollProgressBar />
 			<ProjectHeaderShell>
 				<TypographyLink href={link ?? '#'}>
-					<TypographyH1 className={'scroll-m-20'}>
+					<TypographyH1 className={'scroll-m-20'} id={'main-content'}>
 						<Balancer>{title}</Balancer>
 					</TypographyH1>
 				</TypographyLink>
 				{description && (
-					<TypographyH2 className="border-b-0">
+					<TypographyLarge
+						className={
+							'scroll-m-20 border-b-0 pb-2 font-display text-2xl font-semibold tracking-tight text-muted-foreground transition-colors first:mt-0'
+						}
+					>
 						<Balancer>{description}</Balancer>
-					</TypographyH2>
+					</TypographyLarge>
 				)}
 				{downloadGitHubSlug && (
 					<DownloadSection githubSlug={downloadGitHubSlug} />
@@ -121,6 +125,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 			</ProjectHeaderShell>
 			<Separator className="my-4 md:my-6" />
 			<Mdx code={proj.body.code} />
-		</>
+		</article>
 	);
 }

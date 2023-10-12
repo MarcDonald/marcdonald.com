@@ -10,7 +10,7 @@ import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/projec
 import ScrollProgressBar from '@/app/components/scroll-progress-bar';
 import {
 	TypographyH1,
-	TypographyH2,
+	TypographyLarge,
 	TypographyMuted,
 } from '@/app/components/ui/typography';
 
@@ -123,13 +123,17 @@ export default async function BlogPage({ params }: BlogPageProps) {
 			<ScrollProgressBar />
 			{!blog.published && <DraftBanner />}
 			<ProjectHeaderShell>
-				<TypographyH1 className={'scroll-m-20'}>
+				<TypographyH1 className={'scroll-m-20'} id={'main-content'}>
 					<Balancer>{title}</Balancer>
 				</TypographyH1>
 				{description && (
-					<TypographyH2 className={'border-b-0'}>
+					<TypographyLarge
+						className={
+							'scroll-m-20 border-b-0 pb-2 font-display text-2xl font-semibold tracking-tight text-muted-foreground transition-colors first:mt-0'
+						}
+					>
 						<Balancer>{description}</Balancer>
-					</TypographyH2>
+					</TypographyLarge>
 				)}
 			</ProjectHeaderShell>
 			<TypographyMuted>

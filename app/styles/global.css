@@ -57,3 +57,32 @@
 		@apply bg-background text-foreground;
 	}
 }
+.skip-to-content-link {
+	position: absolute;
+	top: 1rem;
+	left: 25%;
+	right: 25%;
+	z-index: 100;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: 50ms ease-in-out transform;
+		transform: translateY(calc(-100% - 1rem));
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: 150ms ease-in-out opacity;
+		opacity: 0;
+	}
+}
+
+.skip-to-content-link:focus-within {
+	@media (prefers-reduced-motion: no-preference) {
+		transition: 150ms ease-in-out transform;
+		transform: translateY(0%);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: 250ms ease-in-out opacity;
+		opacity: 100;
+	}
+}

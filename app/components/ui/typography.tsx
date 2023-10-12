@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 type TypographyProps = React.PropsWithChildren & {
 	className?: string;
+	id?: string;
 };
 
 export function TypographyH1({ className, ...props }: TypographyProps) {

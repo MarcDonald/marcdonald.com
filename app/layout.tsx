@@ -10,6 +10,8 @@ import { siteConfig } from '@/app/config/site';
 import { fontDisplay, fontMono, fontSans } from '@/app/lib/fonts';
 import { SiteHeader } from '@/app/components/site-header';
 import { Analytics } from '@vercel/analytics/react';
+import Link from 'next/link';
+import { Button } from '@/app/components/ui/button';
 
 export const metadata: Metadata = {
 	title: {
@@ -61,6 +63,11 @@ export default function RootLayout({
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<div className="relative flex min-h-screen flex-col">
+						<Button asChild>
+							<Link href={'#main-content'} className={'skip-to-content-link'}>
+								Skip to Content
+							</Link>
+						</Button>
 						<SiteHeader />
 						<main className={'container my-6 lg:px-10'}>{children}</main>
 					</div>

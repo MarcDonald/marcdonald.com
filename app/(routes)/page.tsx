@@ -12,16 +12,21 @@ import { sortedBlogPosts } from '@/app/config/blog';
 export default function Home() {
 	return (
 		<>
-			<TypographyH1>Marc Donald</TypographyH1>
-			<TypographyH2>
-				I like to make things with TypeScript and React
-			</TypographyH2>
+			<div className={'flex w-full flex-col items-center border-b text-center'}>
+				<TypographyH1
+					className={'text-7xl sm:text-7xl md:text-8xl lg:text-9xl'}
+					id={'main-content'}
+				>
+					Hey There
+				</TypographyH1>
+				<TypographyH2 className={'border-none text-2xl'}>
+					I like to make things with TypeScript and React
+				</TypographyH2>
+			</div>
 			<div className={'md:grid md:grid-cols-2'}>
 				{sortedBlogPosts.length > 0 && (
 					<section>
-						<TypographyH3 className={'mb-2 mt-4'}>
-							Here's some things I've written
-						</TypographyH3>
+						<TypographyH3 className={'mb-2 mt-4'}>Blog Posts</TypographyH3>
 						<BlogList maxItems={5} />
 						{sortedBlogPosts.length > 5 && (
 							<TypographyLink
@@ -35,9 +40,7 @@ export default function Home() {
 					</section>
 				)}
 				<section>
-					<TypographyH3 className={'mb-2 mt-4'}>
-						Here's some things I've made
-					</TypographyH3>
+					<TypographyH3 className={'mb-2 mt-4'}>Projects</TypographyH3>
 					<ProjectList />
 				</section>
 			</div>
