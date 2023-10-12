@@ -1,6 +1,6 @@
 module.exports = {
-	extends: ['plugin:@typescript-eslint/recommended', 'prettier', 'next'],
-	plugins: ['@typescript-eslint', 'import', 'prettier'],
+	extends: ['plugin:@typescript-eslint/recommended', 'next', 'prettier'],
+	plugins: ['@typescript-eslint', 'import'],
 	rules: {
 		'no-used-vars': 'off',
 		'react/no-unescaped-entities': 'off',

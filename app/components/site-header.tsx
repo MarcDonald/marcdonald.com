@@ -24,7 +24,7 @@ export function SiteHeader() {
 							href={siteConfig.links.github}
 							target="_blank"
 							rel="noreferrer"
-							className={'hidden sm:block'}
+							className={'sm:block md:hidden'}
 						>
 							<div
 								className={cn(
