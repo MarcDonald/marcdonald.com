@@ -14,6 +14,7 @@ import {
 import { siteConfig } from '@/app/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 import ScrollProgressBar from '@/app/components/scroll-progress-bar';
+import { CopyLinkToClipboard } from '@/app/components/copy-link-to-clipboard';
 
 interface ProjectPageProps {
 	params: {
@@ -105,11 +106,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 		<article>
 			<ScrollProgressBar />
 			<ProjectHeaderShell>
-				<TypographyLink href={link ?? '#'}>
-					<TypographyH1 className={'scroll-m-20'} id={'main-content'}>
+				<TypographyH1 className={'group scroll-m-20'} id={'main-content'}>
+					<TypographyLink href={link ?? '#'}>
 						<Balancer>{title}</Balancer>
-					</TypographyH1>
-				</TypographyLink>
+					</TypographyLink>
+					<CopyLinkToClipboard className={'self-center'} />
+				</TypographyH1>
 				{description && (
 					<TypographyLarge
 						className={

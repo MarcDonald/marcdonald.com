@@ -13,6 +13,7 @@ import {
 	TypographyLarge,
 	TypographyMuted,
 } from '@/app/components/ui/typography';
+import { CopyLinkToClipboard } from '@/app/components/copy-link-to-clipboard';
 
 interface BlogPageProps {
 	params: {
@@ -123,8 +124,11 @@ export default async function BlogPage({ params }: BlogPageProps) {
 			<ScrollProgressBar />
 			{!blog.published && <DraftBanner />}
 			<ProjectHeaderShell>
-				<TypographyH1 className={'scroll-m-20'} id={'main-content'}>
-					<Balancer>{title}</Balancer>
+				<TypographyH1 className={'group scroll-m-20'} id={'main-content'}>
+					<Balancer>
+						{title}
+						<CopyLinkToClipboard className={'self-center'} />
+					</Balancer>
 				</TypographyH1>
 				{description && (
 					<TypographyLarge
