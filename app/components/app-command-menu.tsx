@@ -138,7 +138,7 @@ export default function AppCommandMenu({
 							}
 						>
 							<TwitterIcon className="mr-2 h-4 w-4" />
-							Twitter
+							The Site Formally Known as Twitter
 						</CommandItem>
 						<CommandItem
 							onSelect={() => runCommand(() => router.push('/feed.xml'))}

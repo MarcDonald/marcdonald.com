@@ -6,7 +6,7 @@
 	"tailwind": {
 		"config": "tailwind.config.js",
 		"css": "app/styles/global.css",
-		"baseColor": "orange",
+		"baseColor": "neutral",
 		"cssVariables": true
 	},
 	"aliases": {
