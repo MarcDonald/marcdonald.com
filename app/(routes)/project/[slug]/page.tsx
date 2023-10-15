@@ -115,7 +115,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 				{description && (
 					<TypographyLarge
 						className={
-							'scroll-m-20 border-b-0 pb-2 font-display text-2xl font-semibold tracking-tight text-muted-foreground transition-colors first:mt-0'
+							'scroll-m-20 border-b-0 pb-2 font-display text-xl font-semibold tracking-tight text-muted-foreground transition-colors first:mt-0'
 						}
 					>
 						<Balancer>{description}</Balancer>

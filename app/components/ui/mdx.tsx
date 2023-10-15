@@ -8,6 +8,7 @@ import { TypographyLink } from '@/app/components/ui/typography';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
 import { Alert, AlertDescription, AlertTitle } from '@/app/components/ui/alert';
 import { CopyLinkToClipboard } from '@/app/components/copy-link-to-clipboard';
+import Balancer from 'react-wrap-balancer';
 
 const ResponsiveImage = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -39,60 +40,60 @@ const components = {
 	h2: ({ className, ...props }: ComponentProps) => (
 		<h2
 			className={cn(
-				'group mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0',
+				'group mt-10 flex scroll-m-20 flex-row border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0',
 				className
 			)}
 			{...props}
 		>
-			{props.children}
+			<Balancer>{props.children}</Balancer>
 			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
 		</h2>
 	),
 	h3: ({ className, ...props }: ComponentProps) => (
 		<h3
 			className={cn(
-				'group mt-8 scroll-m-20 text-2xl font-semibold tracking-tight',
+				'group mt-8 flex scroll-m-20 text-2xl font-semibold tracking-tight',
 				className
 			)}
 			{...props}
 		>
-			{props.children}
+			<Balancer>{props.children}</Balancer>
 			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
 		</h3>
 	),
 	h4: ({ className, ...props }: ComponentProps) => (
 		<h4
 			className={cn(
-				'mt-8 scroll-m-20 text-xl font-semibold tracking-tight',
+				'mt-8 flex scroll-m-20 text-xl font-semibold tracking-tight',
 				className
 			)}
 			{...props}
 		>
-			{props.children}
+			<Balancer>{props.children}</Balancer>
 			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
 		</h4>
 	),
 	h5: ({ className, ...props }: ComponentProps) => (
 		<h5
 			className={cn(
-				'mt-8 scroll-m-20 text-lg font-semibold tracking-tight',
+				'mt-8 flex scroll-m-20 text-lg font-semibold tracking-tight',
 				className
 			)}
 			{...props}
 		>
-			{props.children}
+			<Balancer>{props.children}</Balancer>
 			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
 		</h5>
 	),
 	h6: ({ className, ...props }: ComponentProps) => (
 		<h6
 			className={cn(
-				'mt-8 scroll-m-20 text-base font-semibold tracking-tight',
+				'mt-8 flex scroll-m-20 text-base font-semibold tracking-tight',
 				className
 			)}
 			{...props}
 		>
-			{props.children}
+			<Balancer>{props.children}</Balancer>
 			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
 		</h6>
 	),
