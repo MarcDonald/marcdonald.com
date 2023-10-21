@@ -7,7 +7,7 @@ import '@/app/styles/mdx.css';
 import { TypographyLink } from '@/app/components/ui/typography';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
 import { Alert, AlertDescription, AlertTitle } from '@/app/components/ui/alert';
-import { CopyLinkToClipboard } from '@/app/components/copy-link-to-clipboard';
+import { AnchorButton } from '@/app/components/anchor-button';
 import Balancer from 'react-wrap-balancer';
 
 const ResponsiveImage = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
@@ -46,7 +46,7 @@ const components = {
 			{...props}
 		>
 			<Balancer>{props.children}</Balancer>
-			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
+			<AnchorButton linkTo={props.id} className={'self-center'} />
 		</h2>
 	),
 	h3: ({ className, ...props }: ComponentProps) => (
@@ -58,7 +58,7 @@ const components = {
 			{...props}
 		>
 			<Balancer>{props.children}</Balancer>
-			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
+			<AnchorButton linkTo={props.id} className={'self-center'} />
 		</h3>
 	),
 	h4: ({ className, ...props }: ComponentProps) => (
@@ -70,7 +70,7 @@ const components = {
 			{...props}
 		>
 			<Balancer>{props.children}</Balancer>
-			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
+			<AnchorButton linkTo={props.id} className={'self-center'} />
 		</h4>
 	),
 	h5: ({ className, ...props }: ComponentProps) => (
@@ -82,7 +82,7 @@ const components = {
 			{...props}
 		>
 			<Balancer>{props.children}</Balancer>
-			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
+			<AnchorButton linkTo={props.id} className={'self-center'} />
 		</h5>
 	),
 	h6: ({ className, ...props }: ComponentProps) => (
@@ -94,7 +94,7 @@ const components = {
 			{...props}
 		>
 			<Balancer>{props.children}</Balancer>
-			<CopyLinkToClipboard linkTo={props.id} className={'self-center'} />
+			<AnchorButton linkTo={props.id} className={'self-center'} />
 		</h6>
 	),
 	a: ({

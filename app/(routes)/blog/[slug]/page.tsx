@@ -13,7 +13,7 @@ import {
 	TypographyLarge,
 	TypographyMuted,
 } from '@/app/components/ui/typography';
-import { CopyLinkToClipboard } from '@/app/components/copy-link-to-clipboard';
+import { AnchorButton } from '@/app/components/anchor-button';
 
 interface BlogPageProps {
 	params: {
@@ -127,7 +127,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
 				<TypographyH1 className={'group scroll-m-20'} id={'main-content'}>
 					<Balancer>
 						{title}
-						<CopyLinkToClipboard className={'self-center'} />
+						<AnchorButton className={'self-center'} />
 					</Balancer>
 				</TypographyH1>
 				{description && (

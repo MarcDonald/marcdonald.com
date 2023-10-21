@@ -4,8 +4,9 @@ import { LinkIcon } from 'lucide-react';
 import { VisuallyHidden } from '@/app/components/visually-hidden';
 import { ReactNode } from 'react';
 import { cn } from '@/app/lib/utils';
+import { useRouter } from 'next/navigation';
 
-export function CopyLinkToClipboard({
+export function AnchorButton({
 	linkTo,
 	icon,
 	className,
@@ -14,6 +15,7 @@ export function CopyLinkToClipboard({
 	className?: string;
 	icon?: ReactNode;
 }) {
+	const router = useRouter();
 	return (
 		<Button
 			size={'icon'}
@@ -28,9 +30,14 @@ export function CopyLinkToClipboard({
 				if (indexOfHash > 0) {
 					url = window.location.href.substring(0, indexOfHash);
 				}
-				await navigator.clipboard.writeText(
-					`${url}${linkTo ? '#' + linkTo : ''}`
-				);
+				if (linkTo) {
+					url = `${url}${linkTo ? '#' + linkTo : ''}`;
+				}
+
+				await navigator.clipboard.writeText(url);
+				router.replace(url, {
+					scroll: true,
+				});
 			}}
 		>
 			{icon ? icon : <LinkIcon className={'h-5 w-5'} />}
