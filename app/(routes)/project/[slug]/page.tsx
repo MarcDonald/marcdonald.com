@@ -106,12 +106,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 		<article>
 			<ScrollProgressBar />
 			<ProjectHeaderShell>
-				<TypographyH1 className={'group scroll-m-20'} id={'main-content'}>
-					<TypographyLink href={link ?? '#'}>
-						<Balancer>{title}</Balancer>
-					</TypographyLink>
-					<CopyLinkToClipboard className={'self-center'} />
-				</TypographyH1>
+				<Balancer>
+					<TypographyH1 className={'group scroll-m-20'} id={'main-content'}>
+						<TypographyLink href={link ?? '#'}>{title}</TypographyLink>
+						<CopyLinkToClipboard className={'self-center'} />
+					</TypographyH1>
+				</Balancer>
 				{description && (
 					<TypographyLarge
 						className={
