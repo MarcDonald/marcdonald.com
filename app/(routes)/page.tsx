@@ -16,6 +16,7 @@ export default function Home() {
 				<TypographyH1
 					className={'text-7xl sm:text-7xl md:text-8xl lg:text-9xl'}
 					id={'main-content'}
+					tabIndex={-1}
 				>
 					Hey There
 				</TypographyH1>

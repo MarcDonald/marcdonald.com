@@ -41,7 +41,7 @@ export function AnchorButton({
 			}}
 		>
 			{icon ? icon : <LinkIcon className={'h-5 w-5'} />}
-			<VisuallyHidden text={'Copy current URL to clipboard'} />
+			<VisuallyHidden text={'Copy section link to clipboard'} />
 		</Button>
 	);
 }

@@ -124,7 +124,11 @@ export default async function BlogPage({ params }: BlogPageProps) {
 			<ScrollProgressBar />
 			{!blog.published && <DraftBanner />}
 			<ProjectHeaderShell>
-				<TypographyH1 className={'group scroll-m-20'} id={'main-content'}>
+				<TypographyH1
+					className={'group scroll-m-20'}
+					id={'main-content'}
+					tabIndex={-1}
+				>
 					<Balancer>
 						{title}
 						<AnchorButton className={'self-center'} />

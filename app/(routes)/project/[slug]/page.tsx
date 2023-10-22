@@ -107,7 +107,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 			<ScrollProgressBar />
 			<ProjectHeaderShell>
 				<Balancer>
-					<TypographyH1 className={'group scroll-m-20'} id={'main-content'}>
+					<TypographyH1
+						className={'group scroll-m-20'}
+						id={'main-content'}
+						tabIndex={-1}
+					>
 						<TypographyLink href={link ?? '#'}>{title}</TypographyLink>
 						<AnchorButton className={'self-center'} />
 					</TypographyH1>
