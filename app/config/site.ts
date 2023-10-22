@@ -23,7 +23,7 @@ export const siteConfig = {
 	},
 	creator: {
 		name: 'Marc Donald',
-		twitter: 'https://twitter.com/@DeveloperMarc',
+		twitter: 'https://x.com/@DeveloperMarc',
 		github: 'https://github.com/MarcDonald',
 	},
 	isProduction: isProduction(),
