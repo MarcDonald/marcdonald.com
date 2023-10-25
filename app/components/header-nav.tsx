@@ -32,7 +32,7 @@ const NavItem = ({
 				<NavigationMenuLink
 					className={cn(
 						navigationMenuTriggerStyle(),
-						'bg-transparent',
+						'bg-transparent font-bold',
 						isActive ? 'bg-muted' : ''
 					)}
 				>
@@ -61,7 +61,7 @@ const ListItem = React.forwardRef<
 					)}
 					{...props}
 				>
-					<div className="text-sm font-medium leading-none">{title}</div>
+					<div className="text-sm font-bold leading-none">{title}</div>
 					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
 						{children}
 					</p>
@@ -84,7 +84,7 @@ export default function HeaderNav() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger
 						className={cn(
-							'data-[active]:bg-accent data-[state=open]:bg-accent',
+							'font-bold data-[active]:bg-accent data-[state=open]:bg-accent',
 							pathName.includes('project') ? 'bg-muted ' : ''
 						)}
 					>

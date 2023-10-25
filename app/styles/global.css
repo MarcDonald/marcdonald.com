@@ -56,6 +56,11 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	p,
+	a,
+	li {
+		@apply text-lg font-normal leading-7 tracking-normal;
+	}
 }
 .skip-to-content-link {
 	position: absolute;

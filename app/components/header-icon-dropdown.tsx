@@ -28,6 +28,7 @@ const MotionLink = motion(Link);
 const textMotion: Variants = {
 	rest: {
 		x: 0,
+		fontWeight: '500',
 		transition: {
 			duration: 0.1,
 			type: 'tween',
@@ -35,6 +36,7 @@ const textMotion: Variants = {
 		},
 	},
 	hover: {
+		fontWeight: '900',
 		x: 5,
 		transition: {
 			duration: 0.2,
@@ -51,14 +53,17 @@ function AnimatedLink({
 }: { href: string } & PropsWithChildren & LinkProps) {
 	return (
 		<MotionLink
-			className={'h-full w-full'}
+			className={'h-full w-full text-sm'}
 			href={href}
 			initial={'rest'}
 			whileHover={'hover'}
 			animate={'rest'}
 			{...props}
 		>
-			<motion.div className={'flex'} variants={textMotion}>
+			<motion.div
+				className={'flex items-center justify-start'}
+				variants={textMotion}
+			>
 				{children}
 			</motion.div>
 		</MotionLink>

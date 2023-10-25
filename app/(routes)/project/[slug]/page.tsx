@@ -6,11 +6,7 @@ import { Separator } from '@/app/components/ui/separator';
 import { Mdx } from '@/app/components/ui/mdx';
 import Balancer from 'react-wrap-balancer';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
-import {
-	TypographyH1,
-	TypographyLarge,
-	TypographyLink,
-} from '@/app/components/ui/typography';
+import { TypographyH1, TypographyLarge } from '@/app/components/ui/typography';
 import { siteConfig } from '@/app/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 import ScrollProgressBar from '@/app/components/scroll-progress-bar';
@@ -100,7 +96,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 		notFound();
 	}
 
-	const { title, description, link, downloadGitHubSlug } = proj;
+	const { title, description, downloadGitHubSlug } = proj;
 
 	return (
 		<article>
@@ -112,7 +108,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 						id={'main-content'}
 						tabIndex={-1}
 					>
-						<TypographyLink href={link ?? '#'}>{title}</TypographyLink>
+						{title}
 						<AnchorButton className={'self-center'} />
 					</TypographyH1>
 				</Balancer>

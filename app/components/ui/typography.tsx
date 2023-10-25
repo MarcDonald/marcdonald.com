@@ -148,7 +148,7 @@ export const TypographyLink = React.forwardRef<
 	return (
 		<Link
 			className={cn(
-				'duration-250 hover:dark:foreground border-b border-foreground transition-all hover:border-b-4 hover:text-foreground dark:border-foreground',
+				'duration-250 rounded-b border-b border-foreground transition-all hover:border-b-4 hover:border-primary hover:text-foreground focus:border-b-4 focus:border-primary focus:text-foreground dark:border-foreground hover:dark:border-primary focus:dark:border-primary',
 				className
 			)}
 			href={href}

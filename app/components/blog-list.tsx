@@ -6,16 +6,24 @@ import {
 import { BlogPost } from 'contentlayer/generated';
 import { cn } from '@/app/lib/utils';
 import { sortedBlogPosts } from '@/app/config/blog';
+import Balancer from 'react-wrap-balancer';
 
 const BlogLink = ({ blog }: { blog: BlogPost }) => {
 	return (
 		<li className={'p-2'}>
-			<TypographyP>
-				<TypographyLink href={`/blog/${blog.slugAsParams}`}>
-					{blog.title}
-				</TypographyLink>
+			<TypographyP className={'mb-2'}>
+				<Balancer>
+					<TypographyLink
+						href={`/blog/${blog.slugAsParams}`}
+						className={'font-bold'}
+					>
+						{blog.title}
+					</TypographyLink>
+				</Balancer>
 			</TypographyP>
-			<TypographyMuted>{blog.description}</TypographyMuted>
+			<TypographyMuted className={'text-base'}>
+				{blog.description}
+			</TypographyMuted>
 		</li>
 	);
 };

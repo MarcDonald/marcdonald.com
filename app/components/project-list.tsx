@@ -4,14 +4,21 @@ import {
 	TypographyP,
 } from '@/app/components/ui/typography';
 import { ProjectDetails, projects } from '@/app/config/project';
+import Balancer from 'react-wrap-balancer';
 
 const ProjectLink = ({ project }: { project: ProjectDetails }) => {
 	return (
 		<li className={'p-2'}>
-			<TypographyP>
-				<TypographyLink href={project.link}>{project.title}</TypographyLink>
+			<TypographyP className={'mb-2'}>
+				<Balancer>
+					<TypographyLink href={project.link} className={'font-bold'}>
+						{project.title}
+					</TypographyLink>
+				</Balancer>
 			</TypographyP>
-			<TypographyMuted>{project.description}</TypographyMuted>
+			<TypographyMuted className={'text-base'}>
+				{project.description}
+			</TypographyMuted>
 		</li>
 	);
 };
