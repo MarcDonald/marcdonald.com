@@ -11,6 +11,9 @@ import { siteConfig } from '@/app/config/site';
 import ProjectHeaderShell from '@/app/(routes)/project/[slug]/_components/project-header-shell';
 import ScrollProgressBar from '@/app/components/scroll-progress-bar';
 import { AnchorButton } from '@/app/components/anchor-button';
+import { Button } from '@/app/components/ui/button';
+import { ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
 interface ProjectPageProps {
 	params: {
@@ -96,22 +99,32 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 		notFound();
 	}
 
-	const { title, description, downloadGitHubSlug } = proj;
+	const { title, description, link, downloadGitHubSlug } = proj;
 
 	return (
 		<article>
 			<ScrollProgressBar />
 			<ProjectHeaderShell>
-				<Balancer>
-					<TypographyH1
-						className={'group scroll-m-20'}
-						id={'main-content'}
-						tabIndex={-1}
-					>
-						{title}
-						<AnchorButton className={'self-center'} />
-					</TypographyH1>
-				</Balancer>
+				<div className={'flex items-center justify-between'}>
+					<Balancer>
+						<TypographyH1
+							className={'group scroll-m-20'}
+							id={'main-content'}
+							tabIndex={-1}
+						>
+							{title}
+							<AnchorButton className={'self-center'} />
+						</TypographyH1>
+					</Balancer>
+					{link && !downloadGitHubSlug && (
+						<Link href={link} legacyBehavior passHref>
+							<Button className={'hidden sm:flex'}>
+								<span>View</span>
+								<ExternalLink className={'h-5 w-5 sm:ml-2'} />
+							</Button>
+						</Link>
+					)}
+				</div>
 				{description && (
 					<TypographyLarge
 						className={
@@ -120,6 +133,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 					>
 						<Balancer>{description}</Balancer>
 					</TypographyLarge>
+				)}
+				{link && !downloadGitHubSlug && (
+					<Link href={link} legacyBehavior passHref>
+						<Button className={'w-full sm:hidden'}>
+							View
+							<ExternalLink className={'ml-2 h-5 w-5'} />
+						</Button>
+					</Link>
 				)}
 				{downloadGitHubSlug && (
 					<DownloadSection githubSlug={downloadGitHubSlug} />

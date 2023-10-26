@@ -56,10 +56,11 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+
 	p,
 	a,
 	li {
-		@apply text-lg font-normal leading-7 tracking-normal;
+		@apply text-lg font-normal;
 	}
 }
 .skip-to-content-link {
