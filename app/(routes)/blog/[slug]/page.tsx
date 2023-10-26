@@ -13,7 +13,7 @@ import {
 	TypographyLarge,
 	TypographyMuted,
 } from '@/app/components/ui/typography';
-import { AnchorButton } from '@/app/components/anchor-button';
+import { ShareButton } from '@/app/components/share-button';
 
 interface BlogPageProps {
 	params: {
@@ -120,20 +120,23 @@ export default async function BlogPage({ params }: BlogPageProps) {
 	const { title, description, date } = blog;
 
 	return (
-		<article>
+		<article className={'relative'}>
 			<ScrollProgressBar />
 			{!blog.published && <DraftBanner />}
 			<ProjectHeaderShell>
-				<TypographyH1
-					className={'group scroll-m-20'}
-					id={'main-content'}
-					tabIndex={-1}
-				>
-					<Balancer>
-						{title}
-						<AnchorButton className={'self-center'} />
-					</Balancer>
-				</TypographyH1>
+				<div className={'flex justify-between gap-2'}>
+					<TypographyH1
+						className={'group scroll-m-20'}
+						id={'main-content'}
+						tabIndex={-1}
+					>
+						<Balancer>{title}</Balancer>
+					</TypographyH1>
+					<ShareButton
+						link={`${siteConfig.url}/blog/${blog.slugAsParams}`}
+						altText={'Share blog post'}
+					/>
+				</div>
 				{description && (
 					<TypographyLarge
 						className={

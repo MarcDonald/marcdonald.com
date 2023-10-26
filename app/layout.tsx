@@ -12,6 +12,7 @@ import { SiteHeader } from '@/app/components/site-header';
 import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 import { Button } from '@/app/components/ui/button';
+import { Toaster } from '@/app/components/ui/toaster';
 
 export const metadata: Metadata = {
 	title: {
@@ -70,6 +71,7 @@ export default function RootLayout({
 						</Button>
 						<SiteHeader />
 						<main className={'container my-6 lg:px-10'}>{children}</main>
+						<Toaster />
 					</div>
 				</ThemeProvider>
 				<StyleSwitcher />

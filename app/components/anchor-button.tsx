@@ -5,6 +5,7 @@ import { VisuallyHidden } from '@/app/components/visually-hidden';
 import { ReactNode } from 'react';
 import { cn } from '@/app/lib/utils';
 import { useRouter } from 'next/navigation';
+import { useToast } from '@/app/components/ui/use-toast';
 
 export function AnchorButton({
 	linkTo,
@@ -16,6 +17,7 @@ export function AnchorButton({
 	icon?: ReactNode;
 }) {
 	const router = useRouter();
+	const { toast } = useToast();
 	return (
 		<Button
 			size={'icon'}
@@ -37,6 +39,9 @@ export function AnchorButton({
 				await navigator.clipboard.writeText(url);
 				router.replace(url, {
 					scroll: true,
+				});
+				toast({
+					title: 'Copied section link to clipboard',
 				});
 			}}
 		>
