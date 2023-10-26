@@ -2,7 +2,7 @@ import React from 'react';
 
 import '@/app/styles/global.css';
 
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { cn } from '@/app/lib/utils';
 import { ThemeProvider } from '@/app/components/theme-provider';
 import StyleSwitcher from '@/app/components/style-switcher';
@@ -14,6 +14,10 @@ import Link from 'next/link';
 import { Button } from '@/app/components/ui/button';
 import { Toaster } from '@/app/components/ui/toaster';
 
+export const viewport: Viewport = {
+	themeColor: [{ color: 'hsl(var(--background))' }],
+};
+
 export const metadata: Metadata = {
 	title: {
 		default: siteConfig.name,
@@ -23,7 +27,6 @@ export const metadata: Metadata = {
 	keywords: [
 		'software engineer,portfolio,developer,marc donald,programming,web development,full stack,fullstack,react,reactjs,typescript,js,java,html,css,frontend,backend,full stack,fullstack,full-stack',
 	],
-	themeColor: [{ color: 'hsl(var(--background))' }],
 	metadataBase: new URL(siteConfig.url),
 	alternates: {
 		canonical: siteConfig.url,
