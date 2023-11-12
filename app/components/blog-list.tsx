@@ -13,10 +13,7 @@ const BlogLink = ({ blog }: { blog: BlogPost }) => {
 		<li className={'p-2'}>
 			<TypographyP className={'mb-2'}>
 				<Balancer>
-					<TypographyLink
-						href={`/blog/${blog.slugAsParams}`}
-						className={'font-bold'}
-					>
+					<TypographyLink href={`/blog/${blog.slugAsParams}`}>
 						{blog.title}
 					</TypographyLink>
 				</Balancer>

@@ -27,7 +27,7 @@ export function TypographyH2(props: TypographyProps) {
 		<h2
 			{...props}
 			className={cn(
-				'scroll-m-20 border-b pb-2 font-display text-2xl font-semibold tracking-tight text-muted-foreground transition-colors first:mt-0',
+				'scroll-m-20 border-b pb-2 font-display text-xl font-semibold tracking-tight text-muted-foreground transition-colors first:mt-0',
 				props.className
 			)}
 		>
@@ -68,7 +68,7 @@ export function TypographyP(props: TypographyProps) {
 	return (
 		<p
 			{...props}
-			className={cn('leading-7 [&:not(:first-child)]:mt-6', props.className)}
+			className={cn('leading-7 [&:not(:first-child)]:mt-4', props.className)}
 		>
 			{props.children}
 		</p>
@@ -102,10 +102,7 @@ export function TypographyInlineCode(props: TypographyProps) {
 
 export function TypographyLead(props: TypographyProps) {
 	return (
-		<p
-			{...props}
-			className={cn('text-xl text-muted-foreground', props.className)}
-		>
+		<p {...props} className={cn('text-muted-foreground', props.className)}>
 			{props.children}
 		</p>
 	);
@@ -148,7 +145,7 @@ export const TypographyLink = React.forwardRef<
 	return (
 		<Link
 			className={cn(
-				'duration-250 rounded-b border-b border-foreground transition-all hover:border-b-4 hover:border-primary hover:text-foreground focus:border-b-4 focus:border-primary focus:text-foreground dark:border-foreground hover:dark:border-primary focus:dark:border-primary',
+				'duration-250 border-b border-foreground transition-all hover:rounded-b hover:border-b-4 hover:border-primary hover:text-foreground focus:border-b-4 focus:border-primary focus:text-foreground dark:border-foreground hover:dark:border-primary focus:dark:border-primary',
 				className
 			)}
 			href={href}

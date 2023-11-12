@@ -11,9 +11,7 @@ const ProjectLink = ({ project }: { project: ProjectDetails }) => {
 		<li className={'p-2'}>
 			<TypographyP className={'mb-2'}>
 				<Balancer>
-					<TypographyLink href={project.link} className={'font-bold'}>
-						{project.title}
-					</TypographyLink>
+					<TypographyLink href={project.link}>{project.title}</TypographyLink>
 				</Balancer>
 			</TypographyP>
 			<TypographyMuted className={'text-base'}>

@@ -60,9 +60,9 @@ module.exports = {
 				sm: 'calc(var(--radius) - 4px)',
 			},
 			fontFamily: {
-				display: ['var(--font-display)', ...fontFamily.sans],
-				sans: ['var(--font-sans)', ...fontFamily.sans],
-				mono: ['var(--font-mono)', ...fontFamily.mono],
+				display: ['var(--font-geist-sans)', ...fontFamily.sans],
+				sans: ['var(--font-geist-sans)', ...fontFamily.sans],
+				mono: ['var(--font-geist-mono)', ...fontFamily.mono],
 			},
 			keyframes: {
 				'accordion-down': {

@@ -1,24 +1,8 @@
-import {
-	JetBrains_Mono as FontMono,
-	Nunito as FontSans,
-	Nunito as FontDisplay,
-} from 'next/font/google';
+import { GeistSans as FontSans } from 'geist/font/sans';
+import { GeistMono as FontMono } from 'geist/font/mono';
 
-export const fontDisplay = FontDisplay({
-	subsets: ['latin'],
-	variable: '--font-display',
-	preload: true,
-	weight: '400',
-});
+export const fontDisplay = FontSans;
 
-export const fontSans = FontSans({
-	subsets: ['latin'],
-	variable: '--font-sans',
-	preload: true,
-	weight: '400',
-});
+export const fontSans = FontSans;
 
-export const fontMono = FontMono({
-	subsets: ['latin'],
-	variable: '--font-mono',
-});
+export const fontMono = FontMono;

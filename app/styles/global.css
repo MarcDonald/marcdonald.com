@@ -60,7 +60,7 @@
 	p,
 	a,
 	li {
-		@apply text-lg font-normal;
+		@apply font-normal;
 	}
 }
 .skip-to-content-link {
