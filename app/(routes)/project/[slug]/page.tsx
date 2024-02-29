@@ -106,16 +106,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 			<ScrollProgressBar />
 			<ProjectHeaderShell>
 				<div className={'flex items-center justify-between'}>
-					<Balancer>
-						<TypographyH1
-							className={'group scroll-m-20'}
-							id={'main-content'}
-							tabIndex={-1}
-						>
-							{title}
-							<AnchorButton className={'self-center'} />
-						</TypographyH1>
-					</Balancer>
+					<TypographyH1
+						className={'group scroll-m-20'}
+						id={'main-content'}
+						tabIndex={-1}
+					>
+						<Balancer>{title}</Balancer>
+						<AnchorButton className={'self-center'} />
+					</TypographyH1>
 					{link && !downloadGitHubSlug && (
 						<Link href={link} legacyBehavior passHref>
 							<Button className={'hidden sm:flex'}>
