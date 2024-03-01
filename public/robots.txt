@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 Sitemap: https://marcdonald.com/sitemap.xml
 Host: https://marcdonald.com
+
+User-agent: GPTBot
+Disallow: /
