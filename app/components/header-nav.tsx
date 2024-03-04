@@ -98,8 +98,8 @@ export default function HeaderNav() {
 							<ListItem href="/project/hibi" title="Hibi">
 								Japanese learning journal app
 							</ListItem>
-							<ListItem href="https://buttercat.dev" title="Buttercat">
-								WIP Modular Twitch bot framework
+							<ListItem href="/project/badger" title="Badger">
+								iOS App for Previewing Twitch Badges and Emotes
 							</ListItem>
 							<ListItem
 								href="/project/event-management-system"

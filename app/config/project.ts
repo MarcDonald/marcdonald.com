@@ -1,8 +1,8 @@
 import {
 	BookmarkIcon,
-	CatIcon,
 	GitPullRequestIcon,
 	LucideIcon,
+	PaletteIcon,
 	ShieldCheckIcon,
 } from 'lucide-react';
 
@@ -22,18 +22,18 @@ export const projects: ProjectDetails[] = [
 		icon: GitPullRequestIcon,
 	},
 	{
+		title: 'Badger',
+		description:
+			'An app for iOS that lets you test your badges and emotes without uploading them to Twitch',
+		link: '/project/badger',
+		icon: PaletteIcon,
+	},
+	{
 		title: 'Hibi',
 		description:
 			'An Android app designed to aid your Japanese learning through keeping a journal',
 		link: '/project/hibi',
 		icon: BookmarkIcon,
-	},
-	{
-		title: 'Buttercat (WIP)',
-		description:
-			'A (WIP) framework for creating modular, extensible, and easy to set up Twitch bots',
-		link: 'https://buttercat.dev',
-		icon: CatIcon,
 	},
 	{
 		title: 'Event Management System',
