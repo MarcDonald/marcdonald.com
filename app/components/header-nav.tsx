@@ -13,6 +13,12 @@ import { cn } from '@/app/lib/utils';
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { projects } from '@/app/config/project';
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from '@/app/components/ui/tooltip';
 
 const NavItem = ({
 	href,
@@ -61,10 +67,8 @@ const ListItem = React.forwardRef<
 					)}
 					{...props}
 				>
-					<div className="text-sm font-semibold leading-none">{title}</div>
-					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-						{children}
-					</p>
+					<div className="text-sm font-semibold">{title}</div>
+					{children}
 				</a>
 			</NavigationMenuLink>
 		</li>
@@ -92,21 +96,18 @@ export default function HeaderNav() {
 					</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-							<ListItem href="https://omniscience.app" title="Omniscience">
-								GitHub Pull Request management app
-							</ListItem>
-							<ListItem href="/project/hibi" title="Hibi">
-								Japanese learning journal app
-							</ListItem>
-							<ListItem href="/project/badger" title="Badger">
-								iOS App for Previewing Twitch Badges and Emotes
-							</ListItem>
-							<ListItem
-								href="/project/event-management-system"
-								title="Event Management System"
-							>
-								Final year project for my degree
-							</ListItem>
+							{projects.map((project) => (
+								<Tooltip key={project.link}>
+									<ListItem href={project.link} title={project.title}>
+										<TooltipTrigger>
+											<p className="line-clamp-2 text-start text-sm leading-snug text-muted-foreground">
+												{project.description}
+											</p>
+										</TooltipTrigger>
+										<TooltipContent>{project.description}</TooltipContent>
+									</ListItem>
+								</Tooltip>
+							))}
 						</ul>
 					</NavigationMenuContent>
 				</NavigationMenuItem>

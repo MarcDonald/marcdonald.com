@@ -1,6 +1,7 @@
 import {
 	BookmarkIcon,
 	GitPullRequestIcon,
+	ImportIcon,
 	LucideIcon,
 	PaletteIcon,
 	ShieldCheckIcon,
@@ -27,6 +28,12 @@ export const projects: ProjectDetails[] = [
 			'An app for iOS that lets you test your badges and emotes without uploading them to Twitch',
 		link: '/project/badger',
 		icon: PaletteIcon,
+	},
+	{
+		title: 'Obsidian Day One Importer',
+		description: 'Obsidian plugin that lets you import Day One journals',
+		link: '/project/obsidian-day-one-importer',
+		icon: ImportIcon,
 	},
 	{
 		title: 'Hibi',

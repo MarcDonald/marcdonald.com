@@ -13,7 +13,10 @@ import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 import { Button } from '@/app/components/ui/button';
 import { Toaster } from '@/app/components/ui/toaster';
+import { TooltipProvider } from '@/app/components/ui/tooltip';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export const viewport: Viewport = {
 	themeColor: [{ color: 'hsl(var(--background))' }],
 };
@@ -66,16 +69,18 @@ export default function RootLayout({
 				)}
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<div className="relative flex min-h-screen flex-col">
-						<Button asChild>
-							<Link href={'#main-content'} className={'skip-to-content-link'}>
-								Skip to Content
-							</Link>
-						</Button>
-						<SiteHeader />
-						<main className={'container my-6 lg:px-10'}>{children}</main>
-						<Toaster />
-					</div>
+					<TooltipProvider>
+						<div className="relative flex min-h-screen flex-col">
+							<Button asChild>
+								<Link href={'#main-content'} className={'skip-to-content-link'}>
+									Skip to Content
+								</Link>
+							</Button>
+							<SiteHeader />
+							<main className={'container my-6 lg:px-10'}>{children}</main>
+							<Toaster />
+						</div>
+					</TooltipProvider>
 				</ThemeProvider>
 				<StyleSwitcher />
 				<Analytics />
