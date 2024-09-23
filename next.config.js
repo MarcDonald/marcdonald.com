@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { withAxiom } = require('next-axiom');
 const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
-const nextConfig = withAxiom({
+const nextConfig = {
 	pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 	reactStrictMode: true,
 	images: {
@@ -25,6 +24,6 @@ const nextConfig = withAxiom({
 		];
 	},
 	swcMinify: true,
-});
+};
 
 module.exports = withContentlayer(nextConfig);

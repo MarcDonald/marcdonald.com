@@ -9,11 +9,11 @@ import StyleSwitcher from '@/app/components/style-switcher';
 import { siteConfig } from '@/app/config/site';
 import { fontDisplay, fontMono, fontSans } from '@/app/lib/fonts';
 import { SiteHeader } from '@/app/components/site-header';
-import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 import { Button } from '@/app/components/ui/button';
 import { Toaster } from '@/app/components/ui/toaster';
 import { TooltipProvider } from '@/app/components/ui/tooltip';
+import { CSPostHogProvider, OptIn } from '@/app/components/posthog-provider';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -61,30 +61,37 @@ export default function RootLayout({
 			suppressHydrationWarning
 			className={`${fontDisplay.className} ${fontDisplay.variable} ${fontSans.className} ${fontMono.className} font-sans`}
 		>
-			<body
-				className={cn(
-					'min-h-screen scroll-smooth bg-background font-sans antialiased',
-					fontSans.variable,
-					process.env.NODE_ENV === 'production' ? '' : 'debug-screens'
-				)}
-			>
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<TooltipProvider>
-						<div className="relative flex min-h-screen flex-col">
-							<Button asChild>
-								<Link href={'#main-content'} className={'skip-to-content-link'}>
-									Skip to Content
-								</Link>
-							</Button>
-							<SiteHeader />
-							<main className={'container my-6 lg:px-10'}>{children}</main>
-							<Toaster />
-						</div>
-					</TooltipProvider>
-				</ThemeProvider>
-				<StyleSwitcher />
-				<Analytics />
-			</body>
+			<CSPostHogProvider>
+				<body
+					className={cn(
+						'min-h-screen scroll-smooth bg-background font-sans antialiased',
+						fontSans.variable,
+						process.env.NODE_ENV === 'production' ? '' : 'debug-screens'
+					)}
+				>
+					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+						<TooltipProvider>
+							<div className="relative flex min-h-screen flex-col">
+								<Button asChild>
+									<Link
+										href={'#main-content'}
+										className={'skip-to-content-link'}
+									>
+										Skip to Content
+									</Link>
+								</Button>
+								<SiteHeader />
+								<main className={'container my-6 lg:px-10'}>
+									{children}
+									<OptIn />
+								</main>
+								<Toaster />
+							</div>
+						</TooltipProvider>
+					</ThemeProvider>
+					<StyleSwitcher />
+				</body>
+			</CSPostHogProvider>
 		</html>
 	);
 }

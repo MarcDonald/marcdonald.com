@@ -2,6 +2,8 @@
 
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { DialogProps } from '@radix-ui/react-alert-dialog';
 import {
 	GithubIcon,
