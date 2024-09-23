@@ -9,9 +9,10 @@ import { CardHeader } from '@/app/components/ui/card';
 
 if (typeof window !== 'undefined') {
 	posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || '', {
-		api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
 		person_profiles: 'identified_only',
 		opt_out_capturing_by_default: true,
+		api_host: '/ingest',
+		ui_host: 'https://eu.posthog.com',
 	});
 }
 
