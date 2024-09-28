@@ -46,16 +46,16 @@ export function OptIn({
 			<CardHeader>
 				<CardTitle>Anonymous Analytics</CardTitle>
 				<CardDescription>
-					I use anonymous tracking to see what people are interested in and see
-					where I can improve the site. If you're cool with that then click
-					accept!
+					I use anonymous tracking and cookies to see what people are interested
+					in and see where I can improve the site. If you're cool with that then
+					please click accept!
 				</CardDescription>
 			</CardHeader>
 			<CardFooter className="flex justify-between">
 				<Button
 					variant="ghost"
 					onClick={() => {
-						posthog.opt_out_capturing();
+						posthog.consent.optInOut(false);
 						localStorage.setItem('has_seen_opt_in', 'true');
 						setShow(false);
 						onAction?.();
@@ -65,7 +65,7 @@ export function OptIn({
 				</Button>
 				<Button
 					onClick={() => {
-						posthog.opt_in_capturing();
+						posthog.consent.optInOut(true);
 						localStorage.setItem('has_seen_opt_in', 'true');
 						setShow(false);
 						onAction?.();

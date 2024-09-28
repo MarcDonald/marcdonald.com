@@ -7,6 +7,7 @@ import { ShareIcon } from 'lucide-react';
 import { useToast } from '@/app/components/ui/use-toast';
 import { motion, TargetAndTransition } from 'framer-motion';
 import { VisuallyHidden } from '@/app/components/visually-hidden';
+import posthog from 'posthog-js';
 
 export interface ShareButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -38,6 +39,10 @@ export function ShareButton({
 				await navigator.clipboard.writeText(link);
 				toast({
 					title: 'Copied URL to clipboard',
+				});
+
+				posthog.capture('Share URL', {
+					link,
 				});
 
 				if (

@@ -6,6 +6,7 @@ import { ReactNode } from 'react';
 import { cn } from '@/app/lib/utils';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/app/components/ui/use-toast';
+import posthog from 'posthog-js';
 
 export function AnchorButton({
 	linkTo,
@@ -42,6 +43,10 @@ export function AnchorButton({
 				});
 				toast({
 					title: 'Copied section link to clipboard',
+				});
+
+				posthog.capture('Share URL', {
+					url,
 				});
 			}}
 		>
