@@ -91,7 +91,7 @@ export function TypographyInlineCode(props: TypographyProps) {
 		<code
 			{...props}
 			className={cn(
-				'relative rounded bg-popover px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-popover-foreground',
+				'relative bg-popover px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-popover-foreground',
 				props.className
 			)}
 		>
@@ -145,7 +145,7 @@ export const TypographyLink = React.forwardRef<
 	return (
 		<Link
 			className={cn(
-				'duration-250 border-b border-foreground transition-all hover:rounded-b hover:border-b-4 hover:border-primary hover:text-foreground focus:border-b-4 focus:border-primary focus:text-foreground dark:border-foreground hover:dark:border-primary focus:dark:border-primary',
+				'duration-250 border-b border-foreground transition-all hover:border-b-4 hover:border-primary hover:text-foreground focus:border-b-4 focus:border-primary focus:text-foreground dark:border-foreground hover:dark:border-primary focus:dark:border-primary',
 				className
 			)}
 			href={href}

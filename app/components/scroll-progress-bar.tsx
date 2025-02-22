@@ -12,7 +12,7 @@ export default function ScrollProgressBar() {
 				transformOrigin: '0%',
 			}}
 			className={
-				'sticky left-0 right-0 top-14 isolate z-40 -m-6 mb-6 h-1 rounded-b-lg bg-primary'
+				'sticky left-0 right-0 top-14 isolate z-40 -m-6 mb-6 h-1 bg-primary'
 			}
 		/>
 	);

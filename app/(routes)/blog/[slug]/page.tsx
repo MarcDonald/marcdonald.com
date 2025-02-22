@@ -96,7 +96,7 @@ function DraftBanner() {
 	return (
 		<div
 			className={
-				'sticky left-0 right-0 top-16 isolate z-40 -m-6 mb-6 flex h-6 items-center justify-center rounded-lg bg-red-800 text-white'
+				'sticky left-0 right-0 top-16 isolate z-40 -m-6 mb-6 flex h-6 items-center justify-center bg-red-800 text-white'
 			}
 		>
 			DRAFT

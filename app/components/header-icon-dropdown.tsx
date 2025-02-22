@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import icon from '@/app/icon.png';
 import { Button } from './ui/button';
@@ -20,62 +20,15 @@ import {
 	DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { VisuallyHidden } from '@/app/components/visually-hidden';
-import Link, { LinkProps } from 'next/link';
 import { siteConfig } from '@/app/config/site';
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import {
 	Dialog,
 	DialogContent,
 	DialogTrigger,
 } from '@/app/components/ui/dialog';
 import { OptIn } from '@/app/components/posthog-provider';
-
-const MotionLink = motion(Link);
-
-const textMotion: Variants = {
-	rest: {
-		x: 0,
-		fontWeight: '500',
-		transition: {
-			duration: 0.1,
-			type: 'tween',
-			ease: 'easeIn',
-		},
-	},
-	hover: {
-		fontWeight: '900',
-		x: 5,
-		transition: {
-			duration: 0.2,
-			type: 'tween',
-			ease: 'easeOut',
-		},
-	},
-};
-
-function AnimatedLink({
-	href,
-	children,
-	...props
-}: { href: string } & PropsWithChildren & LinkProps) {
-	return (
-		<MotionLink
-			className={'h-full w-full text-sm'}
-			href={href}
-			initial={'rest'}
-			whileHover={'hover'}
-			animate={'rest'}
-			{...props}
-		>
-			<motion.div
-				className={'flex items-center justify-start'}
-				variants={textMotion}
-			>
-				{children}
-			</motion.div>
-		</MotionLink>
-	);
-}
+import { AnimatedLink } from '@/app/components/animated-link';
 
 export default function HeaderIconDropdown() {
 	const [privacyDialogOpen, setPrivacyDialogOpen] = React.useState(false);
@@ -104,7 +57,7 @@ export default function HeaderIconDropdown() {
 					</Button>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent align="end" asChild>
-					<nav>
+					<nav className={'ml-2'}>
 						<div className={'md:hidden'}>
 							<DropdownMenuItem>
 								<AnimatedLink href={'/'}>
