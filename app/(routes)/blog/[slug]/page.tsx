@@ -52,7 +52,7 @@ export async function generateMetadata({
 							height: 630,
 							alt: blog.title,
 						},
-				  ]
+					]
 				: [],
 		},
 		alternates: {
@@ -73,7 +73,7 @@ export async function generateMetadata({
 							height: 630,
 							alt: blog.title,
 						},
-				  ]
+					]
 				: [],
 		},
 	};
@@ -132,10 +132,12 @@ export default async function BlogPage({ params }: BlogPageProps) {
 					>
 						<Balancer>{title}</Balancer>
 					</TypographyH1>
-					<ShareButton
-						link={`${siteConfig.url}/blog/${blog.slugAsParams}`}
-						altText={'Share blog post'}
-					/>
+					<div className={'h-fit'}>
+						<ShareButton
+							link={`${siteConfig.url}/blog/${blog.slugAsParams}`}
+							altText={'Share blog post'}
+						/>
+					</div>
 				</div>
 				{description && (
 					<TypographyLarge

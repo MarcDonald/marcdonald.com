@@ -1,4 +1,4 @@
-const isProduction = () => {
+export const isProduction = () => {
 	const vercelEnv = process.env.VERCEL_ENV;
 	if (vercelEnv) {
 		// Server Side

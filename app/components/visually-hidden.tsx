@@ -1,31 +1,33 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { isProduction } from '../config/site';
 
 export function VisuallyHidden({ text }: { text: string }) {
 	const [forceShow, setForceShow] = useState(false);
 
 	useEffect(() => {
 		// noinspection JSUnresolvedReference
-		if (process.env.VERCEL_ENV !== 'production') {
-			const handleKeyDown = (ev: KeyboardEvent) => {
-				if (ev.key === 'Alt') {
-					setForceShow(true);
-				}
-			};
-			const handleKeyUp = (ev: KeyboardEvent) => {
-				if (ev.key === 'Alt') {
-					setForceShow(false);
-				}
-			};
-			window.addEventListener('keydown', handleKeyDown);
-			window.addEventListener('keyup', handleKeyUp);
-			return () => {
-				window.removeEventListener('keydown', handleKeyDown);
-				window.removeEventListener('keyup', handleKeyUp);
-			};
+		if (isProduction()) {
+			return;
 		}
-		return;
+
+		const handleKeyDown = (ev: KeyboardEvent) => {
+			if (ev.key === 'Alt') {
+				setForceShow(true);
+			}
+		};
+		const handleKeyUp = (ev: KeyboardEvent) => {
+			if (ev.key === 'Alt') {
+				setForceShow(false);
+			}
+		};
+		window.addEventListener('keydown', handleKeyDown);
+		window.addEventListener('keyup', handleKeyUp);
+		return () => {
+			window.removeEventListener('keydown', handleKeyDown);
+			window.removeEventListener('keyup', handleKeyUp);
+		};
 	}, []);
 
 	if (forceShow) {
