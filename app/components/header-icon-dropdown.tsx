@@ -20,17 +20,19 @@ import {
 	DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { VisuallyHidden } from '@/app/components/visually-hidden';
+import { VisuallyHidden as RadixVisuallyHidden } from '@radix-ui/react-visually-hidden';
 import Link, { LinkProps } from 'next/link';
 import { siteConfig } from '@/app/config/site';
 import React, { PropsWithChildren } from 'react';
 import {
 	Dialog,
 	DialogContent,
+	DialogTitle,
 	DialogTrigger,
 } from '@/app/components/ui/dialog';
 import { OptIn } from '@/app/components/posthog-provider';
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const textMotion: Variants = {
 	rest: {
@@ -151,6 +153,9 @@ export default function HeaderIconDropdown() {
 								</DropdownMenuItem>
 							</DialogTrigger>
 							<DialogContent>
+								<RadixVisuallyHidden>
+									<DialogTitle>Privacy options</DialogTitle>
+								</RadixVisuallyHidden>
 								<OptIn
 									className={'border-0 shadow-none'}
 									forceShow

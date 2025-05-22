@@ -71,7 +71,11 @@ export default function AppCommandMenu({
 					<span className="text-xs">⌘</span>K
 				</kbd>
 			</Button>
-			<CommandDialog open={open} onOpenChange={setOpen}>
+			<CommandDialog
+				open={open}
+				onOpenChange={setOpen}
+				a11yTitle={'Sitewide Navigation'}
+			>
 				<CommandInput placeholder="Type a command or search..." />
 				<CommandList>
 					<CommandEmpty>No results found.</CommandEmpty>
