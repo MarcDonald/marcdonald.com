@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { withContentlayer } = require('next-contentlayer');
+const { withContentlayer } = require('next-contentlayer2');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -41,8 +41,6 @@ const nextConfig = {
 	},
 	// This is required to support PostHog trailing slash API requests
 	skipTrailingSlashRedirect: true,
-
-	swcMinify: true,
 };
 
 module.exports = withContentlayer(nextConfig);

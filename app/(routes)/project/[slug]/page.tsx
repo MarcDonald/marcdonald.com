@@ -16,14 +16,15 @@ import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
 interface ProjectPageProps {
-	params: {
+	params: Promise<{
 		slug: string;
-	};
+	}>;
 }
 
-export async function generateMetadata({
-	params,
-}: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata(
+	props: ProjectPageProps
+): Promise<Metadata> {
+	const params = await props.params;
 	const project = await getProjectFromParams(params);
 
 	if (!project) {
@@ -52,7 +53,7 @@ export async function generateMetadata({
 							height: 630,
 							alt: project.title,
 						},
-				  ]
+					]
 				: [],
 		},
 		alternates: {
@@ -73,7 +74,7 @@ export async function generateMetadata({
 							height: 630,
 							alt: project.title,
 						},
-				  ]
+					]
 				: [],
 		},
 	};
@@ -87,12 +88,15 @@ async function getProjectFromParams(params: { slug: string }) {
 export async function generateStaticParams(): Promise<
 	ProjectPageProps['params'][]
 > {
-	return allProjects.map((proj) => ({
-		slug: proj.slugAsParams,
-	}));
+	return allProjects.map((proj) =>
+		Promise.resolve({
+			slug: proj.slugAsParams,
+		})
+	);
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage(props: ProjectPageProps) {
+	const params = await props.params;
 	const proj = await getProjectFromParams(params);
 
 	if (!proj) {

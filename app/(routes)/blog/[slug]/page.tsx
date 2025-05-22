@@ -16,14 +16,15 @@ import {
 import { ShareButton } from '@/app/components/share-button';
 
 interface BlogPageProps {
-	params: {
+	params: Promise<{
 		slug: string;
-	};
+	}>;
 }
 
-export async function generateMetadata({
-	params,
-}: BlogPageProps): Promise<Metadata> {
+export async function generateMetadata(
+	props: BlogPageProps
+): Promise<Metadata> {
+	const params = await props.params;
 	const blog = await getBlogFromParams(params);
 
 	if (!blog) {
@@ -87,9 +88,11 @@ async function getBlogFromParams(params: { slug: string }) {
 export async function generateStaticParams(): Promise<
 	BlogPageProps['params'][]
 > {
-	return allBlogPosts.map((blog) => ({
-		slug: blog.slugAsParams,
-	}));
+	return allBlogPosts.map((blog) =>
+		Promise.resolve({
+			slug: blog.slugAsParams,
+		})
+	);
 }
 
 function DraftBanner() {
@@ -110,7 +113,8 @@ const dateFormatter = Intl.DateTimeFormat('en-GB', {
 	year: 'numeric',
 });
 
-export default async function BlogPage({ params }: BlogPageProps) {
+export default async function BlogPage(props: BlogPageProps) {
+	const params = await props.params;
 	const blog = await getBlogFromParams(params);
 
 	if (!blog) {
