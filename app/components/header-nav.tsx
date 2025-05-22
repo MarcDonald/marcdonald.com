@@ -61,7 +61,7 @@ const ListItem = React.forwardRef<
 				<a
 					ref={ref}
 					className={cn(
-						'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+						'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none',
 						pathname === props.href ? 'bg-popover-foreground/10' : '',
 						className
 					)}
@@ -88,8 +88,8 @@ export default function HeaderNav() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger
 						className={cn(
-							'data-[active]:bg-accent data-[state=open]:bg-accent',
-							pathName.includes('project') ? 'bg-muted ' : ''
+							'data-active:bg-accent data-[state=open]:bg-accent',
+							pathName.includes('project') ? 'bg-muted' : ''
 						)}
 					>
 						Projects
@@ -100,7 +100,7 @@ export default function HeaderNav() {
 								<Tooltip key={project.link}>
 									<ListItem href={project.link} title={project.title}>
 										<TooltipTrigger>
-											<p className="line-clamp-2 text-start text-sm leading-snug text-muted-foreground">
+											<p className="text-muted-foreground line-clamp-2 text-start text-sm leading-snug">
 												{project.description}
 											</p>
 										</TooltipTrigger>

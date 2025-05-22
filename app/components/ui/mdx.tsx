@@ -105,10 +105,7 @@ const components = {
 		<TypographyLink href={href ?? ''} className={cn(className)} {...props} />
 	),
 	p: ({ className, ...props }: ComponentProps) => (
-		<p
-			className={cn('leading-7 [&:not(:first-child)]:mt-4', className)}
-			{...props}
-		/>
+		<p className={cn('leading-7 not-first:mt-4', className)} {...props} />
 	),
 	ul: ({ className, ...props }: ComponentProps) => (
 		<ul className={cn('my-6 ml-6 list-disc', className)} {...props} />
@@ -122,7 +119,7 @@ const components = {
 	blockquote: ({ className, ...props }: ComponentProps) => (
 		<blockquote
 			className={cn(
-				'mt-6 break-words border-l-2 pl-6 italic text-muted [&>*]:text-foreground',
+				'text-muted *:text-foreground mt-6 border-l-2 pl-6 break-words italic',
 				className
 			)}
 			{...props}
@@ -140,7 +137,7 @@ const components = {
 	),
 	tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
 		<tr
-			className={cn('m-0 border-t p-0 even:bg-muted', className)}
+			className={cn('even:bg-muted m-0 border-t p-0', className)}
 			{...props}
 		/>
 	),
@@ -165,7 +162,7 @@ const components = {
 	pre: ({ className, ...props }: ComponentProps) => (
 		<pre
 			className={cn(
-				'mb-4 mt-6 overflow-x-auto break-words rounded-lg bg-slate-900 py-4',
+				'mt-6 mb-4 overflow-x-auto rounded-lg bg-slate-900 py-4 break-words',
 				className
 			)}
 			{...props}
@@ -174,7 +171,7 @@ const components = {
 	code: ({ className, ...props }: ComponentProps) => (
 		<code
 			className={cn(
-				'break-words rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm',
+				'bg-muted rounded px-[0.3rem] py-[0.2rem] font-mono text-sm break-words',
 				className
 			)}
 			{...props}

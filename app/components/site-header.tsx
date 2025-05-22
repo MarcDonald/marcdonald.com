@@ -5,7 +5,7 @@ import HeaderIconDropdown from '@/app/components/header-icon-dropdown';
 
 export function SiteHeader() {
 	return (
-		<header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 shadow-sm backdrop-blur">
+		<header className="supports-backdrop-blur:bg-background/60 bg-background/95 sticky top-0 z-40 w-full border-b shadow-xs backdrop-blur-sm">
 			<div className="container flex h-14 items-center space-x-2 px-4">
 				<HeaderIconDropdown />
 				<HeaderNav />
