@@ -111,7 +111,7 @@ export default async function ProjectPage(props: ProjectPageProps) {
 			<ProjectHeaderShell>
 				<div className={'flex items-center justify-between'}>
 					<TypographyH1
-						className={'group scroll-m-20'}
+						className={'group flex scroll-m-20 flex-row'}
 						id={'main-content'}
 						tabIndex={-1}
 					>
@@ -130,7 +130,7 @@ export default async function ProjectPage(props: ProjectPageProps) {
 				{description && (
 					<TypographyLarge
 						className={
-							'scroll-m-20 border-b-0 pb-2 font-display text-xl font-semibold tracking-tight text-muted-foreground transition-colors first:mt-0'
+							'font-display text-muted-foreground scroll-m-20 border-b-0 pb-2 text-xl font-semibold tracking-tight transition-colors first:mt-0'
 						}
 					>
 						<Balancer>{description}</Balancer>
