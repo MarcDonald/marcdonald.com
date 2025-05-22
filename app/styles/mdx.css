@@ -1,5 +1,5 @@
 [data-rehype-pretty-code-fragment] code {
-	@apply grid min-w-full break-words border-0 bg-transparent p-0 text-sm text-black;
+	@apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
 	counter-reset: line;
 	box-decoration-break: clone;
 	tab-size: 2;
@@ -23,7 +23,7 @@
 	@apply relative;
 }
 [data-rehype-pretty-code-fragment] .word--highlighted {
-	@apply bg-slate-300 bg-opacity-10 p-1;
+	@apply rounded-md bg-slate-300 bg-opacity-10 p-1;
 }
 [data-rehype-pretty-code-title] {
 	@apply mt-4 px-4 py-2 text-sm font-medium;

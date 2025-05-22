@@ -32,35 +32,34 @@ export function ShareButton({
 }: ShareButtonProps) {
 	const { toast } = useToast();
 	return (
-		<motion.div whileHover={iconAnimation} whileFocus={iconAnimation}>
-			<Button
-				variant="outline"
-				className={cn(className)}
-				onClick={async () => {
-					console.log(`Share link: ${link}`);
-					await navigator.clipboard.writeText(link);
-					toast({
-						title: 'Copied URL to clipboard',
-					});
+		<Button
+			className={cn(className)}
+			onClick={async () => {
+				console.log(`Share link: ${link}`);
+				await navigator.clipboard.writeText(link);
+				toast({
+					title: 'Copied URL to clipboard',
+				});
 
-					posthog.capture('Share URL', {
-						link,
-					});
+				posthog.capture('Share URL', {
+					link,
+				});
 
-					if (
-						window.navigator.canShare &&
-						window.navigator.canShare({
-							url: link,
-						})
-					) {
-						await window.navigator.share({ url: link });
-					}
-				}}
-				{...props}
-			>
+				if (
+					window.navigator.canShare &&
+					window.navigator.canShare({
+						url: link,
+					})
+				) {
+					await window.navigator.share({ url: link });
+				}
+			}}
+			{...props}
+		>
+			<motion.div whileHover={iconAnimation} whileFocus={iconAnimation}>
 				<ShareIcon className={'h-5 w-5'} />
 				<VisuallyHidden text={altText ?? 'Share URL'} />
-			</Button>
-		</motion.div>
+			</motion.div>
+		</Button>
 	);
 }
