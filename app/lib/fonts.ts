@@ -1,5 +1,10 @@
-import { GeistSans as FontSans } from 'geist/font/sans';
 import { GeistMono as FontMono } from 'geist/font/mono';
+import { Nunito } from 'next/font/google';
+
+const FontSans = Nunito({
+	style: 'normal',
+	subsets: ['latin'],
+});
 
 export const fontDisplay = FontSans;
 

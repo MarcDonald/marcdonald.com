@@ -41,7 +41,7 @@ export function TypographyH3(props: TypographyProps) {
 		<h3
 			{...props}
 			className={cn(
-				'font-display scroll-m-20 text-2xl font-semibold tracking-tight',
+				'font-display scroll-m-20 text-2xl font-bold tracking-tight',
 				props.className
 			)}
 		>

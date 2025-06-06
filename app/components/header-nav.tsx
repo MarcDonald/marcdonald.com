@@ -38,7 +38,7 @@ const NavItem = ({
 				<NavigationMenuLink
 					className={cn(
 						navigationMenuTriggerStyle(),
-						'bg-transparent',
+						'bg-transparent font-semibold',
 						isActive ? 'bg-muted' : ''
 					)}
 				>
@@ -88,7 +88,7 @@ export default function HeaderNav() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger
 						className={cn(
-							'data-active:bg-accent data-[state=open]:bg-accent',
+							'data-active:bg-accent data-[state=open]:bg-accent font-semibold',
 							pathName.includes('project') ? 'bg-muted' : ''
 						)}
 					>
@@ -100,7 +100,7 @@ export default function HeaderNav() {
 								<Tooltip key={project.link}>
 									<ListItem href={project.link} title={project.title}>
 										<TooltipTrigger>
-											<p className="text-muted-foreground line-clamp-2 text-start text-sm leading-snug">
+											<p className="text-muted-foreground line-clamp-2 cursor-pointer text-start text-sm leading-snug">
 												{project.description}
 											</p>
 										</TooltipTrigger>

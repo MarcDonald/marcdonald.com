@@ -59,13 +59,18 @@ export default function RootLayout({
 		<html
 			lang="en"
 			suppressHydrationWarning
-			className={`${fontDisplay.className} ${fontDisplay.variable} ${fontSans.className} ${fontMono.className} font-sans`}
+			className={cn(
+				`${fontDisplay.className} ${fontSans.className} ${fontMono.className} font-sans`
+				// variable not on NextFont but it is on Geist
+				// fontDisplay.variable
+			)}
 		>
 			<CSPostHogProvider>
 				<body
 					className={cn(
-						'min-h-screen scroll-smooth bg-background font-sans antialiased',
-						fontSans.variable,
+						'bg-background min-h-screen scroll-smooth font-sans antialiased',
+						// variable not on NextFont but it is on Geist
+						// fontSans.variable,
 						process.env.NODE_ENV === 'production' ? '' : 'debug-screens'
 					)}
 				>

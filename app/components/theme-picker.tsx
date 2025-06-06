@@ -47,7 +47,7 @@ export default function ThemePicker() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button variant="ghost" size={'icon'}>
+				<Button variant="ghost" size={'icon'} className={'cursor-pointer'}>
 					<motion.div
 						className={'absolute'}
 						whileHover={{
@@ -59,8 +59,8 @@ export default function ThemePicker() {
 							},
 						}}
 					>
-						<SunIcon className="absolute -left-[12px] -top-[12px] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-						<MoonIcon className="absolute -left-[12px] -top-[12px] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+						<SunIcon className="absolute -top-[12px] -left-[12px] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+						<MoonIcon className="absolute -top-[12px] -left-[12px] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
 					</motion.div>
 					<VisuallyHidden text={'Open theme switcher'} />
 				</Button>
