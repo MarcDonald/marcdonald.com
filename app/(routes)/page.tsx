@@ -24,10 +24,10 @@ export default function Home() {
 					I like to make things with TypeScript and React
 				</TypographyH2>
 			</div>
-			<div className={'md:grid md:grid-cols-2'}>
+			<div className={'flex flex-col'}>
 				{sortedBlogPosts.length > 0 && (
 					<section>
-						<TypographyH3 className={'mb-2 mt-4'}>Blog Posts</TypographyH3>
+						<TypographyH3 className={'mt-4 mb-2'}>Blog Posts</TypographyH3>
 						<BlogList maxItems={5} />
 						{sortedBlogPosts.length > 5 && (
 							<TypographyLink
@@ -41,7 +41,7 @@ export default function Home() {
 					</section>
 				)}
 				<section>
-					<TypographyH3 className={'mb-2 mt-4'}>Projects</TypographyH3>
+					<TypographyH3 className={'mt-4 mb-2'}>Projects</TypographyH3>
 					<ProjectList />
 				</section>
 			</div>

@@ -1,36 +1,38 @@
+import { projects } from '@/app/config/project';
 import {
-	TypographyLink,
-	TypographyMuted,
-	TypographyP,
-} from '@/app/components/ui/typography';
-import { ProjectDetails, projects } from '@/app/config/project';
-import Balancer from 'react-wrap-balancer';
-
-const ProjectLink = ({ project }: { project: ProjectDetails }) => {
-	return (
-		<li className={'p-2'}>
-			<TypographyP className={'mb-2'}>
-				<Balancer>
-					<TypographyLink
-						className={'font-semibold hover:font-bold focus:font-bold'}
-						href={project.link}
-					>
-						{project.title}
-					</TypographyLink>
-				</Balancer>
-			</TypographyP>
-			<TypographyMuted className={'text-base'}>
-				{project.description}
-			</TypographyMuted>
-		</li>
-	);
-};
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from '@/app/components/ui/card';
+import Link from 'next/link';
 
 export default function ProjectList() {
 	return (
-		<ul className={'list-none p-0'}>
+		<ul
+			className={'grid w-full list-none grid-cols-1 gap-2 p-2 md:grid-cols-3'}
+		>
 			{projects.map((proj) => (
-				<ProjectLink key={proj.title} project={proj} />
+				<li key={proj.title}>
+					<Link href={proj.link} aria-label={proj.title}>
+						<Card
+							className={
+								'focus:border-b-primary hover:border-b-primary gap-2 transition-all'
+							}
+						>
+							<CardHeader className={'flex flex-row items-center gap-2'}>
+								{<proj.icon size={20} />}
+								<CardTitle className={'font-display font-extrabold'}>
+									{proj.title}
+								</CardTitle>
+							</CardHeader>
+							<CardContent>
+								<CardDescription>{proj.description}</CardDescription>
+							</CardContent>
+						</Card>
+					</Link>
+				</li>
 			))}
 		</ul>
 	);
