@@ -64,6 +64,34 @@ export function TypographyH4(props: TypographyProps) {
 	);
 }
 
+export function TypographyH5(props: TypographyProps) {
+	return (
+		<h5
+			{...props}
+			className={cn(
+				'font-display scroll-m-20 text-lg font-semibold tracking-tight',
+				props.className
+			)}
+		>
+			{props.children}
+		</h5>
+	);
+}
+
+export function TypographyH6(props: TypographyProps) {
+	return (
+		<h6
+			{...props}
+			className={cn(
+				'font-display scroll-m-20 text-base font-semibold tracking-tight',
+				props.className
+			)}
+		>
+			{props.children}
+		</h6>
+	);
+}
+
 export function TypographyP(props: TypographyProps) {
 	return (
 		<p {...props} className={cn('leading-7 not-first:mt-4', props.className)}>

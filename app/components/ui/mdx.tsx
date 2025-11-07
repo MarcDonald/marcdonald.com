@@ -4,7 +4,14 @@ import { useMDXComponent } from 'next-contentlayer2/hooks';
 
 import { cn } from '@/app/lib/utils';
 import '@/app/styles/mdx.css';
-import { TypographyLink } from '@/app/components/ui/typography';
+import {
+	TypographyH2,
+	TypographyH3,
+	TypographyH4,
+	TypographyH5,
+	TypographyH6,
+	TypographyLink,
+} from '@/app/components/ui/typography';
 import DownloadSection from '@/app/(routes)/project/[slug]/_components/download-section';
 import { Alert, AlertDescription, AlertTitle } from '@/app/components/ui/alert';
 import { AnchorButton } from '@/app/components/anchor-button';
@@ -38,64 +45,69 @@ const components = {
 		/>
 	),
 	h2: ({ className, ...props }: ComponentProps) => (
-		<h2
+		<div
 			className={cn(
-				'group mt-10 flex scroll-m-20 flex-row border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0',
+				'group mt-10 flex scroll-m-20 flex-row items-center border-b pb-1 first:mt-0',
 				className
 			)}
 			{...props}
 		>
-			<Balancer>{props.children}</Balancer>
-			<AnchorButton linkTo={props.id} className={'self-center'} />
-		</h2>
+			<TypographyH2
+				className={
+					'text-foreground border-none pb-0 text-3xl font-bold tracking-tight'
+				}
+			>
+				<Balancer>{props.children}</Balancer>
+			</TypographyH2>
+			<AnchorButton
+				linkTo={props.id}
+				className={'hidden self-center md:flex'}
+			/>
+		</div>
 	),
 	h3: ({ className, ...props }: ComponentProps) => (
-		<h3
-			className={cn(
-				'group mt-8 flex scroll-m-20 text-2xl font-semibold tracking-tight',
-				className
-			)}
+		<div
+			className={cn('group mt-8 flex scroll-m-20 items-center', className)}
 			{...props}
 		>
-			<Balancer>{props.children}</Balancer>
+			<TypographyH3>
+				<Balancer>{props.children}</Balancer>
+			</TypographyH3>
 			<AnchorButton linkTo={props.id} className={'self-center'} />
-		</h3>
+		</div>
 	),
 	h4: ({ className, ...props }: ComponentProps) => (
-		<h4
-			className={cn(
-				'mt-8 flex scroll-m-20 text-xl font-semibold tracking-tight',
-				className
-			)}
+		<div
+			className={cn('mt-8 flex scroll-m-20 items-center', className)}
 			{...props}
 		>
-			<Balancer>{props.children}</Balancer>
+			<TypographyH4>
+				<Balancer>{props.children}</Balancer>
+			</TypographyH4>
 			<AnchorButton linkTo={props.id} className={'self-center'} />
-		</h4>
+		</div>
 	),
 	h5: ({ className, ...props }: ComponentProps) => (
-		<h5
-			className={cn(
-				'mt-8 flex scroll-m-20 text-lg font-semibold tracking-tight',
-				className
-			)}
+		<div
+			className={cn('mt-8 flex scroll-m-20 items-center', className)}
 			{...props}
 		>
-			<Balancer>{props.children}</Balancer>
+			<TypographyH5>
+				<Balancer>{props.children}</Balancer>
+			</TypographyH5>
 			<AnchorButton linkTo={props.id} className={'self-center'} />
-		</h5>
+		</div>
 	),
 	h6: ({ className, ...props }: ComponentProps) => (
-		<h6
-			className={cn(
-				'mt-8 flex scroll-m-20 text-base font-semibold tracking-tight',
-				className
-			)}
+		<div
+			className={cn('mt-8 flex scroll-m-20 items-center', className)}
 			{...props}
 		>
-			<Balancer>{props.children}</Balancer>
+			<TypographyH6>
+				<Balancer>{props.children}</Balancer>
+			</TypographyH6>
 			<AnchorButton linkTo={props.id} className={'self-center'} />
-		</h6>
+		</div>
 	),
 	a: ({
 		className,

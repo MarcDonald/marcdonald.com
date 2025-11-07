@@ -68,7 +68,7 @@ export default function RootLayout({
 			<CSPostHogProvider>
 				<body
 					className={cn(
-						'bg-background min-h-screen scroll-smooth font-sans antialiased',
+						'bg-background min-h-screen scroll-smooth antialiased',
 						// variable not on NextFont but it is on Geist
 						// fontSans.variable,
 						process.env.NODE_ENV === 'production' ? '' : 'debug-screens'

@@ -88,7 +88,7 @@ export default function HeaderNav() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger
 						className={cn(
-							'data-active:bg-accent data-[state=open]:bg-accent font-semibold',
+							'data-active:bg-accent data-[state=open]:bg-accent cursor-pointer font-semibold',
 							pathName.includes('project') ? 'bg-muted' : ''
 						)}
 					>

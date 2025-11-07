@@ -85,7 +85,7 @@ export default function HeaderIconDropdown() {
 		<>
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
-					<Button variant="ghost" size={'icon'}>
+					<Button variant="ghost" size={'icon'} className={'cursor-pointer'}>
 						<motion.div
 							whileHover={{
 								scale: [null, 1.25, 1.2],
