@@ -22,7 +22,7 @@ export default function ProjectList() {
 					>
 						<Card
 							className={
-								'focus:border-b-primary hover:border-b-primary gap-2 transition-all'
+								'focus:border-b-primary hover:border-b-primary gap-2 border-b-2 transition-all'
 							}
 						>
 							<CardHeader className={'flex flex-row items-center gap-2'}>

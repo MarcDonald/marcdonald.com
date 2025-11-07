@@ -37,15 +37,15 @@
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-sm: calc(var(--radius) - 4px);
 
-	--font-weight-normal: 500;
+	--font-weight-normal: 400;
 	/*noinspection CssUnresolvedCustomProperty*/
 	--font-display:
 		'Nunito', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	/*noinspection CssUnresolvedCustomProperty*/
 	--font-sans:
-		'Geist Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+		var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	/*noinspection CssUnresolvedCustomProperty*/
 	--font-mono:
 		var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,

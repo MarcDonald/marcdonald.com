@@ -7,11 +7,6 @@ const FontDisplay = Nunito({
 	subsets: ['latin'],
 });
 
-// const FontSans = GeistSans({
-// 	style: 'normal',
-// 	subsets: ['latin'],
-// });
-
 export const fontDisplay = FontDisplay;
 
 export const fontSans = FontSans;
