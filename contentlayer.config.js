@@ -2,7 +2,6 @@ import { defineDocumentType, makeSource } from 'contentlayer2/source-files';
 import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -111,15 +110,6 @@ export default makeSource({
 					},
 					onVisitHighlightedWord(node) {
 						node.properties.className = ['word--highlighted'];
-					},
-				},
-			],
-			[
-				rehypeAutolinkHeadings,
-				{
-					properties: {
-						className: ['subheading-anchor'],
-						ariaLabel: 'Link to section',
 					},
 				},
 			],

@@ -15,7 +15,11 @@ export default function ProjectList() {
 		>
 			{projects.map((proj) => (
 				<li key={proj.title}>
-					<Link href={proj.link} aria-label={proj.title}>
+					<Link
+						href={proj.link}
+						aria-label={proj.title}
+						aria-description={proj.description}
+					>
 						<Card
 							className={
 								'focus:border-b-primary hover:border-b-primary gap-2 transition-all'
@@ -24,11 +28,13 @@ export default function ProjectList() {
 							<CardHeader className={'flex flex-row items-center gap-2'}>
 								{<proj.icon size={20} />}
 								<CardTitle className={'font-display font-extrabold'}>
-									{proj.title}
+									<h4>{proj.title}</h4>
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<CardDescription>{proj.description}</CardDescription>
+								<CardDescription>
+									<p>{proj.description}</p>
+								</CardDescription>
 							</CardContent>
 						</Card>
 					</Link>
