@@ -14,6 +14,7 @@ import { Button } from '@/app/components/ui/button';
 import { Toaster } from '@/app/components/ui/toaster';
 import { TooltipProvider } from '@/app/components/ui/tooltip';
 import { CSPostHogProvider, OptIn } from '@/app/components/posthog-provider';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -86,6 +87,7 @@ export default function RootLayout({
 								<SiteHeader />
 								<main className={'container my-6 lg:px-10'}>
 									{children}
+									<SpeedInsights />
 									<OptIn />
 								</main>
 								<Toaster />
